@@ -1,0 +1,155 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
+public class PanelManager : MonoBehaviour
+{
+    public GameObject[] panels;
+    public string sceneOnBackButton;
+    public string sceneOnNextButton;
+
+    public Button backButton;
+
+    private int currentPanelIndex = 0;
+    private Animator panelAnimator;
+    private AudioSource currentAudioSource;
+
+    void Start()
+    {
+        panelAnimator = GetComponent<Animator>();
+        ShowPanel(currentPanelIndex);
+        StartCoroutine(FindAudioSourceInPanel(currentPanelIndex));
+
+        AdjustBackButtonPosition();
+    }
+
+    public void RepeatAudio()
+    {
+        if (currentAudioSource != null)
+        {
+            currentAudioSource.Stop();
+            currentAudioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró AudioSource actual para repetir.");
+        }
+    }
+
+    public void SetCurrentAudioSource(AudioSource audioSource)
+    {
+        currentAudioSource = audioSource;
+    }
+
+    public void ShowNextPanel()
+    {
+        if (currentPanelIndex < panels.Length - 1)
+        {
+            StartCoroutine(TransitionToPanel(currentPanelIndex + 1, true));
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync(sceneOnNextButton);
+        }
+    }
+
+    public void ShowPreviousPanel()
+    {
+        if (currentPanelIndex > 0)
+        {
+            StartCoroutine(TransitionToPanel(currentPanelIndex - 1, false));
+        }
+        else
+        {
+            AdjustBackButtonPosition(true);
+            SceneManager.LoadSceneAsync(sceneOnBackButton);
+        }
+    }
+
+    private IEnumerator TransitionToPanel(int nextIndex, bool isNext)
+    {
+        if (panelAnimator != null)
+        {
+            ShowPanel(nextIndex);
+
+            if (isNext)
+            {
+                panelAnimator.SetTrigger("FadeIn");
+                float fadeInDuration = GetAnimatorStateDuration("FadeIn");
+                yield return new WaitForSeconds(fadeInDuration);
+                panels[currentPanelIndex].SetActive(false);
+            }
+            else
+            {
+                float fadeOutDuration = 0.8f;
+                yield return new WaitForSeconds(fadeOutDuration);
+                panels[currentPanelIndex].SetActive(false);
+            }
+
+            yield return StartCoroutine(FindAudioSourceInPanel(nextIndex));
+        }
+        else
+        {
+            Debug.LogWarning("Animator es null durante la transición.");
+            panels[currentPanelIndex].SetActive(false);
+            yield return StartCoroutine(FindAudioSourceInPanel(nextIndex));
+        }
+
+        currentPanelIndex = nextIndex;
+
+        AdjustBackButtonPosition();
+    }
+
+    private void ShowPanel(int index)
+    {
+        panels[index].SetActive(true);
+    }
+
+    private IEnumerator FindAudioSourceInPanel(int panelIndex)
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        AudioSource audioSource = panels[panelIndex].GetComponentInChildren<AudioSource>();
+
+        if (audioSource != null)
+        {
+            SetCurrentAudioSource(audioSource);
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.Log($"No se encontró AudioSource en el panel {panelIndex}.");
+        }
+    }
+
+    private float GetAnimatorStateDuration(string stateName)
+    {
+        if (panelAnimator == null)
+            return 0f;
+
+        AnimatorStateInfo stateInfo = panelAnimator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName(stateName))
+        {
+            return stateInfo.length;
+        }
+
+        return 1f;
+    }
+
+    private void AdjustBackButtonPosition(bool isInitialSetup = false)
+    {
+        if (backButton != null)
+        {
+           
+            if (currentPanelIndex == 0 && !isInitialSetup)
+            {
+                backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(50, 373);
+            }
+            else
+            {
+                
+                backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(50, 50);
+            }
+        }
+    }
+}

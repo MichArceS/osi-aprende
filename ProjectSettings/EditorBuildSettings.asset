@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_Inicio.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_Avatars.unity
+    guid: 9246091c755b9454787bc847fcc59294
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_Nuevo_Juego.unity
+    guid: 9fc555e6f3cb8d3409de54f10dfa6850
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_Nombre.unity
+    guid: c466b16fdb6d0b941946348f3624374e
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_Actividades.unity
+    guid: c41abc57251163140b383b1834d7853e
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_eleccion_avatars_creates.unity
+    guid: 84af1ea60f628d942ac3ad206cdbc35f
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_select_clima.unity
+    guid: 4f0db048f0edaf64a91d842183c2b63b
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_select_fenomenos.unity
+    guid: 2f481ce9f37f1714e994fb3b9e28e01f
+  - enabled: 1
+    path: Assets/Scenes/historia_clima.unity
+    guid: 037bb0bf7523f8f40bc45c1fa268c20f
+  - enabled: 1
+    path: Assets/Scenes/juegos_clima.unity
+    guid: 205dfa53b7b33eb449d21bfd50656c0e
+  - enabled: 1
+    path: Assets/Scenes/historia_fenomenos_naturales.unity
+    guid: 0124f1622ce6fb3438ea038836f4229d
+  - enabled: 1
+    path: Assets/Scenes/juegos_fenomenos_naturales.unity
+    guid: f937934dc13060a45bfbb544a6442007
+  - enabled: 1
+    path: Assets/Scenes/terremoto_juego.unity
+    guid: 403debca4edfa3d44b50ac028e6ccbeb
+  m_configObjects: {}
