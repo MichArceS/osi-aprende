@@ -44,4 +44,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/terremoto_juego.unity
     guid: 403debca4edfa3d44b50ac028e6ccbeb
+  - enabled: 1
+    path: Assets/Scenes/terremoto_juego2.unity
+    guid: c68064da0ea54bb43a96e61ff36bb3f4
+  - enabled: 1
+    path: Assets/Scenes/inundacion_juego.unity
+    guid: fd9318715911f9441aee542eb8029e2d
+  - enabled: 1
+    path: Assets/Scenes/inundacion_juego2.unity
+    guid: 3db8f04704719e74db0b8d3f23f9ed6c
+  - enabled: 1
+    path: Assets/Scenes/erupcion_volcanica.unity
+    guid: 9bf04b76e14841a4d823190affa86bc7
+  - enabled: 1
+    path: Assets/Scenes/erupcion_Volcanica2.unity
+    guid: e5ba07859bee7224e80817f8f988463e
+  - enabled: 1
+    path: Assets/Scenes/recompensas_juego2.unity
+    guid: 507917460ab224147b770c396fa3a138
+  - enabled: 1
+    path: Assets/Scenes/instruccion_juego1.unity
+    guid: b59d959631b183c42b8a1c8f0e218fb1
+  - enabled: 1
+    path: Assets/Scenes/recompensa1_jego2.unity
+    guid: 835b30c1375f64f49ab0c7187f558340
+  - enabled: 1
+    path: Assets/Scenes/recompensa3_juego2.unity
+    guid: 232602d34bc344946b0b1ea3e701dd2c
   m_configObjects: {}

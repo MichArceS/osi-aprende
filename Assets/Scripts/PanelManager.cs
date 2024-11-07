@@ -7,7 +7,7 @@ public class PanelManager : MonoBehaviour
     public GameObject[] panels;
     public string sceneOnBackButton;
     public string sceneOnNextButton;
-
+    public AudioSource audioClic;
     public Button backButton;
 
     private int currentPanelIndex = 0;
@@ -22,9 +22,18 @@ public class PanelManager : MonoBehaviour
 
         AdjustBackButtonPosition();
     }
+    private void PlayAudioClic()
+    {
+        if (audioClic != null)
+        {
+            audioClic.Play();
+        }
+    }
 
     public void RepeatAudio()
     {
+        PlayAudioClic();
+
         if (currentAudioSource != null)
         {
             currentAudioSource.Stop();
@@ -43,6 +52,8 @@ public class PanelManager : MonoBehaviour
 
     public void ShowNextPanel()
     {
+        PlayAudioClic();
+
         if (currentPanelIndex < panels.Length - 1)
         {
             StartCoroutine(TransitionToPanel(currentPanelIndex + 1, true));
@@ -55,6 +66,8 @@ public class PanelManager : MonoBehaviour
 
     public void ShowPreviousPanel()
     {
+        PlayAudioClic();
+
         if (currentPanelIndex > 0)
         {
             StartCoroutine(TransitionToPanel(currentPanelIndex - 1, false));
@@ -143,12 +156,12 @@ public class PanelManager : MonoBehaviour
            
             if (currentPanelIndex == 0 && !isInitialSetup)
             {
-                backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(50, 373);
+                backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(135, 945);
             }
             else
             {
                 
-                backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(50, 50);
+                backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(135, 135);
             }
         }
     }

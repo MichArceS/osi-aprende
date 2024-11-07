@@ -8,20 +8,24 @@ public class AvatarSelection : MonoBehaviour
 {
     public Button[] avatarButtons;  
     public Button readyButton;      
-    public string nextSceneName;    
+    public string nextSceneName;
+    public AudioSource audioSource;
 
     private Button selectedButton;   
     private string selectedAvatarName;  
 
     void Start()
     {
-        // Desactivar el botón
         readyButton.gameObject.SetActive(false);
-        // Asignar función de manejo de clic a cada botón de avatar
         for (int i = 0; i < avatarButtons.Length; i++)
         {
             int index = i;
             avatarButtons[i].onClick.AddListener(() => SelectAvatar(index));
+        }
+
+        if (audioSource == null)
+        {
+            audioSource = FindObjectOfType<AudioSource>();
         }
 
         readyButton.onClick.AddListener(SaveAndLoadNextScene);
@@ -30,38 +34,29 @@ public class AvatarSelection : MonoBehaviour
 
     void SelectAvatar(int index)
     {
-    
-        if (selectedButton != null)
-        {
-            // Aquí podrías quitar cualquier efecto de resaltado visual del botón previamente seleccionado si lo hubiera
-        }
-
-        // Obtener el nombre del avatar seleccionado (nombre del sprite asociado al botón de avatar)
         selectedAvatarName = avatarButtons[index].GetComponent<Image>().sprite.name;
 
-        // Guardar referencia al nuevo botón seleccionado
         selectedButton = avatarButtons[index];
         readyButton.gameObject.SetActive(true);
-
-        //Debug.Log("Avatar seleccionado: " + selectedAvatarName);
     }
 
     void SaveAndLoadNextScene()
     {
         if (selectedButton != null)
         {
-            // Guardar el nombre del avatar seleccionado en PlayerPrefs
             PlayerPrefs.SetString("SelectedAvatarImageName", selectedAvatarName);
-
-            // Confirmación de que se ha guardado correctamente (opcional)
-            Debug.Log("Avatar seleccionado y guardado: " + selectedAvatarName);
-
-            // Cargar la siguiente escena
-            SceneManager.LoadSceneAsync(nextSceneName);
+            StartCoroutine(PlayAudioAndLoadScene(nextSceneName));
         }
         else
         {
             Debug.LogWarning("Ningún avatar seleccionado.");
         }
+    }
+
+    IEnumerator PlayAudioAndLoadScene(string sceneToLoad)
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

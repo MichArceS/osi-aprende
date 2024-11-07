@@ -10,8 +10,13 @@ public class PanelManagerTransition : MonoBehaviour
     public AudioSource audioButton1;
     public AudioSource audioButton2;
     public AudioSource audioButton3;
+    public AudioSource audioInstrucion;
 
-    public string[] scenes; // Nombres de las escenas asociadas a cada botón
+    public Animator animator1;
+    public Animator animator2;
+    public Animator animator3;
+
+    public string[] scenes;
     public float waitTimeBeforePanel2Transition = 1f;
     public float waitTimeBeforePanel3Transition = 0.5f;
     public float transitionDuration = 1f;
@@ -20,7 +25,6 @@ public class PanelManagerTransition : MonoBehaviour
 
     private void Start()
     {
-        // Inicialmente desactivar todos los paneles
         panel2.SetActive(false);
         panel3.SetActive(false);
         panel4.SetActive(false);
@@ -34,7 +38,14 @@ public class PanelManagerTransition : MonoBehaviour
             return;
         }
 
-        // Seleccionar el audio correspondiente
+        StartCoroutine(HandleButtonClick(buttonIndex));
+    }
+
+    private IEnumerator HandleButtonClick(int buttonIndex)
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        // Establece el audio activo
         switch (buttonIndex)
         {
             case 1:
@@ -48,52 +59,67 @@ public class PanelManagerTransition : MonoBehaviour
                 break;
         }
 
-        StartCoroutine(HandlePanelTransition(buttonIndex - 1)); // Pasar el índice de escena
-    }
-
-    private IEnumerator HandlePanelTransition(int sceneIndex)
-    {
-        // Activar todos los paneles
-        panel2.SetActive(true);
-        panel3.SetActive(true);
-        panel4.SetActive(true);
-
-        // Configurar CanvasGroup de Paneles
-        CanvasGroup canvasGroup2 = panel2.GetComponent<CanvasGroup>();
-        CanvasGroup canvasGroup3 = panel3.GetComponent<CanvasGroup>();
-        CanvasGroup canvasGroup4 = panel4.GetComponent<CanvasGroup>();
-
-        // Inicializar alfa de Paneles
-        SetCanvasGroupAlpha(canvasGroup2, 1f); // Panel 2 visible
-        SetCanvasGroupAlpha(canvasGroup3, 0f); // Panel 3 invisible
-        SetCanvasGroupAlpha(canvasGroup4, 0f); // Panel 4 invisible
-
-        // Reproducir el audio correspondiente después de la espera
+        // Reproduce el audio
         if (activeAudioSource != null)
         {
             activeAudioSource.Play();
         }
 
-        // Esperar a que el Panel 2 esté completamente visible
+        // Inicia la transición de panel
+        StartCoroutine(HandlePanelTransition(buttonIndex - 1));
+    }
+
+    private IEnumerator HandlePanelTransition(int sceneIndex)
+    {
+        panel2.SetActive(true);
+        panel3.SetActive(true);
+        panel4.SetActive(true);
+
+        CanvasGroup canvasGroup2 = panel2.GetComponent<CanvasGroup>();
+        CanvasGroup canvasGroup3 = panel3.GetComponent<CanvasGroup>();
+        CanvasGroup canvasGroup4 = panel4.GetComponent<CanvasGroup>();
+
+        SetCanvasGroupAlpha(canvasGroup2, 1f);
+        SetCanvasGroupAlpha(canvasGroup3, 0f);
+        SetCanvasGroupAlpha(canvasGroup4, 0f);
+
         yield return new WaitForSeconds(waitTimeBeforePanel2Transition);
-
-        // Transición entre Panel 2 y Panel 3
+        Debug.Log("Esperando transición de Panel 2 a Panel 3.");
         yield return StartCoroutine(FadeOutAndIn(canvasGroup2, canvasGroup3, transitionDuration, 1f));
+        Debug.Log("Transición de Panel 2 a Panel 3 completada.");
 
-        // Esperar después de que el Panel 3 esté completamente visible
         yield return new WaitForSeconds(waitTimeBeforePanel3Transition);
-
-        // Transición entre Panel 3 y Panel 4
+        Debug.Log("Esperando transición de Panel 3 a Panel 4.");
         yield return StartCoroutine(FadeOutAndIn(canvasGroup3, canvasGroup4, transitionDuration, 1f));
+        Debug.Log("Transición de Panel 3 a Panel 4 completada.");
 
-        // Mostrar Panel 4 completamente
+        
+
         SetCanvasGroupAlpha(canvasGroup4, 1f);
 
-        // Esperar 0.5 segundos antes de cargar la nueva escena
+        // Reproduce el audio
+        if (audioInstrucion != null)
+        {
+            audioInstrucion.Play();
+        }
+        yield return new WaitForSeconds(1f);
+
+        yield return StartCoroutine(PlayAnimations());
+
+        SceneManager.LoadScene(scenes[sceneIndex]);
+    }
+
+    private IEnumerator PlayAnimations()
+    {
+        animator1.SetTrigger("PlayAnimation1");
         yield return new WaitForSeconds(0.5f);
 
-        // Cargar la escena correspondiente
-        SceneManager.LoadScene(scenes[sceneIndex]);
+        animator2.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        animator2.gameObject.SetActive(false);
+
+        animator3.SetTrigger("PlayAnimation3");
+        yield return new WaitForSeconds(2.5f);
     }
 
     private IEnumerator FadeOutAndIn(CanvasGroup fadeOutGroup, CanvasGroup fadeInGroup, float duration, float initialFadeInAlpha)

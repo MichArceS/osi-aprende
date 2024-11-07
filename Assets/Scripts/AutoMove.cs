@@ -1,0 +1,277 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using Cinemachine;
+
+public class AutoMove : MonoBehaviour
+{
+    private float moveSpeed = 5f;
+    public List<GameObject> validTargets;
+    private Vector2 targetPosition;
+    private bool isMoving = false;
+    private Animator animator;
+    private Animator tvAnimator;
+    private Rigidbody2D rb;
+    private bool firstClick = true;
+    private int clickCount = 0;
+
+    public Vector2 mochilaDestination;
+    public Vector2 tvDestination;
+    public List<Button> botones;
+
+    public CinemachineVirtualCamera camera1; 
+    public CinemachineVirtualCamera camera2;
+
+    [Header("Objetos a Desactivar")]
+    [SerializeField] private GameObject objeto1;
+    [SerializeField] private GameObject objeto2;
+ 
+
+    [Header("Objetos a Activar")]
+    [SerializeField] private GameObject PersonajeNuevo;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip clickSound;
+    public AudioClip[] randomSounds;
+    public AudioSource audioTv;
+    public AudioSource audioMochila;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        isMoving = false;
+
+        camera1.gameObject.SetActive(true);
+        camera2.gameObject.SetActive(false);
+
+        // Desactivar todos los botones al iniciar
+        foreach (Button boton in botones)
+        {
+            if (boton != null)
+            {
+                boton.interactable = false;
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && firstClick)
+        {
+            animator.SetBool("IsMovingOsi", true);
+            firstClick = false;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 clickedPosition = new Vector2(mousePos.x, mousePos.y + 2f);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+            if (tvAnimator != null && tvAnimator.GetBool("isMovingTv"))
+            {
+                tvAnimator.SetBool("isMovingTv", false);
+                //Debug.Log("Animación de la TV desactivada.");
+            }
+
+            if (hit)
+            {
+                if (validTargets.Contains(hit.collider.gameObject))
+                {
+                    if (hit.collider.gameObject.CompareTag("Mochila"))
+                    {
+                        targetPosition = mochilaDestination;
+                        //Debug.Log("Dirigiéndose a la mochila");
+                    }
+                    else if (hit.collider.gameObject.CompareTag("tv"))
+                    {
+                        targetPosition = tvDestination;
+                        //Debug.Log("Dirigiéndose a la televisión");
+                    }
+                    else if (hit.collider.gameObject.CompareTag("Piso"))
+                    {
+                        targetPosition = clickedPosition;
+                        //Debug.Log("Lugar correcto");
+                    }
+
+                    isMoving = true;
+                }
+                else
+                {
+                    PlayToAudioClicIncorrect();
+                    isMoving = false;
+                    //Debug.Log("Lugar incorrecto");
+                }
+            }
+        }
+
+
+        if (isMoving)
+        {
+            MoveTowardsTarget();
+        }
+    }
+
+    private void PlayTheAudioCorrect(AudioSource audioSource)
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+    }
+
+    private void PlayToAudioClicIncorrect()
+    {
+        clickCount++;
+
+        if (clickCount <= 2)
+        {
+            PlayAudio(clickSound);
+        }
+        else if (clickCount > 2)
+        {
+            PlayRandomSound();
+        }
+
+    }
+
+    private void PlayAudio(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+    }
+
+    private void PlayRandomSound()
+    {
+        if (audioSource != null && randomSounds.Length > 0)
+        {
+            AudioClip randomClip = randomSounds[Random.Range(0, randomSounds.Length)];
+            PlayAudio(randomClip);
+        }
+    }
+
+    void MoveTowardsTarget()
+    {
+        Vector2 newPosition = Vector2.MoveTowards(rb.position, targetPosition, moveSpeed * Time.deltaTime);
+        rb.MovePosition(newPosition);
+
+        UpdateDirection(newPosition);
+
+        if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
+        {
+            isMoving = false;
+            animator.SetBool("isWalking", false);
+            ShowDestinationMessage(targetPosition);
+        }
+        else
+        {
+            animator.SetBool("isWalking", true);
+        }
+    }
+
+    void UpdateDirection(Vector2 newPosition)
+    {
+        Vector2 direction = (newPosition - rb.position).normalized;
+        animator.SetFloat("Horizontal", direction.x);
+        animator.SetFloat("Vertical", direction.y);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Pared"))
+        {
+            isMoving = false;
+            animator.SetBool("isWalking", false);
+            ShowCollisionMessage();
+        }
+    }
+
+    private void ShowCollisionMessage()
+    {
+        Debug.Log("Te has chocado con una pared");
+    }
+
+    private void ShowDestinationMessage(Vector2 position)
+    {
+        if (position == mochilaDestination)
+        {
+            PlayTheAudioCorrect(audioMochila);
+
+            if (botones.Count > 1 && botones[0] != null)
+            {
+                botones[0].interactable = true;
+            }
+
+            StartCoroutine(WaitAndPrint(ReactivateNewCharacter));
+
+            bool isCamera1Active = camera1.gameObject.activeSelf;
+            camera1.gameObject.SetActive(!isCamera1Active);
+            camera2.gameObject.SetActive(isCamera1Active);
+
+            if (GameManagerOsiPersonaje.Instance != null)
+            {
+                GameManagerOsiPersonaje.Instance.IncrementScore();
+            }
+        }
+        else if (position == tvDestination)
+        {
+            Debug.Log("Llegaste a la televisión, ¡mira la televisión!");
+            PlayTheAudioCorrect(audioTv);
+            if (botones.Count > 1 && botones[1] != null)
+            {
+                botones[1].interactable = true;
+            }
+            StartCoroutine(WaitAndPrint(StartTVAnimation));
+
+            if (GameManagerOsiPersonaje.Instance != null)
+            {
+                GameManagerOsiPersonaje.Instance.IncrementScore();
+            }
+        }
+    }
+
+    private IEnumerator WaitAndPrint(System.Action action)
+    {
+        yield return new WaitForSeconds(0.5f);
+        action?.Invoke(); 
+    }
+
+    private void ReactivateNewCharacter()
+    {
+
+        if (objeto1 != null && objeto2 != null)
+        {
+            objeto1.SetActive(false);
+            objeto2.SetActive(false);
+        }
+
+        if (PersonajeNuevo != null)
+        {
+            PersonajeNuevo.SetActive(true);
+        }
+    }
+
+    private void StartTVAnimation()
+    {
+        GameObject tvObject = GameObject.FindGameObjectWithTag("tv");
+        if (tvObject != null)
+        {
+            tvAnimator = tvObject.GetComponent<Animator>();
+            if (tvAnimator != null)
+            {
+                tvAnimator.SetBool("isMovingTv", true); ;
+                Debug.Log("Animación de la TV iniciada.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el objeto de la TV.");
+        }
+    }
+}

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,6 +11,7 @@ public class PlayerRegistration : MonoBehaviour
     public TMP_InputField playerNameInput;
     public Button saveButton;
     public string nextSceneName;
+    public AudioSource audioSource;
 
     private PlayerData playerData;
 
@@ -18,6 +21,11 @@ public class PlayerRegistration : MonoBehaviour
         saveButton.gameObject.SetActive(false);
         // Cargar datos de jugadores al iniciar
         LoadPlayersData();
+
+        if (audioSource == null)
+        {
+            audioSource = FindObjectOfType<AudioSource>();
+        }
 
         // Añadir listener al input field para verificar cambios en el texto
         playerNameInput.onValueChanged.AddListener(OnPlayerNameInputChanged);
@@ -79,11 +87,19 @@ public class PlayerRegistration : MonoBehaviour
         playerNameInput.text = "";
         PlayerPrefs.SetString("playerName", playerName);
         // Cargar la siguiente escena
-        SceneManager.LoadSceneAsync(nextSceneName);
+        StartCoroutine(PlayAudioAndLoadScene(nextSceneName));
         //modifaca la seccion
         PlayerPrefs.SetInt("FirstTime", 0);
         PlayerPrefs.Save();
     }
+
+    IEnumerator PlayAudioAndLoadScene(string sceneToLoad)
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
 
     private void SavePlayersData()
     {
@@ -136,7 +152,7 @@ public class PlayerRegistration : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("PlayerCodeContinue");
         }
-        // Construir la ruta completa al archivo players.json en el directorio persistente de datos de la aplicación
+        // Construir la ruta completa al archivo
         string playersDataPath = Path.Combine(Application.persistentDataPath, "players.json");
 
         // Verificar si el archivo existe antes de intentar eliminarlo
@@ -144,11 +160,7 @@ public class PlayerRegistration : MonoBehaviour
         {
             // Eliminar el archivo
             File.Delete(playersDataPath);
-            Debug.Log("Archivo players.json eliminado correctamente.");
-        }
-        else
-        {
-            Debug.Log("El archivo players.json no existe en la ruta especificada.");
+            //Debug.Log("Archivo players.json eliminado correctamente.");
         }
         PlayerPrefs.SetInt("FirstTime", 1);
         PlayerPrefs.Save();

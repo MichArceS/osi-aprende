@@ -17,10 +17,25 @@ TagManager:
   - DroppableSandalias
   - DroppableMedias
   - DroppableZapatos
-  - ZonaDeEncuentro
-  - PeligroPuerta
-  - ZonaMochila
   - Salir
+  - Pared
+  - Mochila
+  - Mama
+  - tv
+  - Puerta
+  - empezandoCaminar
+  - fondoNoCaminar
+  - caminoCorrecto
+  - caminoIncorrecto
+  - Square
+  - segundoCaminoCorrecto
+  - segundoCaminoIncorrecto
+  - tercerCaminoIncorrecto
+  - debajoMesa
+  - Mascarilla
+  - Alimentos
+  - Naturaleza
+  - Piso
   layers:
   - Default
   - TransparentFX
