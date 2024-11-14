@@ -74,11 +74,23 @@ public class PanelManagerPlayer : MonoBehaviour
     private IEnumerator FindAudioSourceInPanel(int panelIndex)
     {
         yield return new WaitForSeconds(0.1f);
-        AudioSource audioSource = panels[panelIndex].GetComponentInChildren<AudioSource>();
-        if (audioSource != null)
+        AudioSource[] audioSources = panels[panelIndex].GetComponentsInChildren<AudioSource>();
+        AudioSource audioRepetir = null;
+        AudioSource audioAmbiente = null;
+        if (audioSources.Length > 0)
         {
-            SetCurrentAudioSource(audioSource);
-            audioSource.Play();
+            audioRepetir = audioSources[0];
+            audioAmbiente = audioSources.Length > 1 ? audioSources[1] : null;
+        }
+        if (audioRepetir != null)
+        {
+            SetCurrentAudioSource(audioRepetir);
+            audioRepetir.Play();
+        }
+        
+        if (audioAmbiente != null)
+        {
+            audioAmbiente.Play();
         }
     }
 

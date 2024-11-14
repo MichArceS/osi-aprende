@@ -1,13 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 public class PanelManager : MonoBehaviour
 {
     public GameObject[] panels;
     public string sceneOnBackButton;
     public string sceneOnNextButton;
     public AudioSource audioClic;
+    public AudioSource backgroundAudio;
     public Button backButton;
 
     private int currentPanelIndex = 0;
@@ -41,7 +42,7 @@ public class PanelManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No se encontró AudioSource actual para repetir.");
+            Debug.LogWarning("No se encontrï¿½ AudioSource actual para repetir.");
         }
     }
 
@@ -103,7 +104,7 @@ public class PanelManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Animator es null durante la transición.");
+            Debug.LogWarning("Animator es null durante la transiciï¿½n.");
             panels[currentPanelIndex].SetActive(false);
             yield return StartCoroutine(FindAudioSourceInPanel(nextIndex));
         }
@@ -131,7 +132,7 @@ public class PanelManager : MonoBehaviour
         }
         else
         {
-            Debug.Log($"No se encontró AudioSource en el panel {panelIndex}.");
+            Debug.Log($"No se encontrï¿½ AudioSource en el panel {panelIndex}.");
         }
     }
 
@@ -153,14 +154,14 @@ public class PanelManager : MonoBehaviour
     {
         if (backButton != null)
         {
-           
+
             if (currentPanelIndex == 0 && !isInitialSetup)
             {
                 backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(135, 945);
             }
             else
             {
-                
+
                 backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(135, 135);
             }
         }

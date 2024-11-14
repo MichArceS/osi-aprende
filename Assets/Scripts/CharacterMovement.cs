@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
@@ -59,6 +60,13 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        GameObject btnAction = EventSystem.current.currentSelectedGameObject;
+
+        if (Input.GetMouseButtonDown(0) && btnAction != null && btnAction.GetComponent<Button>() != null)
+        {    
+            Debug.Log("Boton UI Presionado");
+            return;
+        }
         if (Input.GetMouseButtonDown(0) && firstClick)
         {
             animator.SetBool("isMoving", true);
@@ -76,7 +84,7 @@ public class CharacterMovement : MonoBehaviour
                 if (hit.collider.CompareTag("Square"))
                 {
                     PlayToAudioClicIncorrect();
-                    Debug.Log("Por ahí no puede caminar.");
+                    Debug.Log("Por ahï¿½ no puede caminar.");
                     return;
                 }
 
@@ -137,7 +145,7 @@ public class CharacterMovement : MonoBehaviour
         if (hit.CompareTag("caminoCorrecto"))
         {
             targetPosition = DestinationCorrecto;
-            Debug.Log("Dirigiéndose a camino correcto");
+            Debug.Log("Dirigiï¿½ndose a camino correcto");
             isMoving = true;
 
             if (botones.Count > 1 && botones[0] != null)
@@ -149,7 +157,7 @@ public class CharacterMovement : MonoBehaviour
         else if (hit.CompareTag("caminoIncorrecto"))
         {
             targetPosition = DestinationInorrecto;
-            Debug.Log("Dirigiéndose a camino incorrecto");
+            Debug.Log("Dirigiï¿½ndose a camino incorrecto");
             isMoving = true;
             PlayTheAudioCorrect(audioWalkInCorrect1);
         }
@@ -165,7 +173,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 currentWaypointIndex = 0;
                 targetPosition = waypoints[currentWaypointIndex];
-                Debug.Log("Dirigiéndose a lugar a salvo");
+                Debug.Log("Dirigiï¿½ndose a lugar a salvo");
                 isMoving = true;
             }
             if (botones.Count > 1 && botones[1] != null)
@@ -177,7 +185,7 @@ public class CharacterMovement : MonoBehaviour
         else if (hit.CompareTag("segundoCaminoIncorrecto"))
         {
             targetPosition = DestinationIncorrectoSegundo;
-            Debug.Log("Está pensando pasar por el puente");
+            Debug.Log("Estï¿½ pensando pasar por el puente");
             isMoving = true;
             PlayTheAudioCorrect(audioWalkInCorrect2);
         }
@@ -237,7 +245,7 @@ public class CharacterMovement : MonoBehaviour
             }
             else
             {
-                // Si hemos llegado al último waypoint
+                // Si hemos llegado al ï¿½ltimo waypoint
                 isMoving = false;
                 animator.SetBool("isWalking", false);
                 ShowDestinationMessage(targetPosition);
