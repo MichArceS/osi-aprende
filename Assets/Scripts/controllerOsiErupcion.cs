@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public class controllerOsiErupcion : MonoBehaviour
 {
@@ -49,18 +50,25 @@ public class controllerOsiErupcion : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
+
         foreach (Button boton in botones)
         {
             if (boton != null)
             {
                 boton.interactable = false;
             }
-        } 
+        }
     }
 
     void Update()
     {
+        GameObject btnAction = EventSystem.current.currentSelectedGameObject;
+
+        if (Input.GetMouseButtonDown(0) && btnAction != null && btnAction.GetComponent<Button>() != null)
+        {
+            Debug.Log("Boton UI Presionado");
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (firstClick)
@@ -147,10 +155,10 @@ public class controllerOsiErupcion : MonoBehaviour
                 PlayToAudioClicIncorrect();
                 break;
             case "Mascarilla":
-                SetWaypoints(waypointsMascarilla, Destination.Mascarilla, "Dirigiéndose a la mascarilla");
+                SetWaypoints(waypointsMascarilla, Destination.Mascarilla, "Dirigiï¿½ndose a la mascarilla");
                 break;
             case "Mochila":
-                SetWaypoints(waypointsMochila, Destination.Mochila, "Dirigiéndome a recoger la mochila");
+                SetWaypoints(waypointsMochila, Destination.Mochila, "Dirigiï¿½ndome a recoger la mochila");
                 break;
             default:
                 SetTargetPosition(clickedPosition);
@@ -212,7 +220,7 @@ public class controllerOsiErupcion : MonoBehaviour
         if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
         {
             EndMovement();
-            Debug.Log("¡Llegaste a la posición clickeada!");
+            Debug.Log("ï¿½Llegaste a la posiciï¿½n clickeada!");
         }
     }
 
@@ -240,7 +248,7 @@ public class controllerOsiErupcion : MonoBehaviour
                 StartCoroutine(WaitOsi(ReactiveToCharter));
                 break;
             case Destination.Mochila:
-                Debug.Log("¡Llegaste a recoger la mochila! Vuelva primero recoga la mascarilla.");
+                Debug.Log("ï¿½Llegaste a recoger la mochila! Vuelva primero recoga la mascarilla.");
                 break;
             default:
                 break;

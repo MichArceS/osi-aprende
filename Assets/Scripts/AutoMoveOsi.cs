@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public class AutoMoveOsi : MonoBehaviour
 {
@@ -69,6 +70,13 @@ public class AutoMoveOsi : MonoBehaviour
 
     void Update()
     {
+        GameObject btnAction = EventSystem.current.currentSelectedGameObject;
+
+        if (Input.GetMouseButtonDown(0) && btnAction != null && btnAction.GetComponent<Button>() != null)
+        {
+            Debug.Log("Boton UI Presionado");
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (firstClick)
@@ -111,16 +119,16 @@ public class AutoMoveOsi : MonoBehaviour
         {
             case "Pared":
                 PlayToAudioClicIncorrect();
-                Debug.Log("¡Es una pared! No puedo dirigirme allí.");
+                Debug.Log("ï¿½Es una pared! No puedo dirigirme allï¿½.");
                 break;
             case "debajoMesa":
-                SetWaypoints(waypointsMesa, Destination.Mesa, "Dirigiéndose a la mesa");
+                SetWaypoints(waypointsMesa, Destination.Mesa, "Dirigiï¿½ndose a la mesa");
                 break;
             case "Mochila":
-                SetWaypoints(waypointsMochila, Destination.Mochila, "Dirigiéndome a recoger la mochila");
+                SetWaypoints(waypointsMochila, Destination.Mochila, "Dirigiï¿½ndome a recoger la mochila");
                 break;
             case "Puerta":
-                SetWaypoints(waypointsPuerta, Destination.Puerta, "Dirigiéndose a la puerta");
+                SetWaypoints(waypointsPuerta, Destination.Puerta, "Dirigiï¿½ndose a la puerta");
                 break;
             default:
                 SetTargetPosition(clickedPosition);
@@ -128,7 +136,7 @@ public class AutoMoveOsi : MonoBehaviour
         }
     }
 
-    private void  PlayToAudioClicIncorrect()
+    private void PlayToAudioClicIncorrect()
     {
         clickCount++;
 
@@ -162,7 +170,7 @@ public class AutoMoveOsi : MonoBehaviour
 
     private void PlayTheAudioCorrect(AudioSource audioSource)
     {
-        if(audioSource != null)
+        if (audioSource != null)
         {
             audioSource.Play();
         }
@@ -222,7 +230,7 @@ public class AutoMoveOsi : MonoBehaviour
         if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
         {
             EndMovement();
-            Debug.Log("¡Llegaste a la posición clickeada!");
+            Debug.Log("ï¿½Llegaste a la posiciï¿½n clickeada!");
         }
     }
 
@@ -256,7 +264,7 @@ public class AutoMoveOsi : MonoBehaviour
         switch (currentDestination)
         {
             case Destination.Mesa:
-                //Debug.Log("¡Llegaste a la mesa! Ponte debajo de ella.");
+                //Debug.Log("ï¿½Llegaste a la mesa! Ponte debajo de ella.");
                 StartCoroutine(WaitOsi(ReactivateNewCharacter));
                 PlayTheAudioCorrect(audioMesa);
                 pasarSiguente = true;
@@ -265,7 +273,7 @@ public class AutoMoveOsi : MonoBehaviour
                 TrackOnContinuo();
                 break;
             case Destination.Puerta:
-                //Debug.LogWarning("¡Peligro! Has llegado a la puerta.");
+                //Debug.LogWarning("ï¿½Peligro! Has llegado a la puerta.");
                 PlayTheAudioCorrect(audioPuerta);
                 break;
             default:
@@ -278,15 +286,15 @@ public class AutoMoveOsi : MonoBehaviour
     }
     private void TrackOnContinuo()
     {
-        if(pasarSiguente == true)
+        if (pasarSiguente == true)
         {
-            //Debug.Log("¡Llegaste a recoger la mochila! Recógela.");
+            //Debug.Log("ï¿½Llegaste a recoger la mochila! Recï¿½gela.");
             StartCoroutine(WaitOsi(ActivateOsiMochila));
             PlayTheAudioCorrect(audioMochila);
         }
         else
         {
-            Debug.Log("¡Primero pngase debajo de la mesa.");
+            Debug.Log("ï¿½Primero pngase debajo de la mesa.");
         }
     }
 
@@ -325,11 +333,11 @@ public class AutoMoveOsi : MonoBehaviour
             }
             StartCoroutine(WaitOsiOne(ReactiveToCharter));
         }
-    } 
+    }
 
     private void ActivateOsiMochila()
     {
-        if(osiMochila != null && Mochila != null)
+        if (osiMochila != null && Mochila != null)
         {
             Mochila.SetActive(false);
             osiMochila.SetActive(true);
@@ -350,7 +358,7 @@ public class AutoMoveOsi : MonoBehaviour
         if (spriteRenderer != null)
         {
             Color colorActual = spriteRenderer.color;
-            colorActual.a = nuevoAlpha; 
+            colorActual.a = nuevoAlpha;
             spriteRenderer.color = colorActual;
         }
     }

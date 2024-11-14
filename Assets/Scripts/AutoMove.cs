@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public class AutoMove : MonoBehaviour
 {
@@ -20,13 +21,13 @@ public class AutoMove : MonoBehaviour
     public Vector2 tvDestination;
     public List<Button> botones;
 
-    public CinemachineVirtualCamera camera1; 
+    public CinemachineVirtualCamera camera1;
     public CinemachineVirtualCamera camera2;
 
     [Header("Objetos a Desactivar")]
     [SerializeField] private GameObject objeto1;
     [SerializeField] private GameObject objeto2;
- 
+
 
     [Header("Objetos a Activar")]
     [SerializeField] private GameObject PersonajeNuevo;
@@ -59,6 +60,13 @@ public class AutoMove : MonoBehaviour
 
     void Update()
     {
+        GameObject btnAction = EventSystem.current.currentSelectedGameObject;
+
+        if (Input.GetMouseButtonDown(0) && btnAction != null && btnAction.GetComponent<Button>() != null)
+        {
+            Debug.Log("Boton UI Presionado");
+            return;
+        }
         if (Input.GetMouseButtonDown(0) && firstClick)
         {
             animator.SetBool("IsMovingOsi", true);
@@ -74,7 +82,7 @@ public class AutoMove : MonoBehaviour
             if (tvAnimator != null && tvAnimator.GetBool("isMovingTv"))
             {
                 tvAnimator.SetBool("isMovingTv", false);
-                //Debug.Log("Animación de la TV desactivada.");
+                //Debug.Log("Animaciï¿½n de la TV desactivada.");
             }
 
             if (hit)
@@ -84,12 +92,12 @@ public class AutoMove : MonoBehaviour
                     if (hit.collider.gameObject.CompareTag("Mochila"))
                     {
                         targetPosition = mochilaDestination;
-                        //Debug.Log("Dirigiéndose a la mochila");
+                        //Debug.Log("Dirigiï¿½ndose a la mochila");
                     }
                     else if (hit.collider.gameObject.CompareTag("tv"))
                     {
                         targetPosition = tvDestination;
-                        //Debug.Log("Dirigiéndose a la televisión");
+                        //Debug.Log("Dirigiï¿½ndose a la televisiï¿½n");
                     }
                     else if (hit.collider.gameObject.CompareTag("Piso"))
                     {
@@ -221,7 +229,7 @@ public class AutoMove : MonoBehaviour
         }
         else if (position == tvDestination)
         {
-            Debug.Log("Llegaste a la televisión, ¡mira la televisión!");
+            Debug.Log("Llegaste a la televisiï¿½n, ï¿½mira la televisiï¿½n!");
             PlayTheAudioCorrect(audioTv);
             if (botones.Count > 1 && botones[1] != null)
             {
@@ -239,7 +247,7 @@ public class AutoMove : MonoBehaviour
     private IEnumerator WaitAndPrint(System.Action action)
     {
         yield return new WaitForSeconds(0.5f);
-        action?.Invoke(); 
+        action?.Invoke();
     }
 
     private void ReactivateNewCharacter()
@@ -266,12 +274,12 @@ public class AutoMove : MonoBehaviour
             if (tvAnimator != null)
             {
                 tvAnimator.SetBool("isMovingTv", true); ;
-                Debug.Log("Animación de la TV iniciada.");
+                Debug.Log("Animaciï¿½n de la TV iniciada.");
             }
         }
         else
         {
-            Debug.LogWarning("No se encontró el objeto de la TV.");
+            Debug.LogWarning("No se encontrï¿½ el objeto de la TV.");
         }
     }
 }

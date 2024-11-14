@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class AutoMoveOsiMochile : MonoBehaviour
@@ -41,6 +42,13 @@ public class AutoMoveOsiMochile : MonoBehaviour
 
     void Update()
     {
+        GameObject btnAction = EventSystem.current.currentSelectedGameObject;
+
+        if (Input.GetMouseButtonDown(0) && btnAction != null && btnAction.GetComponent<Button>() != null)
+        {
+            Debug.Log("Boton UI Presionado");
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -54,12 +62,12 @@ public class AutoMoveOsiMochile : MonoBehaviour
                     if (hit.collider.gameObject.CompareTag("tv"))
                     {
                         targetPosition = tvDestination;
-                        Debug.Log("Dirigiéndose a la televisión");
+                        Debug.Log("Dirigiï¿½ndose a la televisiï¿½n");
                     }
                     else if (hit.collider.gameObject.CompareTag("Puerta"))
                     {
                         targetPosition = puertaDestination;
-                        Debug.Log("Dirigiéndose a la Puerta");
+                        Debug.Log("Dirigiï¿½ndose a la Puerta");
                     }
                     else if (hit.collider.gameObject.CompareTag("Piso"))
                     {
@@ -204,7 +212,7 @@ public class AutoMoveOsiMochile : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No se encontró el objeto de la TV.");
+            Debug.LogWarning("No se encontrï¿½ el objeto de la TV.");
         }
     }
 

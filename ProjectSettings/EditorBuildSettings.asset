@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/historia_lugares_publicos.unity
     guid: f574ed0550428354f9dc66e6aebb711d
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_select_lugares.unity
+    guid: f60b60db26e24e54fa5150246bd3bcc5
   m_configObjects: {}
