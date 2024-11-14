@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class charter_Erupcion : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class charter_Erupcion : MonoBehaviour
     public AudioClip[] randomSounds;
     public AudioSource audioWalkCorrect1;
     public AudioSource audioWalkInCorrect1;
-  
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -36,11 +37,18 @@ public class charter_Erupcion : MonoBehaviour
         animator.SetBool("isWalking", false);
 
         botones.interactable = false;
-            
+
     }
 
     void Update()
     {
+        GameObject btnAction = EventSystem.current.currentSelectedGameObject;
+
+        if (Input.GetMouseButtonDown(0) && btnAction != null && btnAction.GetComponent<Button>() != null)
+        {
+            Debug.Log("Boton UI Presionado");
+            return;
+        }
         if (Input.GetMouseButtonDown(0) && firstClick)
         {
             animator.SetBool("isMoving", true);
@@ -167,7 +175,7 @@ public class charter_Erupcion : MonoBehaviour
             }
             else
             {
-                // Si hemos llegado al último waypoint
+                // Si hemos llegado al ï¿½ltimo waypoint
                 isMoving = false;
                 animator.SetBool("isWalking", false);
                 ShowDestinationMessage(targetPosition);
