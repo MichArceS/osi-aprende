@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CharacterMovementOsiMochila : MonoBehaviour
 {
-    
+
     private int currentWaypointIndex = 0;
     private float speed = 5f;
     private bool isMoving = false;
@@ -24,7 +24,7 @@ public class CharacterMovementOsiMochila : MonoBehaviour
     public Vector2 destinationMama;
     public Transform mamaTransform;
     public Vector2[] waypoints;
-    public Vector2[] mamaWaypoints; 
+    public Vector2[] mamaWaypoints;
     public GameObject newCharacter1;
     public GameObject newCharacter2;
 
@@ -128,7 +128,7 @@ public class CharacterMovementOsiMochila : MonoBehaviour
     {
         if (hit.collider.CompareTag("Pared"))
         {
-            Debug.Log("¡Allá no puedes caminar!");
+            Debug.Log("ï¿½Allï¿½ no puedes caminar!");
             PlayToAudioClicIncorrect();
         }
         else if (hit.collider.CompareTag("Mama"))
@@ -221,7 +221,7 @@ public class CharacterMovementOsiMochila : MonoBehaviour
     {
         if (hasReachedMama && hasReachedCharacter)
         {
-            Debug.Log("¡Ambos han llegado a sus destinos!");
+            Debug.Log("ï¿½Ambos han llegado a sus destinos!");
             PlayTheAudioCorrect(audioSalida);
             FadeOutCharacter(animator);
             FadeOutCharacter(mamaAnimator);

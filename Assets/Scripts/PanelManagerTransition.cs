@@ -22,6 +22,10 @@ public class PanelManagerTransition : MonoBehaviour
     public float transitionDuration = 1f;
 
     private AudioSource activeAudioSource;
+    private bool isInInstructionPanel = false;
+    private bool isSkipping = false;
+    private int currentSceneIndex = 0;
+    private Coroutine currentTransitionCoroutine;
 
     private void Start()
     {
@@ -30,11 +34,48 @@ public class PanelManagerTransition : MonoBehaviour
         panel4.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (isInInstructionPanel && Input.GetMouseButtonDown(0) && !isSkipping)
+        {
+            SkipToNextScene();
+        }
+    }
+
+    private void SkipToNextScene()
+    {
+        isSkipping = true;
+
+        // Detener el audio actual
+        if (activeAudioSource != null && activeAudioSource.isPlaying)
+        {
+            activeAudioSource.Stop();
+        }
+        if (audioInstrucion != null && audioInstrucion.isPlaying)
+        {
+            audioInstrucion.Stop();
+        }
+
+        // Detener la corrutina actual si existe
+        if (currentTransitionCoroutine != null)
+        {
+            StopCoroutine(currentTransitionCoroutine);
+        }
+
+        // Detener todas las animaciones
+        if (animator1 != null) animator1.enabled = false;
+        if (animator2 != null) animator2.enabled = false;
+        if (animator3 != null) animator3.enabled = false;
+
+        // Cargar la siguiente escena inmediatamente
+        SceneManager.LoadScene(scenes[currentSceneIndex]);
+    }
+
     public void OnButtonClick(int buttonIndex)
     {
         if (buttonIndex < 1 || buttonIndex > scenes.Length)
         {
-            Debug.LogError("Botón inválido");
+            Debug.LogError("Botï¿½n invï¿½lido");
             return;
         }
 
@@ -65,8 +106,7 @@ public class PanelManagerTransition : MonoBehaviour
             activeAudioSource.Play();
         }
 
-        // Inicia la transición de panel
-        StartCoroutine(HandlePanelTransition(buttonIndex - 1));
+        currentTransitionCoroutine = StartCoroutine(HandlePanelTransition(buttonIndex - 1));
     }
 
     private IEnumerator HandlePanelTransition(int sceneIndex)
@@ -84,29 +124,35 @@ public class PanelManagerTransition : MonoBehaviour
         SetCanvasGroupAlpha(canvasGroup4, 0f);
 
         yield return new WaitForSeconds(waitTimeBeforePanel2Transition);
-        Debug.Log("Esperando transición de Panel 2 a Panel 3.");
+        Debug.Log("Esperando transiciï¿½n de Panel 2 a Panel 3.");
         yield return StartCoroutine(FadeOutAndIn(canvasGroup2, canvasGroup3, transitionDuration, 1f));
-        Debug.Log("Transición de Panel 2 a Panel 3 completada.");
+        Debug.Log("Transiciï¿½n de Panel 2 a Panel 3 completada.");
 
         yield return new WaitForSeconds(waitTimeBeforePanel3Transition);
-        Debug.Log("Esperando transición de Panel 3 a Panel 4.");
+        Debug.Log("Esperando transiciï¿½n de Panel 3 a Panel 4.");
         yield return StartCoroutine(FadeOutAndIn(canvasGroup3, canvasGroup4, transitionDuration, 1f));
-        Debug.Log("Transición de Panel 3 a Panel 4 completada.");
+        Debug.Log("Transiciï¿½n de Panel 3 a Panel 4 completada.");
 
-        
+
 
         SetCanvasGroupAlpha(canvasGroup4, 1f);
+        isInInstructionPanel = true; // Indicamos que estamos en el panel de instrucciones
 
         // Reproduce el audio
-        if (audioInstrucion != null)
+        if (audioInstrucion != null && !isSkipping)
         {
+            activeAudioSource = audioInstrucion;
             audioInstrucion.Play();
         }
-        yield return new WaitForSeconds(1f);
+        if (!isSkipping)
+        {
+            yield return StartCoroutine(PlayAnimations());
+        }
 
-        yield return StartCoroutine(PlayAnimations());
-
-        SceneManager.LoadScene(scenes[sceneIndex]);
+        if (!isSkipping)
+        {
+            SceneManager.LoadScene(scenes[sceneIndex]);
+        }
     }
 
     private IEnumerator PlayAnimations()

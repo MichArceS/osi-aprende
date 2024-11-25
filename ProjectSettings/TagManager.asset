@@ -36,6 +36,7 @@ TagManager:
   - Alimentos
   - Naturaleza
   - Piso
+  - PuertaSalida
   layers:
   - Default
   - TransparentFX

@@ -2139,10 +2139,10 @@ PolygonCollider2D:
       - {x: 7.358837, y: -1.282686}
       - {x: 6.8754854, y: -0.77518344}
       - {x: 3.7478256, y: -0.7929093}
-      - {x: 3.589366, y: -1.599795}
+      - {x: 4.113654, y: -1.9772825}
       - {x: 1.8374457, y: -2.125475}
-      - {x: 0.59102726, y: -1.4705195}
-      - {x: -4.8627877, y: -1.456148}
+      - {x: 0.71685624, y: -1.9318931}
+      - {x: -4.9047313, y: -1.8336354}
       - {x: -4.770353, y: -3.2472014}
       - {x: -9.661792, y: -3.2339501}
       - {x: -9.752876, y: -4.600319}
@@ -2420,6 +2420,54 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.6666, y: 2.7351, z: 0}
   m_LocalScale: {x: 3.2732, y: 5.5297, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1066283361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066283363}
+  - component: {fileID: 1066283362}
+  m_Layer: 0
+  m_Name: TouchPulseEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1066283362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066283361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2677fbe1967ddd48862bcce5044cbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulsePrefab: {fileID: 3504192309371906139, guid: 5f6d2d918d554b7428f089beb5afd9bf, type: 3}
+  maxScale: 2
+  duration: 1
+  fadeSpeed: 2
+--- !u!4 &1066283363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066283361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3202,16 +3250,17 @@ PolygonCollider2D:
     - - {x: 0.031167507, y: 3.8361962}
       - {x: -16.87739, y: 3.7685528}
       - {x: -17.043957, y: -1.4635239}
-      - {x: -17.018982, y: -3.6650038}
-      - {x: -9.428182, y: -3.701549}
+      - {x: -17.060925, y: -4.0215197}
+      - {x: -9.008752, y: -4.0580654}
       - {x: -8.986016, y: -2.24128}
       - {x: -8.99831, y: -1.6299838}
       - {x: -8.823819, y: -0.6425004}
       - {x: -8.016098, y: 0.25441432}
       - {x: -3.9083228, y: 0.23955739}
       - {x: -3.282417, y: -0.5575037}
+      - {x: -3.519022, y: -0.6711285}
       - {x: -3.2979712, y: -1.7380378}
-      - {x: -3.156309, y: -2.5696716}
+      - {x: -3.5967114, y: -2.2341273}
       - {x: -2.536664, y: -2.5272367}
       - {x: -0.83512926, y: -2.5294046}
       - {x: -1.0583758, y: -1.5977325}
@@ -3246,7 +3295,7 @@ GameObject:
   - component: {fileID: 1342475133}
   m_Layer: 0
   m_Name: puertaSalida
-  m_TagString: Untagged
+  m_TagString: PuertaSalida
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4787,3 +4836,4 @@ SceneRoots:
   - {fileID: 1752692162}
   - {fileID: 469803625}
   - {fileID: 669483050}
+  - {fileID: 1066283363}
