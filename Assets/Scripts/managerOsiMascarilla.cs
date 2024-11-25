@@ -65,7 +65,7 @@ public class managerOsiMascarilla : MonoBehaviour
     private IEnumerator WaitBeforeMove()
     {
         yield return new WaitForSeconds(0.5f);
-        SetTargetPosition(nuevoDestino); 
+        SetTargetPosition(nuevoDestino);
     }
 
     void Update()
@@ -151,10 +151,10 @@ public class managerOsiMascarilla : MonoBehaviour
                 PlayToAudioClicIncorrect();
                 break;
             case "Mascarilla":
-                SetWaypoints(waypointsMascarilla, Destination.Mascarilla, "Dirigiéndose a la mascarilla");
+                SetWaypoints(waypointsMascarilla, Destination.Mascarilla, "Dirigiï¿½ndose a la mascarilla");
                 break;
             case "Mochila":
-                SetWaypoints(waypointsMochila, Destination.Mochila, "Dirigiéndome a recoger la mochila");
+                SetWaypoints(waypointsMochila, Destination.Mochila, "Dirigiï¿½ndome a recoger la mochila");
                 break;
             default:
                 SetTargetPosition(clickedPosition);
@@ -216,7 +216,7 @@ public class managerOsiMascarilla : MonoBehaviour
         if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
         {
             EndMovement();
-            Debug.Log("¡Llegaste a la posición clickeada!");
+            Debug.Log("ï¿½Llegaste a la posiciï¿½n clickeada!");
         }
     }
 
@@ -240,7 +240,7 @@ public class managerOsiMascarilla : MonoBehaviour
         switch (currentDestination)
         {
             case Destination.Mascarilla:
-                Debug.Log("¡Llegaste a la mascarilla.");
+                Debug.Log("ï¿½Llegaste a la mascarilla.");
                 break;
             case Destination.Mochila:
                 PlayTheAudioCorrect(audioMochila);
@@ -280,7 +280,35 @@ public class managerOsiMascarilla : MonoBehaviour
     private void UpdateDirection(Vector2 newPosition)
     {
         Vector2 direction = (newPosition - rb.position).normalized;
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
+
+        // Use a threshold to determine when we're "close enough" to cardinal directions
+        float threshold = 0.7f; // You can adjust this value between 0.5 and 0.9
+
+        if (Mathf.Abs(direction.x) > threshold)
+        {
+            // Pure horizontal movement
+            animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+            animator.SetFloat("Vertical", 0f);
+        }
+        else if (Mathf.Abs(direction.y) > threshold)
+        {
+            // Pure vertical movement
+            animator.SetFloat("Horizontal", 0f);
+            animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+        }
+        else
+        {
+            // For diagonal movement, choose based on which direction is larger
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            {
+                animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+                animator.SetFloat("Vertical", 0f);
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", 0f);
+                animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+            }
+        }
     }
 }

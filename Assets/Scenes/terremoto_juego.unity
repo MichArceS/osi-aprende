@@ -898,13 +898,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 6.0233154, y: -4.833768}
+    - - {x: 6.933487, y: -4.8337684}
       - {x: 4.959135, y: -5.6510763}
       - {x: -3.3469696, y: -5.7739944}
       - {x: -6.7269926, y: -3.774977}
       - {x: -6.888807, y: -8.947836}
       - {x: 10.885284, y: -8.918662}
-      - {x: 11.090328, y: -5.929783}
+      - {x: 11.404179, y: -5.5531597}
       - {x: 13.436501, y: -5.600768}
       - {x: 18.936512, y: -5.687743}
       - {x: 18.951431, y: -8.874443}
@@ -914,9 +914,10 @@ PolygonCollider2D:
       - {x: 23.810154, y: -3.2314699}
       - {x: 23.7533, y: -3.9666386}
       - {x: 11.621105, y: -3.8269181}
-      - {x: 10.834225, y: -5.4288363}
-      - {x: 8.647533, y: -5.4533005}
-      - {x: 7.864669, y: -4.0083485}
+      - {x: 11.085308, y: -5.366066}
+      - {x: 10.829685, y: -6.296226}
+      - {x: 8.61615, y: -6.11239}
+      - {x: 7.3938894, y: -5.3892984}
   m_UseDelaunayMesh: 0
 --- !u!4 &412014251
 Transform:
@@ -962,7 +963,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3e7f4a63307ed94bba2bff296d32c1e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1438,7 +1439,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f89a902dbbf0d0d49bddf81d47f721f9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.65
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1598,12 +1599,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -4.5947022, y: 0.08194482}
-      - {x: -7.2621164, y: 0.061439186}
-      - {x: -8.01512, y: -0.54902124}
-      - {x: -7.9784064, y: -2.2285159}
-      - {x: -3.9251468, y: -2.2562473}
-      - {x: -3.9097745, y: -0.49968475}
+    - - {x: -3.9820273, y: 0.08194482}
+      - {x: -7.79291, y: 0.081397444}
+      - {x: -8.490145, y: -0.54902124}
+      - {x: -8.567562, y: -2.713703}
+      - {x: -3.3823695, y: -2.7414343}
+      - {x: -3.458267, y: -0.5600905}
   m_UseDelaunayMesh: 0
 --- !u!4 &808594611
 Transform:
@@ -1909,12 +1910,12 @@ PolygonCollider2D:
       - {x: -16.678122, y: 0.4017192}
       - {x: -7.6453514, y: 0.34937418}
       - {x: -7.112522, y: 1.6158354}
-      - {x: -4.5266457, y: 1.7399931}
-      - {x: -3.8178406, y: 5.05317}
-      - {x: -1.6816368, y: 5.042963}
+      - {x: -4.57885, y: 2.1837387}
+      - {x: -3.5046082, y: 8.002773}
+      - {x: -1.3423042, y: 8.018669}
       - {x: -1.1248474, y: 2.1567485}
-      - {x: 11.236225, y: 2.0775309}
-      - {x: 11.184563, y: 7.990836}
+      - {x: 10.949097, y: 2.0775309}
+      - {x: 10.949638, y: 8.069144}
       - {x: 14.7223625, y: 8.037632}
       - {x: 14.833982, y: 2.4144292}
       - {x: 17.375118, y: 2.2656634}
@@ -1963,7 +1964,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 81a3765e5d2561145b78d481953056d4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2131,9 +2132,9 @@ PolygonCollider2D:
       - {x: 20.800312, y: -2.6502545}
       - {x: 19.779064, y: -0.84728754}
       - {x: 17.231136, y: -0.87309206}
-      - {x: 17.36333, y: -1.3450868}
-      - {x: 15.087392, y: -1.4913648}
-      - {x: 14.991326, y: -1.2277262}
+      - {x: 17.488873, y: -2.004177}
+      - {x: 15.181548, y: -1.9935288}
+      - {x: 14.991326, y: -1.1021852}
       - {x: 8.047043, y: -0.7787694}
       - {x: 7.358837, y: -1.282686}
       - {x: 6.8754854, y: -0.77518344}
@@ -2194,7 +2195,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e50fa88f855258f4ebea2f251ca29e2c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2463,7 +2464,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2591,7 +2592,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 44ba2b9fe592d194493ecb8a43f98cef, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2938,7 +2939,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1891594, y: -0.18916416}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2949,7 +2950,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.42, y: 10.65}
+  m_Size: {x: 11.278931, y: 16.173586}
   m_EdgeRadius: 0
 --- !u!95 &1254300813
 Animator:
@@ -3203,18 +3204,19 @@ PolygonCollider2D:
       - {x: -17.043957, y: -1.4635239}
       - {x: -17.018982, y: -3.6650038}
       - {x: -9.428182, y: -3.701549}
-      - {x: -9.707877, y: -1.4566487}
-      - {x: -8.150908, y: -1.5672132}
-      - {x: -8.164729, y: -0.48557425}
-      - {x: -7.4825478, y: 0.06610274}
-      - {x: -4.1280193, y: 0.11401641}
-      - {x: -3.8787367, y: -0.5575037}
-      - {x: -3.8629057, y: -1.5811117}
-      - {x: -3.8781695, y: -2.224434}
-      - {x: -3.164369, y: -2.5272367}
+      - {x: -8.986016, y: -2.24128}
+      - {x: -8.99831, y: -1.6299838}
+      - {x: -8.823819, y: -0.6425004}
+      - {x: -8.016098, y: 0.25441432}
+      - {x: -3.9083228, y: 0.23955739}
+      - {x: -3.282417, y: -0.5575037}
+      - {x: -3.2979712, y: -1.7380378}
+      - {x: -3.156309, y: -2.5696716}
+      - {x: -2.536664, y: -2.5272367}
       - {x: -0.83512926, y: -2.5294046}
       - {x: -1.0583758, y: -1.5977325}
       - {x: -0.06671941, y: -1.6044865}
+      - {x: -0.039170742, y: -0.49966872}
       - {x: -0.015120029, y: 0.46485204}
   m_UseDelaunayMesh: 0
 --- !u!4 &1333263195
@@ -3228,6 +3230,88 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.059766, y: 1.7504635, z: -0.091542125}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1342475132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342475134}
+  - component: {fileID: 1342475133}
+  m_Layer: 0
+  m_Name: puertaSalida
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &1342475133
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342475132}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.47758204, y: 0.4972741}
+      - {x: -0.5199064, y: -0.5753404}
+      - {x: -0.030606318, y: -0.57416695}
+      - {x: 0.46175674, y: -0.57783633}
+      - {x: 0.48674133, y: 0.49249372}
+  m_UseDelaunayMesh: 0
+--- !u!4 &1342475134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342475132}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 56.351, y: 2.441, z: 0}
+  m_LocalScale: {x: 3.490683, y: 6.309794, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3282,7 +3366,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03001833, y: 0.050033808}
+  m_Offset: {x: 0.17206764, y: -3.6431847}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3293,7 +3377,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.120391, y: 4.3703856}
+  m_Size: {x: 8.097702, y: 11.756823}
   m_EdgeRadius: 0
 --- !u!212 &1367535799
 SpriteRenderer:
@@ -3887,7 +3971,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 18e2db4a8c6faa34c970cbdbbdde3588, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4691,6 +4775,7 @@ SceneRoots:
   - {fileID: 1254300811}
   - {fileID: 887943096}
   - {fileID: 412014251}
+  - {fileID: 1342475134}
   - {fileID: 21016222}
   - {fileID: 510517590}
   - {fileID: 125216301}

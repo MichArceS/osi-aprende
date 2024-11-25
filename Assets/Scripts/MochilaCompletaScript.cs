@@ -29,7 +29,7 @@ public class MochilaCompletaScript : MonoBehaviour
     public Vector2[] waypointsAlimentos;
     public Vector2[] waypointsTv;
     public Vector2[] waypointsPuerta;
-   
+
 
     private Vector2 targetPosition;
     private SpriteRenderer tvSpriteRenderer;
@@ -157,10 +157,10 @@ public class MochilaCompletaScript : MonoBehaviour
                 PlayToAudioClicIncorrect();
                 break;
             case "Alimentos":
-                SetWaypoints(waypointsAlimentos, Destination.Alimentos, "Dirigiéndose a tapar los alimentos");
+                SetWaypoints(waypointsAlimentos, Destination.Alimentos, "Dirigiï¿½ndose a tapar los alimentos");
                 break;
             case "tv":
-                SetWaypoints(waypointsTv, Destination.Tv, "Dirigiéndome a la televisión");
+                SetWaypoints(waypointsTv, Destination.Tv, "Dirigiï¿½ndome a la televisiï¿½n");
                 break;
             default:
                 SetTargetPosition(clickedPosition);
@@ -222,7 +222,7 @@ public class MochilaCompletaScript : MonoBehaviour
         if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
         {
             EndMovementNew();
-            Debug.Log("¡Llegaste a la posición clickeada!");
+            Debug.Log("ï¿½Llegaste a la posiciï¿½n clickeada!");
         }
     }
 
@@ -230,7 +230,7 @@ public class MochilaCompletaScript : MonoBehaviour
     {
         Vector2 newPosition = Vector2.MoveTowards(rb.position, position, speed * Time.deltaTime);
         rb.MovePosition(newPosition);
-        UpdateDirectionNew(newPosition);
+        UpdateDirection(newPosition);
         animator.SetBool("isWalking", true);
     }
 
@@ -282,7 +282,7 @@ public class MochilaCompletaScript : MonoBehaviour
     private IEnumerator MoveToDoorAfterDelay()
     {
         yield return new WaitForSeconds(1.0f);
-        SetWaypoints(waypointsPuerta, Destination.Puerta, "Dirigiéndose a la puerta");
+        SetWaypoints(waypointsPuerta, Destination.Puerta, "Dirigiï¿½ndose a la puerta");
     }
 
     private void HandlePuertaArrival()
@@ -371,10 +371,38 @@ public class MochilaCompletaScript : MonoBehaviour
         }
     }
 
-    private void UpdateDirectionNew(Vector2 newPosition)
+    private void UpdateDirection(Vector2 newPosition)
     {
         Vector2 direction = (newPosition - rb.position).normalized;
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
+
+        // Use a threshold to determine when we're "close enough" to cardinal directions
+        float threshold = 0.7f; // You can adjust this value between 0.5 and 0.9
+
+        if (Mathf.Abs(direction.x) > threshold)
+        {
+            // Pure horizontal movement
+            animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+            animator.SetFloat("Vertical", 0f);
+        }
+        else if (Mathf.Abs(direction.y) > threshold)
+        {
+            // Pure vertical movement
+            animator.SetFloat("Horizontal", 0f);
+            animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+        }
+        else
+        {
+            // For diagonal movement, choose based on which direction is larger
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            {
+                animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+                animator.SetFloat("Vertical", 0f);
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", 0f);
+                animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+            }
+        }
     }
 }

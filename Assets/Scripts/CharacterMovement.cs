@@ -26,7 +26,12 @@ public class CharacterMovement : MonoBehaviour
     public List<Button> botones;
     private int clickCount = 0;
 
-    public GameObject newCharacter; 
+    private HashSet<string> visited = new HashSet<string>();
+    private string currentPath = "";
+    private bool hasCompletedFirstPath = false;
+    private bool hasCompletedSecondPath = false;
+
+    public GameObject newCharacter;
     private Animator newCharacterAnimator;
 
     [Header("Audio")]
@@ -63,7 +68,7 @@ public class CharacterMovement : MonoBehaviour
         GameObject btnAction = EventSystem.current.currentSelectedGameObject;
 
         if (Input.GetMouseButtonDown(0) && btnAction != null && btnAction.GetComponent<Button>() != null)
-        {    
+        {
             Debug.Log("Boton UI Presionado");
             return;
         }
@@ -85,6 +90,13 @@ public class CharacterMovement : MonoBehaviour
                 {
                     PlayToAudioClicIncorrect();
                     Debug.Log("Por ah� no puede caminar.");
+                    return;
+                }
+
+                if (visited.Contains(hit.collider.tag))
+                {
+                    PlayToAudioClicIncorrect();
+                    Debug.Log("Ya has pasado por aqu�.");
                     return;
                 }
 
@@ -144,7 +156,13 @@ public class CharacterMovement : MonoBehaviour
     {
         if (hit.CompareTag("caminoCorrecto"))
         {
+            if (hasCompletedFirstPath)
+            {
+                Debug.Log("Ya has completado el primer camino");
+                return;
+            }
             targetPosition = DestinationCorrecto;
+            currentPath = "caminoCorrecto";
             Debug.Log("Dirigi�ndose a camino correcto");
             isMoving = true;
 
@@ -156,23 +174,45 @@ public class CharacterMovement : MonoBehaviour
         }
         else if (hit.CompareTag("caminoIncorrecto"))
         {
+            if (hasCompletedFirstPath)
+            {
+                Debug.Log("Ya has completado el primer camino");
+                return;
+            }
             targetPosition = DestinationInorrecto;
+            currentPath = "caminoIncorrecto";
             Debug.Log("Dirigi�ndose a camino incorrecto");
             isMoving = true;
             PlayTheAudioCorrect(audioWalkInCorrect1);
         }
         else if (hit.CompareTag("empezandoCaminar"))
         {
+            if (hasCompletedFirstPath)
+            {
+                Debug.Log("Ya empezaste a caminar");
+                return;
+            }
             targetPosition = DestinationEmpezando;
             Debug.Log("Empiece a elegir el camino correcto");
             isMoving = true;
         }
         else if (hit.CompareTag("segundoCaminoCorrecto"))
         {
+            if (!hasCompletedFirstPath)
+            {
+                Debug.Log("Debes completar el primer camino antes de avanzar");
+                return;
+            }
+            if (hasCompletedSecondPath)
+            {
+                Debug.Log("Ya completaste este camino.");
+                return;
+            }
             if (waypoints.Count > 0)
             {
                 currentWaypointIndex = 0;
                 targetPosition = waypoints[currentWaypointIndex];
+                currentPath = "segundoCaminoCorrecto";
                 Debug.Log("Dirigi�ndose a lugar a salvo");
                 isMoving = true;
             }
@@ -184,13 +224,24 @@ public class CharacterMovement : MonoBehaviour
         }
         else if (hit.CompareTag("segundoCaminoIncorrecto"))
         {
+            if (!hasCompletedFirstPath || hasCompletedSecondPath)
+            {
+                Debug.Log("No puedes ir a este camino por ahora");
+                return;
+            }
             targetPosition = DestinationIncorrectoSegundo;
+            currentPath = "segundoCaminoIncorrecto";
             Debug.Log("Est� pensando pasar por el puente");
             isMoving = true;
             PlayTheAudioCorrect(audioWalkInCorrect2);
         }
         else if (hit.CompareTag("Salir"))
         {
+            if (!hasCompletedSecondPath)
+            {
+                Debug.Log("Debes completar el segundo camino antes de salir");
+                return;
+            }
             StartCoroutine(HandleCharacterSwitch());
 
             if (botones.Count > 1 && botones[2] != null)
@@ -201,7 +252,13 @@ public class CharacterMovement : MonoBehaviour
         }
         else if (hit.CompareTag("tercerCaminoIncorrecto"))
         {
+            if (!hasCompletedSecondPath)
+            {
+                Debug.Log("No puedes ir a este camino por ahora");
+                return;
+            }
             targetPosition = DestinationIncorrectoTercer;
+            currentPath = "tercerCaminoIncorrecto";
             Debug.Log("Camino Incorrecto");
             isMoving = true;
             PlayTheAudioCorrect(audioWalkInCorrect3);
@@ -249,6 +306,18 @@ public class CharacterMovement : MonoBehaviour
                 isMoving = false;
                 animator.SetBool("isWalking", false);
                 ShowDestinationMessage(targetPosition);
+                if (currentPath == "caminoCorrecto")
+                {
+                    hasCompletedFirstPath = true;
+                    visited.Add("caminoCorrecto");
+                    visited.Add("caminoIncorrecto");
+                }
+                else if (currentPath == "segundoCaminoCorrecto")
+                {
+                    hasCompletedSecondPath = true;
+                    visited.Add("segundoCaminoCorrecto");
+                    visited.Add("segundoCaminoIncorrecto");
+                }
             }
         }
         else
@@ -265,7 +334,7 @@ public class CharacterMovement : MonoBehaviour
 
         // Activate the new character
         newCharacter.SetActive(true);
-       
+
 
         // Wait for the animation to finish
         yield return new WaitForSeconds(newCharacterAnimator.GetCurrentAnimatorStateInfo(0).length);
@@ -305,7 +374,35 @@ public class CharacterMovement : MonoBehaviour
     void UpdateDirection(Vector2 newPosition)
     {
         Vector2 direction = (newPosition - rb.position).normalized;
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
+
+        // Use a threshold to determine when we're "close enough" to cardinal directions
+        float threshold = 0.7f; // You can adjust this value between 0.5 and 0.9
+
+        if (Mathf.Abs(direction.x) > threshold)
+        {
+            // Pure horizontal movement
+            animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+            animator.SetFloat("Vertical", 0f);
+        }
+        else if (Mathf.Abs(direction.y) > threshold)
+        {
+            // Pure vertical movement
+            animator.SetFloat("Horizontal", 0f);
+            animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+        }
+        else
+        {
+            // For diagonal movement, choose based on which direction is larger
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            {
+                animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+                animator.SetFloat("Vertical", 0f);
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", 0f);
+                animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+            }
+        }
     }
 }

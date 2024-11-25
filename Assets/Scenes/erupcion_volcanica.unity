@@ -580,7 +580,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13296175, y: 0.094973326}
+  m_Offset: {x: 0.00253582, y: -4.7744436}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -591,7 +591,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.0215797, y: 4.663752}
+  m_Size: {x: 8.847549, y: 14.402588}
   m_EdgeRadius: 0
 --- !u!1 &245164718
 GameObject:
@@ -622,7 +622,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1102,7 +1102,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3e7f4a63307ed94bba2bff296d32c1e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1943,7 +1943,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2664,7 +2664,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c70123513d45b2142b8706a6c8118403, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2954,14 +2954,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.6130725, y: 0.4246366}
-      - {x: -2.3483677, y: -0.20470032}
-      - {x: 1.7037408, y: -0.24462223}
-      - {x: 1.0313807, y: 0.3643011}
-      - {x: 0.90093637, y: 0.3688004}
-      - {x: 0.9185791, y: 0.595482}
-      - {x: -0.13391817, y: 0.5953752}
-      - {x: -0.148646, y: 0.37066323}
+    - - {x: -2.8414378, y: 0.121995926}
+      - {x: -2.7944808, y: -0.23777497}
+      - {x: -2.7678576, y: -2.3580825}
+      - {x: 2.0113666, y: -2.3420725}
+      - {x: 2.014172, y: -0.22991884}
+      - {x: 1.9262929, y: 0.8397232}
+      - {x: 1.3204262, y: 0.7882905}
+      - {x: -0.9551431, y: 0.70734584}
+      - {x: -2.2034025, y: 0.7072393}
+      - {x: -2.8113022, y: 0.72677535}
   m_UseDelaunayMesh: 0
 --- !u!4 &1319402466
 Transform:
@@ -3181,7 +3183,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5264374572d686a4980e5ac9b32945b8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3589,7 +3591,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb3254973b595ff4ea234fa65f6b481f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4493,7 +4495,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ee44552b8bb25654aac6401fb02408c1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.65
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0

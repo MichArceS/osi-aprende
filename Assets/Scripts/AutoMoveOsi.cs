@@ -366,7 +366,35 @@ public class AutoMoveOsi : MonoBehaviour
     private void UpdateDirection(Vector2 newPosition)
     {
         Vector2 direction = (newPosition - rb.position).normalized;
-        animator.SetFloat("MovimientoX", direction.x);
-        animator.SetFloat("MovimientoY", direction.y);
+
+        // Use a threshold to determine when we're "close enough" to cardinal directions
+        float threshold = 0.7f; // You can adjust this value between 0.5 and 0.9
+
+        if (Mathf.Abs(direction.x) > threshold)
+        {
+            // Pure horizontal movement
+            animator.SetFloat("MovimientoX", Mathf.Sign(direction.x));
+            animator.SetFloat("MovimientoY", 0f);
+        }
+        else if (Mathf.Abs(direction.y) > threshold)
+        {
+            // Pure vertical movement
+            animator.SetFloat("MovimientoX", 0f);
+            animator.SetFloat("MovimientoY", Mathf.Sign(direction.y));
+        }
+        else
+        {
+            // For diagonal movement, choose based on which direction is larger
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            {
+                animator.SetFloat("MovimientoX", Mathf.Sign(direction.x));
+                animator.SetFloat("MovimientoY", 0f);
+            }
+            else
+            {
+                animator.SetFloat("MovimientoX", 0f);
+                animator.SetFloat("MovimientoY", Mathf.Sign(direction.y));
+            }
+        }
     }
 }

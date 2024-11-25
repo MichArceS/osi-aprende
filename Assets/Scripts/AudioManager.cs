@@ -60,7 +60,7 @@ public class AudioManager : MonoBehaviour
         audioSource6.clip = audioClip6;
 
         audioSource1.Play();
-        StartCoroutine(FadeInAudio(audioSource1, 0.5f));
+        StartCoroutine(FadeInAudio(audioSource1, 0.1f));
         currentClipName = "audioClip1";
     }
 
@@ -108,12 +108,12 @@ public class AudioManager : MonoBehaviour
         currentAudio.Stop();
 
         // Prepara el nuevo audio
-        nextAudio.volume = 0.2f;
+        nextAudio.volume = 0.001f;
         nextAudio.Play();
 
         // Fade in
         elapsedTime = 0f;
-        targetVolume = 0.5f;
+        targetVolume = 0.1f;
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;

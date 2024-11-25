@@ -17,4 +17,8 @@ public class SceneChanger : MonoBehaviour
         yield return new WaitForSeconds(delay);
         SceneManager.LoadSceneAsync(nameScene);
     }
+    public void ChangeSceneAfterClick()
+    {
+        SceneManager.LoadSceneAsync(nameScene);
+    }
 }

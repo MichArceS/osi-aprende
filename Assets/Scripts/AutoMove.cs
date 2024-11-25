@@ -87,6 +87,8 @@ public class AutoMove : MonoBehaviour
 
             if (hit)
             {
+                Debug.Log(hit);
+                Debug.Log(hit.collider.gameObject.name);
                 if (validTargets.Contains(hit.collider.gameObject))
                 {
                     if (hit.collider.gameObject.CompareTag("Mochila"))
@@ -186,8 +188,36 @@ public class AutoMove : MonoBehaviour
     void UpdateDirection(Vector2 newPosition)
     {
         Vector2 direction = (newPosition - rb.position).normalized;
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
+
+        // Use a threshold to determine when we're "close enough" to cardinal directions
+        float threshold = 0.7f; // You can adjust this value between 0.5 and 0.9
+
+        if (Mathf.Abs(direction.x) > threshold)
+        {
+            // Pure horizontal movement
+            animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+            animator.SetFloat("Vertical", 0f);
+        }
+        else if (Mathf.Abs(direction.y) > threshold)
+        {
+            // Pure vertical movement
+            animator.SetFloat("Horizontal", 0f);
+            animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+        }
+        else
+        {
+            // For diagonal movement, choose based on which direction is larger
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            {
+                animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+                animator.SetFloat("Vertical", 0f);
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", 0f);
+                animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
