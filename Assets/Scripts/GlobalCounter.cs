@@ -14,28 +14,48 @@ public static class GlobalCounter
     // Evento que se dispara cuando cambian los aciertos
     public static event System.Action OnAciertosChanged;
 
-    // Método para inicializar el AudioSource
+    // Mï¿½todo para inicializar el AudioSource
     public static void InitializeAudioSource(AudioSource source)
     {
         audioSource = source;
     }
 
-    // Método para inicializar el AudioSource
+    // Mï¿½todo para inicializar el AudioSource
     public static void InitializeAudioSourceIncorrect(AudioSource sourceIn)
     {
         audioSourceIncorrect = sourceIn;
     }
 
-    // Método para establecer los AudioClips
+    // Mï¿½todo para establecer los AudioClips
     public static void SetAudioClips(AudioClip[] clips)
     {
         audioClipsForThirdCorrectAnswer = clips;
     }
 
-    // Método para establecer los AudioClips
+    // Mï¿½todo para establecer los AudioClips
     public static void SetAudioClipsIncorrect(AudioClip[] clips)
     {
         audioClipsForThirdIncorrectAnswer = clips;
+    }
+
+    public static void IncrementarAciertosJuego3()
+    {
+        aciertosTotales++;
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+        OnAciertosChanged?.Invoke();
+    }
+
+    public static void IncrementarNoAciertosJuego3()
+    {
+        noAciertosTotales++;
+        if (audioSourceIncorrect != null)
+        {
+            audioSourceIncorrect.Play();
+        }
+
     }
 
     public static void IncrementarAciertos()
@@ -43,7 +63,7 @@ public static class GlobalCounter
         aciertosTotales++;
         Debug.Log("Aciertos Totales: " + aciertosTotales);
 
-        // Reproduce el audio si el número total de aciertos es menor a dos
+        // Reproduce el audio si el nï¿½mero total de aciertos es menor a dos
         if (aciertosTotales < 3)
         {
             if (audioSource != null)
@@ -69,7 +89,7 @@ public static class GlobalCounter
         noAciertosTotales++;
         Debug.Log("No Aciertos Totales: " + noAciertosTotales);
 
-        // Reproduce el audio si el número total de aciertos es menor a dos
+        // Reproduce el audio si el nï¿½mero total de aciertos es menor a dos
         if (noAciertosTotales < 3)
         {
             if (audioSourceIncorrect != null)
@@ -97,7 +117,7 @@ public static class GlobalCounter
         return noAciertosTotales;
     }
 
-    // Método para reiniciar los contadores
+    // Mï¿½todo para reiniciar los contadores
     public static void ResetCounters()
     {
         aciertosTotales = 0;

@@ -77,4 +77,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pantalla_select_lugares.unity
     guid: f60b60db26e24e54fa5150246bd3bcc5
+  - enabled: 1
+    path: Assets/Scenes/juegos_lugares_publicos.unity
+    guid: c488d14548b356640810ac05bed69856
+  - enabled: 1
+    path: Assets/Scenes/lugares_publicos_juego.unity
+    guid: 41eac92bb6c8d344aacdf24ccdeec563
+  - enabled: 1
+    path: Assets/Scenes/profesiones_juego.unity
+    guid: 2f41f568308b68143a3cbda55ff6ae4d
   m_configObjects: {}
