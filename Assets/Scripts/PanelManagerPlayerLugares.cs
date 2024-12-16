@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEditor.Animations;
 
 public class PanelManagerPlayerLugares : MonoBehaviour
 {
@@ -25,8 +24,8 @@ public class PanelManagerPlayerLugares : MonoBehaviour
     public AudioClip[] audiosLugares;
     public AudioSource correctAudio;
     private AudioSource audioRepetir;
-    public AnimatorController correctAnimator;
-    public AnimatorController wrongAnimator;
+    public RuntimeAnimatorController correctAnimator;
+    public RuntimeAnimatorController wrongAnimator;
 
     public Sprite[] optionImages;
 
@@ -215,8 +214,9 @@ public class PanelManagerPlayerLugares : MonoBehaviour
         if (correctAudio != null)
         {
             correctAudio.Play();
-            yield return new WaitForSecondsRealtime(4f);
+            yield return new WaitUntil(() => !correctAudio.isPlaying);
         }
+
         yield return new WaitForSeconds(1f);
     }
 
@@ -229,8 +229,14 @@ public class PanelManagerPlayerLugares : MonoBehaviour
             panelAnimator.SetTrigger("CorrectAnswer");
         }
         StartCoroutine(PlayCorrectAudio());
+        StartCoroutine(waitTenSeconds());
         GlobalCounter.IncrementarAciertosJuego3();
         ShowNextPanelAfterDelay(delayBeforeNextPanel);
+    }
+
+    private IEnumerator waitTenSeconds()
+    {
+        yield return new WaitForSeconds(10);
     }
 
     private void HandleWrongAnswer()
