@@ -58,6 +58,20 @@ public static class GlobalCounter
 
     }
 
+    public static void IncrementarAciertosCartas()
+    {
+        aciertosTotales++;
+        Debug.Log("Aciertos Totales: " + aciertosTotales);
+
+        // Reproduce un audio aleatorio cuando se alcanza el tercer acierto
+        if (audioClipsForThirdCorrectAnswer != null && audioClipsForThirdCorrectAnswer.Length > 0)
+        {
+            AudioClip clipToPlay = audioClipsForThirdCorrectAnswer[Random.Range(0, audioClipsForThirdCorrectAnswer.Length)];
+            audioSource.PlayOneShot(clipToPlay);
+        }
+
+        OnAciertosChanged?.Invoke();
+    }
     public static void IncrementarAciertos()
     {
         aciertosTotales++;

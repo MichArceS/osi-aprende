@@ -70,7 +70,7 @@ public class PanelManagerTransitionLugaresPublicos : MonoBehaviour
         // Play the corresponding button audio
         if (audioButtons != null && buttonIndex < audioButtons.Length)
         {
-            activeAudioSource = audioButtons[buttonIndex];
+            activeAudioSource = audioButtons[0];
             if (activeAudioSource != null)
             {
                 activeAudioSource.Play();

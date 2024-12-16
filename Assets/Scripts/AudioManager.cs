@@ -1,6 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -20,10 +23,47 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSource6;
     private string currentClipName;
 
+    public static AudioManager instance;
+    [Range(0f, 0.5f)]
+    public float musicVolume = 0.5f;
+    [Range(0f, 0.5f)]
+    public float sfxVolume = 0.5f;
+    [Range(0f, 0.5f)]
+    public float voiceVolume = 0.5f;
+
+    private AudioSource musicSource;
+    private AudioSource sfxSource;
+    private AudioSource voiceSource;
+
+    public Slider musicSlider;
+    public Slider sfxSlider;
+    public Slider voiceSlider;
+
+    private List<AudioSource> musicSources = new List<AudioSource>();
+    private List<AudioSource> sfxSources = new List<AudioSource>();
+    private List<AudioSource> voiceSources = new List<AudioSource>();
+
+    public AudioMixer audioMixer; // Drag your Audio Mixer asset here in the Inspector
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
 
+            musicSource = gameObject.AddComponent<AudioSource>();
+            sfxSource = gameObject.AddComponent<AudioSource>();
+            voiceSource = gameObject.AddComponent<AudioSource>();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        musicSlider = GameObject.Find("MusicSlider")?.GetComponent<Slider>();
+        sfxSlider = GameObject.Find("SFXSlider")?.GetComponent<Slider>();
+        voiceSlider = GameObject.Find("VoiceSlider")?.GetComponent<Slider>();
         AudioSource[] audioSources = GetComponents<AudioSource>();
 
         if (audioSources.Length < 6)
@@ -60,8 +100,126 @@ public class AudioManager : MonoBehaviour
         audioSource6.clip = audioClip6;
 
         audioSource1.Play();
-        StartCoroutine(FadeInAudio(audioSource1, 0.1f));
+        StartCoroutine(FadeInAudio(audioSource1, musicVolume));
         currentClipName = "audioClip1";
+    }
+
+    private void Start()
+    {
+
+        musicSlider = GameObject.Find("MusicSlider")?.GetComponent<Slider>();
+        sfxSlider = GameObject.Find("SFXSlider")?.GetComponent<Slider>();
+        voiceSlider = GameObject.Find("VoiceSlider")?.GetComponent<Slider>();
+
+        if (musicSlider != null)
+        {
+            musicSlider.value = musicVolume;
+        }
+        if (sfxSlider != null)
+        {
+            sfxSlider.value = sfxVolume;
+        }
+        if (voiceSlider != null)
+        {
+            voiceSlider.value = voiceVolume;
+        }
+
+        RegisterMusicSource(audioSource1);
+        RegisterMusicSource(audioSource2);
+        RegisterMusicSource(audioSource3);
+        RegisterMusicSource(audioSource4);
+        RegisterMusicSource(audioSource5);
+        RegisterMusicSource(audioSource6);
+        // Register all audio sources in the scene
+    }
+
+    private void OnEnable()
+    {
+        // Register all audio sources in the current scene
+        RegisterAllAudioSources();
+
+        // Subscribe to the scene change event
+        SceneManager.activeSceneChanged += OnSceneChanged;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe from the scene change event
+        SceneManager.activeSceneChanged -= OnSceneChanged;
+    }
+
+    private void OnSceneChanged(Scene prevScene, Scene newScene)
+    {
+        // Register all audio sources in the new scene
+        RegisterAllAudioSources();
+
+        // Dynamically find sliders in the new scene
+        musicSlider = GameObject.Find("MusicSlider")?.GetComponent<Slider>();
+        sfxSlider = GameObject.Find("SFXSlider")?.GetComponent<Slider>();
+        voiceSlider = GameObject.Find("VoiceSlider")?.GetComponent<Slider>();
+
+        // If sliders are found, attach listeners for updates
+        if (musicSlider != null)
+        {
+            musicSlider.onValueChanged.AddListener(SetMusicVolume);
+            musicSlider.value = musicVolume;
+        }
+        if (sfxSlider != null)
+        {
+            sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+            sfxSlider.value = sfxVolume;
+        }
+        if (voiceSlider != null)
+        {
+            voiceSlider.onValueChanged.AddListener(SetVoiceVolume);
+            voiceSlider.value = voiceVolume;
+        }
+    }
+
+    private void RegisterAllAudioSources()
+    {
+        // Find all AudioSource components in the current scene
+        AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>(true);
+
+        // Register each audio source with the appropriate list in the AudioManager
+        foreach (var source in allAudioSources)
+        {
+            if (source.gameObject.scene == gameObject.scene)
+            {
+                // Check if the AudioSource has an OutputAudioMixerGroup assigned
+                if (source.outputAudioMixerGroup == null)
+                {
+                    // Try to assign the default "SFX" group
+                    AudioMixerGroup[] sfxGroups = audioMixer.FindMatchingGroups("SFX");
+
+                    if (sfxGroups.Length > 0) // Ensure "SFX" group exists
+                    {
+                        source.outputAudioMixerGroup = sfxGroups[0];
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"No 'SFX' AudioMixerGroup found for AudioSource on GameObject '{source.gameObject.name}'");
+                    }
+                }
+                if (source.outputAudioMixerGroup?.name == "Music")
+                {
+                    RegisterMusicSource(source);
+                }
+                else if (source.outputAudioMixerGroup?.name == "SFX")
+                {
+                    RegisterSFXSource(source);
+                }
+                else if (source.outputAudioMixerGroup?.name == "Voice")
+                {
+                    RegisterVoiceSource(source);
+                }
+                else
+                {
+                    // Handle unrecognized groups (optional)
+                    Debug.Log($"AudioSource on '{source.gameObject.name}' has an unrecognized group: {source.outputAudioMixerGroup?.name}");
+                }
+            }
+        }
     }
 
     private IEnumerator FadeInAudio(AudioSource audioSource, float targetVolume)
@@ -224,13 +382,119 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public void SetMusicVolume(float volume)
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        // Clamp the slider value between 0 (silent) and 0.5f (50% volume)
+        musicVolume = Mathf.Clamp(volume, 0f, 0.5f);
+
+        // Convert volume to decibels
+        // Use `0.5f` as the maximum volume (50% = 0 dB, 0% = -80 dB)
+        float normalizedVolume = musicVolume / 0.5f; // Normalize to 0 - 1 range
+        float dB = (normalizedVolume > 0) ? Mathf.Log10(normalizedVolume) * 20 : -80f;
+
+        // Update the Audio Mixer's exposed parameter
+        audioMixer.SetFloat("MusicVolume", dB);
+
+        // Update the slider, if present
+        if (musicSlider != null)
+        {
+            musicSlider.value = musicVolume;
+        }
     }
 
-    private void OnDisable()
+    public void SetSFXVolume(float volume)
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        // Clamp the slider value between 0 and 0.5f (50% volume cap)
+        sfxVolume = Mathf.Clamp(volume, 0f, 0.5f);
+
+        // Convert volume to decibels (normalized to 0-1 for Audio Mixer)
+        float normalizedVolume = sfxVolume / 0.5f; // Normalize to 0 - 1 range
+        float dB = (normalizedVolume > 0) ? Mathf.Log10(normalizedVolume) * 20 : -80f;
+
+        // Update the Audio Mixer's SFX volume parameter
+        audioMixer.SetFloat("SFXVolume", dB);
+
+        // Update the slider, if present
+        if (sfxSlider != null)
+        {
+            sfxSlider.value = sfxVolume;
+        }
+    }
+
+    public void SetVoiceVolume(float volume)
+    {
+        // Clamp the slider value between 0 and 0.5f (50% volume cap)
+        voiceVolume = Mathf.Clamp(volume, 0f, 0.5f);
+
+        // Convert volume to decibels (normalized to 0-1 for Audio Mixer)
+        float normalizedVolume = voiceVolume / 0.5f; // Normalize to 0 - 1 range
+        float dB = (normalizedVolume > 0) ? Mathf.Log10(normalizedVolume) * 20 : -80f;
+
+        // Update the Audio Mixer's Voice volume parameter
+        audioMixer.SetFloat("VoiceVolume", dB);
+
+        // Update the slider, if present
+        if (voiceSlider != null)
+        {
+            voiceSlider.value = voiceVolume;
+        }
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip);
+    }
+
+    public void PlayVoice(AudioClip clip)
+    {
+        voiceSource.PlayOneShot(clip);
+    }
+
+    public void RegisterMusicSource(AudioSource source)
+    {
+        if (!musicSources.Contains(source))
+        {
+            musicSources.Add(source);
+            source.volume = musicVolume;
+        }
+    }
+
+    public void RegisterSFXSource(AudioSource source)
+    {
+        if (!sfxSources.Contains(source))
+        {
+            sfxSources.Add(source);
+            source.volume = sfxVolume;
+        }
+    }
+
+    public void RegisterVoiceSource(AudioSource source)
+    {
+        if (!voiceSources.Contains(source))
+        {
+            voiceSources.Add(source);
+            source.volume = voiceVolume;
+        }
+    }
+
+    public void UnregisterMusicSource(AudioSource source)
+    {
+        musicSources.Remove(source);
+    }
+
+    public void UnregisterSFXSource(AudioSource source)
+    {
+        sfxSources.Remove(source);
+    }
+
+    public void UnregisterVoiceSource(AudioSource source)
+    {
+        voiceSources.Remove(source);
     }
 }
