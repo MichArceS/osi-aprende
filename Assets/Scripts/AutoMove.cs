@@ -12,7 +12,7 @@ public class AutoMove : MonoBehaviour
     private Vector2 targetPosition;
     private bool isMoving = false;
     private Animator animator;
-    private Animator tvAnimator;
+    public Animator tvAnimator;
     private Rigidbody2D rb;
     private bool firstClick = true;
     private int clickCount = 0;
@@ -301,9 +301,11 @@ public class AutoMove : MonoBehaviour
         if (tvObject != null)
         {
             tvAnimator = tvObject.GetComponent<Animator>();
+
             if (tvAnimator != null)
             {
-                tvAnimator.SetBool("isMovingTv", true); ;
+                tvAnimator.SetBool("isMovingTv", true);
+
                 Debug.Log("Animaci�n de la TV iniciada.");
             }
         }

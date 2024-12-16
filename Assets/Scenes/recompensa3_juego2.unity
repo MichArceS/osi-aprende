@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcab9b645dfb764e9ba83581b9e8e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeShort: 2
+  timeShort: 5
   nameScene: juegos_fenomenos_naturales
 --- !u!4 &1169729010
 Transform:

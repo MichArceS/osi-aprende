@@ -275,8 +275,44 @@ public class MochilaCompletaScript : MonoBehaviour
         PlayTheAudioCorrect(audioTv);
         activateCharter(osiMochilaAtras1);
         StartCoroutine(WaitAnimationNew(tvObjectAnimationNew));
+        StartCoroutine(PlayTVAnimation());
         StartCoroutine(WaitForOneSecond(reactivandoPersonajes2));
         StartCoroutine(MoveToDoorAfterDelay());
+    }
+
+    private IEnumerator PlayTVAnimation()
+    {
+        Animator tvAnimator = tv.GetComponent<Animator>();
+        AudioSource tvAudioSource = tv.GetComponent<AudioSource>();
+        if (tvAudioSource != null)
+        {
+            tvAudioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el AudioSource en el objeto de la TV.");
+        }
+        if (tvAnimator != null)
+        {
+            // Trigger the TV animation
+            tvAnimator.SetTrigger("PlayTV");
+
+            // Wait for the animation to complete
+            // We'll use a more reliable way to wait for the animation to finish
+            yield return new WaitUntil(() =>
+                tvAnimator.GetCurrentAnimatorStateInfo(0).IsName("TVAnimation") &&
+                tvAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el Animator en el objeto de la TV.");
+        }
+        // Wait for the audio to finish playing
+        if (tvAudioSource != null)
+        {
+            yield return new WaitWhile(() => tvAudioSource.isPlaying);
+        }
+        yield return new WaitForSeconds(8f); // Optional: Wait before deactivating the TV and moving to the door
     }
 
     private IEnumerator MoveToDoorAfterDelay()
@@ -319,8 +355,14 @@ public class MochilaCompletaScript : MonoBehaviour
         }
     }
 
+    private IEnumerator WaitForTenSeconds()
+    {
+        yield return new WaitForSeconds(10f);
+    }
+
     private void reactivandoPersonajes2()
     {
+        StartCoroutine(WaitForTenSeconds());
         if (osiMochilaAtras1 != null)
         {
             osiMochilaAtras1.SetActive(false);

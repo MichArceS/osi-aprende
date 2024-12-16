@@ -113,7 +113,6 @@ public class PanelManagerTransition : MonoBehaviour
     {
         panel2.SetActive(true);
         panel3.SetActive(true);
-        panel4.SetActive(true);
 
         CanvasGroup canvasGroup2 = panel2.GetComponent<CanvasGroup>();
         CanvasGroup canvasGroup3 = panel3.GetComponent<CanvasGroup>();
@@ -130,6 +129,7 @@ public class PanelManagerTransition : MonoBehaviour
 
         yield return new WaitForSeconds(waitTimeBeforePanel3Transition);
         Debug.Log("Esperando transici�n de Panel 3 a Panel 4.");
+        panel4.SetActive(true);
         yield return StartCoroutine(FadeOutAndIn(canvasGroup3, canvasGroup4, transitionDuration, 1f));
         Debug.Log("Transici�n de Panel 3 a Panel 4 completada.");
 
@@ -151,6 +151,7 @@ public class PanelManagerTransition : MonoBehaviour
 
         if (!isSkipping)
         {
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(scenes[sceneIndex]);
         }
     }

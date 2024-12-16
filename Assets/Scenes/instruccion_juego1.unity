@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcab9b645dfb764e9ba83581b9e8e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeShort: 3.8
+  timeShort: 8
   nameScene: juegos_clima
 --- !u!4 &1679124706
 Transform:
