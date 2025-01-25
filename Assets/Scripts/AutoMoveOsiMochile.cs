@@ -26,6 +26,7 @@ public class AutoMoveOsiMochile : MonoBehaviour
 
     [Header("Objeto de la TV")]
     [SerializeField] private GameObject tvObject;
+    [SerializeField] private GameObject tvPanel;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -235,6 +236,10 @@ public class AutoMoveOsiMochile : MonoBehaviour
         if (tvObject != null)
         {
             tvObject.SetActive(true); // Activa la TV
+            if (tvPanel != null)
+            {
+                tvPanel.SetActive(true); // Activa el panel de la TV
+            }
             Debug.Log("TV activada.");
             StartCoroutine(PlayTVAnimation());
             // Esperar a que termine la animación de la TV
@@ -293,6 +298,12 @@ public class AutoMoveOsiMochile : MonoBehaviour
         {
             tvObject.SetActive(false);
             Debug.Log("TV desactivada.");
+        }
+
+        if (tvPanel != null)
+        {
+            tvPanel.SetActive(false);
+            Debug.Log("Panel de la TV desactivado.");
         }
 
         // Dirigirse a la puerta

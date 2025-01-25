@@ -8,6 +8,7 @@ public class MochilaCompletaScript : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private GameObject tv;
+    [SerializeField] private GameObject tvPanel1;
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -62,7 +63,7 @@ public class MochilaCompletaScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        tvSpriteRenderer = tv.GetComponent<SpriteRenderer>();
+        //tvSpriteRenderer = tv.GetComponent<SpriteRenderer>();
         osiSpriteRenderer = OsiPrincipal.GetComponent<SpriteRenderer>();
 
         StartCoroutine(WaitBeforeMoveNew());
@@ -249,6 +250,8 @@ public class MochilaCompletaScript : MonoBehaviour
                 HandleAlimentosArrival();
                 break;
             case Destination.Tv:
+                PlayTheAudioCorrect(audioTv);
+                activateCharter(osiMochilaAtras1);
                 HandleTvArrival();
                 break;
             case Destination.Puerta:
@@ -272,8 +275,10 @@ public class MochilaCompletaScript : MonoBehaviour
 
     private void HandleTvArrival()
     {
-        PlayTheAudioCorrect(audioTv);
-        activateCharter(osiMochilaAtras1);
+        if (tvPanel1 != null)
+        {
+            tvPanel1.SetActive(true);
+        }
         StartCoroutine(WaitAnimationNew(tvObjectAnimationNew));
         StartCoroutine(PlayTVAnimation());
         StartCoroutine(WaitForOneSecond(reactivandoPersonajes2));
@@ -317,7 +322,15 @@ public class MochilaCompletaScript : MonoBehaviour
 
     private IEnumerator MoveToDoorAfterDelay()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(7f);
+        if (tvPanel1 != null)
+        {
+            tvPanel1.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el objeto de la TV.");
+        }
         SetWaypoints(waypointsPuerta, Destination.Puerta, "Dirigi�ndose a la puerta");
     }
 
@@ -368,7 +381,7 @@ public class MochilaCompletaScript : MonoBehaviour
             osiMochilaAtras1.SetActive(false);
             activateDesactivateObject(osiSpriteRenderer, 1f);
         }
-        activateDesactivateObject(tvSpriteRenderer, 0f);
+        //activateDesactivateObject(tvSpriteRenderer, 0f);
     }
 
     private void cubridorAlimentos()
@@ -387,7 +400,7 @@ public class MochilaCompletaScript : MonoBehaviour
 
     private void tvObjectAnimationNew()
     {
-        activateDesactivateObject(tvSpriteRenderer, 1f);
+        //activateDesactivateObject(tvSpriteRenderer, 1f);
         if (botones.Count > 0 && botones[1] != null)
         {
             botones[1].interactable = true;

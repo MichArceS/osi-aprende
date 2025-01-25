@@ -2935,7 +2935,7 @@ AudioSource:
   m_GameObject: {fileID: 641786970}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 07bffa1aef336d84f9433de5dc95bd3e, type: 2}
+  OutputAudioMixerGroup: {fileID: 3092523534473312896, guid: 68ed0c6b97ab13146819fda015d9b1d3, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.5
@@ -3926,7 +3926,7 @@ AudioSource:
   m_GameObject: {fileID: 857463757}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 07bffa1aef336d84f9433de5dc95bd3e, type: 2}
+  OutputAudioMixerGroup: {fileID: 3092523534473312896, guid: 68ed0c6b97ab13146819fda015d9b1d3, type: 2}
   m_audioClip: {fileID: 8300000, guid: 85a5b576173f4c2488e71373146a749b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
@@ -4996,6 +4996,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 857463758}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1428921388}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -7056,7 +7068,7 @@ AudioSource:
   m_GameObject: {fileID: 1459032437}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 07bffa1aef336d84f9433de5dc95bd3e, type: 2}
+  OutputAudioMixerGroup: {fileID: 3092523534473312896, guid: 68ed0c6b97ab13146819fda015d9b1d3, type: 2}
   m_audioClip: {fileID: 8300000, guid: 25f8be77517674d4990317e16bad03f4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
@@ -8445,7 +8457,7 @@ AudioSource:
   m_GameObject: {fileID: 1746067638}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 07bffa1aef336d84f9433de5dc95bd3e, type: 2}
+  OutputAudioMixerGroup: {fileID: 3092523534473312896, guid: 68ed0c6b97ab13146819fda015d9b1d3, type: 2}
   m_audioClip: {fileID: 8300000, guid: a38a27e962f3569449af4df38bdf51be, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5

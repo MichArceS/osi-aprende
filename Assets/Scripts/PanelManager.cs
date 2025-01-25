@@ -85,20 +85,12 @@ public class PanelManager : MonoBehaviour
         if (panelAnimator != null)
         {
             ShowPanel(nextIndex);
+            panels[currentPanelIndex].SetActive(false);
 
-            if (isNext)
-            {
-                panelAnimator.SetTrigger("FadeIn");
-                float fadeInDuration = GetAnimatorStateDuration("FadeIn");
-                yield return new WaitForSeconds(fadeInDuration);
-                panels[currentPanelIndex].SetActive(false);
-            }
-            else
-            {
-                float fadeOutDuration = 0.8f;
-                yield return new WaitForSeconds(fadeOutDuration);
-                panels[currentPanelIndex].SetActive(false);
-            }
+            panelAnimator.SetTrigger("FadeIn");
+            float fadeInDuration = GetAnimatorStateDuration("FadeIn");
+            yield return new WaitForSeconds(fadeInDuration);
+
 
             yield return StartCoroutine(FindAudioSourceInPanel(nextIndex));
         }
