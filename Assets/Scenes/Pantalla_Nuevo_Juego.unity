@@ -498,7 +498,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 796098942}
         m_TargetAssemblyTypeName: CambioEscenaPorIndice, Assembly-CSharp
         m_MethodName: CambiarEscenaPorIndice
         m_Mode: 1
