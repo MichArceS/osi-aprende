@@ -71,7 +71,8 @@ public class PanelManagerTransition : MonoBehaviour
         SceneManager.LoadScene(scenes[currentSceneIndex]);
     }
 
-    public GameObject[] buttons;
+    private Coroutine buttonClickCoroutine; // Track the current coroutine
+
 
     public void OnButtonClick(int buttonIndex)
     {
@@ -80,8 +81,14 @@ public class PanelManagerTransition : MonoBehaviour
             Debug.LogError("Botón inválido");
             return;
         }
-        currentSceneIndex = buttonIndex;
-        StartCoroutine(HandleButtonClick(buttonIndex));
+        // If a coroutine is already running, stop it
+        if (buttonClickCoroutine != null)
+        {
+            StopCoroutine(buttonClickCoroutine);
+        }
+
+        currentSceneIndex = buttonIndex - 1;
+        buttonClickCoroutine = StartCoroutine(HandleButtonClick(buttonIndex));
     }
 
     private IEnumerator HandleButtonClick(int buttonIndex)
