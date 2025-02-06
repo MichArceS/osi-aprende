@@ -376,7 +376,7 @@ public class CharacterMovement : MonoBehaviour
         Vector2 direction = (newPosition - rb.position).normalized;
 
         // Use a threshold to determine when we're "close enough" to cardinal directions
-        float threshold = 0.7f; // You can adjust this value between 0.5 and 0.9
+        /* float threshold = 0.7f; // You can adjust this value between 0.5 and 0.9
 
         if (Mathf.Abs(direction.x) > threshold)
         {
@@ -403,6 +403,28 @@ public class CharacterMovement : MonoBehaviour
                 animator.SetFloat("Horizontal", 0f);
                 animator.SetFloat("Vertical", Mathf.Sign(direction.y));
             }
+        } */
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            // Horizontal movement is dominant
+            animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+            animator.SetFloat("Vertical", 0f);
         }
+        else if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x))
+        {
+            // Vertical movement is dominant
+            animator.SetFloat("Horizontal", 0f);
+            animator.SetFloat("Vertical", Mathf.Sign(direction.y));
+        }
+        else
+        {
+            // Diagonal movement (equal x and y)
+            // Prioritize one direction (e.g., horizontal) to avoid flickering
+            animator.SetFloat("Horizontal", Mathf.Sign(direction.x));
+            animator.SetFloat("Vertical", 0f);
+        }
+
+        // Ensure the walking animation is triggered
+        animator.SetBool("isWalking", true);
     }
 }

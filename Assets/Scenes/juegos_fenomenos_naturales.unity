@@ -2457,6 +2457,10 @@ MonoBehaviour:
   waitTimeBeforePanel2Transition: 1.8
   waitTimeBeforePanel3Transition: 2
   transitionDuration: 0.5
+  buttons:
+  - {fileID: 762477655}
+  - {fileID: 1762918305}
+  - {fileID: 649258067}
 --- !u!4 &1664778539
 Transform:
   m_ObjectHideFlags: 0

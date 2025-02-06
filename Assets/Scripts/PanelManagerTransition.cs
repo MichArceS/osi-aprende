@@ -71,14 +71,16 @@ public class PanelManagerTransition : MonoBehaviour
         SceneManager.LoadScene(scenes[currentSceneIndex]);
     }
 
+    public GameObject[] buttons;
+
     public void OnButtonClick(int buttonIndex)
     {
         if (buttonIndex < 1 || buttonIndex > scenes.Length)
         {
-            Debug.LogError("Bot�n inv�lido");
+            Debug.LogError("Botón inválido");
             return;
         }
-
+        currentSceneIndex = buttonIndex;
         StartCoroutine(HandleButtonClick(buttonIndex));
     }
 
