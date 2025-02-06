@@ -255,30 +255,33 @@ public class AutoMoveOsiMochile : MonoBehaviour
     {
         Animator tvAnimator = tvObject.GetComponent<Animator>();
         AudioSource tvAudioSource = tvObject.GetComponent<AudioSource>();
+        if (tvAnimator == null)
+        {
+            Debug.Log("No se encontró el Animator en el objeto de la TV.");
+        }
+        if (tvAudioSource == null)
+        {
+            Debug.Log("No se encontró el AudioSource en el objeto de la TV.");
+        }
+
+        tvAnimator.SetTrigger("PlayTV");
+        yield return new WaitUntil(() => tvAnimator.GetCurrentAnimatorStateInfo(0).IsName("TVAnimation"));
+        float animationLength = tvAnimator.GetCurrentAnimatorStateInfo(0).length;
+        Debug.Log("Duración de la animación de la TV: " + animationLength);
+        float timeToWait = 90f / 60;
+        if (timeToWait > animationLength)
+        {
+            Debug.LogWarning("El tiempo de espera es mayor a la duración de la animación.");
+            yield break;
+        }
+        yield return new WaitUntil(() => tvAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= (timeToWait / animationLength));
+
         if (tvAudioSource != null)
         {
             tvAudioSource.Play();
+            Debug.Log("Audio de la TV reproducido.");
         }
-        else
-        {
-            Debug.LogWarning("No se encontró el AudioSource en el objeto de la TV.");
-        }
-        if (tvAnimator != null)
-        {
-            // Trigger the TV animation
-            tvAnimator.SetTrigger("PlayTV");
 
-            // Wait for the animation to complete
-            // We'll use a more reliable way to wait for the animation to finish
-            yield return new WaitUntil(() =>
-                tvAnimator.GetCurrentAnimatorStateInfo(0).IsName("TVAnimation") &&
-                tvAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-        }
-        else
-        {
-            Debug.LogWarning("No se encontró el Animator en el objeto de la TV.");
-        }
-        // Wait for the audio to finish playing
         if (tvAudioSource != null)
         {
             yield return new WaitWhile(() => tvAudioSource.isPlaying);

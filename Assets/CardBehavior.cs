@@ -64,6 +64,7 @@ public class CardBehavior : MonoBehaviour
 
         // Ensure final rotation
         transform.localRotation = startRotation;
+        transform.localScale = new Vector3(1, 1, 1); // Reset local scale to avoid flipping issues
     }
 
     private IEnumerator AnimateCardFlip()
@@ -71,7 +72,7 @@ public class CardBehavior : MonoBehaviour
         // Track the initial rotation
         Quaternion startRotation = transform.localRotation;
         Quaternion halfFlipRotation = startRotation * Quaternion.Euler(0, 90, 0);
-        Quaternion fullFlipRotation = startRotation * Quaternion.Euler(0, 180, 0);
+        Quaternion fullFlipRotation = startRotation * Quaternion.Euler(0, 360, 0);
 
         float elapsedTime = 0;
 
@@ -96,9 +97,8 @@ public class CardBehavior : MonoBehaviour
             transform.localRotation = Quaternion.Lerp(halfFlipRotation, fullFlipRotation, flipCurve.Evaluate(t));
             yield return null;
         }
-
         // Ensure final rotation
-        transform.localRotation = fullFlipRotation;
+        //transform.localRotation = fullFlipRotation;
     }
 
     private void SwapCardFace()

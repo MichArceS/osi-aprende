@@ -36,6 +36,8 @@ public class CharacterMovementOsiMochila : MonoBehaviour
     public AudioSource audioMama;
     public AudioSource audioSalida;
 
+    private bool isAtMama = false;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -96,15 +98,17 @@ public class CharacterMovementOsiMochila : MonoBehaviour
         {
             if (waypoints == mamaWaypoints)
             {
+                isAtMama = true;
                 PlayTheAudioCorrect(audioMama);
                 if (botones.Count > 0 && botones[0] != null)
                 {
                     botones[0].interactable = true;
                 }
-                ActivateButton();
-                hasReachedCharacter = true;
+                //ActivateButton();
+                //hasReachedCharacter = true;
+                Debug.Log("Has llegado a la mama!");
             }
-            if (destination == waypoints[currentWaypointIndex - 1])
+            else if (destination == waypoints[currentWaypointIndex - 1])
             {
                 hasReachedCharacter = true;
                 CheckBothArrived();
@@ -133,14 +137,24 @@ public class CharacterMovementOsiMochila : MonoBehaviour
         }
         else if (hit.collider.CompareTag("Mama"))
         {
-            waypoints = mamaWaypoints;
-            currentWaypointIndex = 0;
+            if (!isAtMama)
+            {
+                waypoints = mamaWaypoints;
+                currentWaypointIndex = 0;
+                isMoving = true;
+            }
+        }
+        else if (hit.collider.CompareTag("PuertaSalida") && isAtMama)
+        {
+            Debug.Log("Puerta clickeada, moviendo a salida");
+            ActivateButton();
         }
         else
         {
             Vector2 newWaypoint = new Vector2(hit.point.x, hit.point.y + 2f);
             waypoints = new Vector2[] { newWaypoint };
             currentWaypointIndex = 0;
+            isMoving = true;
         }
     }
 

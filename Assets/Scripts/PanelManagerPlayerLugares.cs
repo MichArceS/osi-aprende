@@ -29,6 +29,8 @@ public class PanelManagerPlayerLugares : MonoBehaviour
 
     public Sprite[] optionImages;
 
+    private bool isPlayingAudio = false;
+
     void Start()
     {
         aciertosPorPanel = new int[panels.Length];
@@ -211,13 +213,22 @@ public class PanelManagerPlayerLugares : MonoBehaviour
 
     private IEnumerator PlayCorrectAudio()
     {
-        if (correctAudio != null)
+        if (isPlayingAudio) yield break;
+        isPlayingAudio = true;
+
+        if (correctAudio != null && correctAudio.clip != null)
         {
             correctAudio.Play();
-            yield return new WaitUntil(() => !correctAudio.isPlaying);
+            Debug.Log("Playing correct audio", correctAudio);
+            yield return new WaitForSeconds(correctAudio.clip.length);
+        }
+        else
+        {
+            Debug.LogWarning("No correct audio found");
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
+        isPlayingAudio = false;
     }
 
     private void HandleCorrectAnswer()
@@ -228,6 +239,7 @@ public class PanelManagerPlayerLugares : MonoBehaviour
         {
             panelAnimator.SetTrigger("CorrectAnswer");
         }
+        Debug.Log("Correct Answer");
         StartCoroutine(PlayCorrectAudio());
         StartCoroutine(waitTenSeconds());
         GlobalCounter.IncrementarAciertosJuego3();

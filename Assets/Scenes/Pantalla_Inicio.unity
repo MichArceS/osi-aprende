@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a9585d949af3ef146ba126b0d7e55230, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 977f1a1012318194a87ae15bc88cc75c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2208,7 +2208,7 @@ GameObject:
   - component: {fileID: 1459617941}
   - component: {fileID: 1459617940}
   m_Layer: 5
-  m_Name: btnCerrar
+  m_Name: btnCancelar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2453,9 +2453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7ecec0e95aa8546b5b6787584d6f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitButton: {fileID: 1459617940}
+  exitButton: {fileID: 1813081962}
   showConfirmationButton: {fileID: 1236103188}
-  cancelButton: {fileID: 1813081962}
+  cancelButton: {fileID: 1459617940}
   audioSource: {fileID: 740784384}
   confirmationPanel: {fileID: 7833761}
 --- !u!4 &1560197143
@@ -2554,7 +2554,7 @@ GameObject:
   - component: {fileID: 1813081963}
   - component: {fileID: 1813081962}
   m_Layer: 5
-  m_Name: btnCancelar
+  m_Name: btnCerrar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
