@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Pantalla_Avatars.unity
     guid: 9246091c755b9454787bc847fcc59294
   - enabled: 1
+    path: Assets/Scenes/Pantalla_Creditos.unity
+    guid: 5be49caf1d38b9649a0886e14b696af7
+  - enabled: 1
     path: Assets/Scenes/Pantalla_Nuevo_Juego.unity
     guid: 9fc555e6f3cb8d3409de54f10dfa6850
   - enabled: 1
