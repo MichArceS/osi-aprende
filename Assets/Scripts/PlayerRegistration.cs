@@ -27,7 +27,7 @@ public class PlayerRegistration : MonoBehaviour
             audioSource = FindObjectOfType<AudioSource>();
         }
 
-        // Añadir listener al input field para verificar cambios en el texto
+        // A?adir listener al input field para verificar cambios en el texto
         playerNameInput.onValueChanged.AddListener(OnPlayerNameInputChanged);
 
         //Llamar a la funcion reiniciar Todo
@@ -38,7 +38,7 @@ public class PlayerRegistration : MonoBehaviour
 
     private void OnPlayerNameInputChanged(string inputText)
     {
-        // Mostrar u ocultar el botón en función de la longitud del texto
+        // Mostrar u ocultar el bot?n en funci?n de la longitud del texto
         if (inputText.Length >= 3)
         {
             saveButton.gameObject.SetActive(true);
@@ -49,15 +49,15 @@ public class PlayerRegistration : MonoBehaviour
         }
     }
 
+    //guardar la informacion del jugador
     private void SavePlayerData()
     {
         string playerName = playerNameInput.text.Trim();
         string selectedAvatarName = PlayerPrefs.GetString("SelectedAvatarImageName", "");
 
-        // Verificar si playerData está inicializado
         if (playerData == null)
         {
-            Debug.LogError("Algo paso.");
+            Debug.LogError("Algo pas?.");
             return;
         }
 
@@ -67,30 +67,57 @@ public class PlayerRegistration : MonoBehaviour
             return;
         }
 
-        // Verificar si el jugador ya existe en la lista
         if (IsPlayerDuplicate(playerName, selectedAvatarName))
         {
             Debug.LogWarning("El jugador con el mismo nombre y avatar ya existe.");
             return;
         }
 
-        //crear el jugador
+        // Crear el jugador
         PlayerInfo newPlayer = new PlayerInfo(playerName, selectedAvatarName);
 
-        // cargar informacion
+        // Guardar localmente
         playerData.players.Add(newPlayer);
-
         SavePlayersData();
 
-        // Actualizar interfaz de usuario
-        //infoText.text = "Jugador registrado exitosamente: " + playerName;
+        // Enviar al dashboard
+        StartCoroutine(EnviarJugadorAlDashboard(newPlayer));
+
+        // Limpiar y guardar PlayerPrefs
         playerNameInput.text = "";
         PlayerPrefs.SetString("playerName", playerName);
-        // Cargar la siguiente escena
-        StartCoroutine(PlayAudioAndLoadScene(nextSceneName));
-        //modifaca la seccion
         PlayerPrefs.SetInt("FirstTime", 0);
         PlayerPrefs.Save();
+
+        // Ir a la siguiente escena
+        StartCoroutine(PlayAudioAndLoadScene(nextSceneName));
+    }
+
+    //se manda a la URL del dashboard
+    private IEnumerator EnviarJugadorAlDashboard(PlayerInfo jugador)
+    {
+        string url = "https://midiapi.espol.edu.ec/api/v1/entrance/AlmacenarDatosController";
+
+        string jsonJugador = JsonUtility.ToJson(jugador);
+        Debug.Log("Enviando JSON al Dashboard: " + jsonJugador);
+
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonJugador);
+
+        UnityEngine.Networking.UnityWebRequest request = new UnityEngine.Networking.UnityWebRequest(url, "POST");
+        request.uploadHandler = new UnityEngine.Networking.UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new UnityEngine.Networking.DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityEngine.Networking.UnityWebRequest.Result.Success)
+        {
+            Debug.Log("Jugador enviado correctamente al dashboard.");
+        }
+        else
+        {
+            Debug.LogError("Error al enviar jugador: " + request.error);
+        }
     }
 
     IEnumerator PlayAudioAndLoadScene(string sceneToLoad)

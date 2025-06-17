@@ -39,11 +39,6 @@ public class WelcomeScreenButton : MonoBehaviour
         StartCoroutine(PlayAudioAndLoadScene(sceneToLoad));
     }
 
-    public void GoToCredits()
-    {
-        StartCoroutine(PlayAudioAndLoadScene("Pantalla_Creditos"));
-    }
-
     IEnumerator PlayAudioAndLoadScene(string sceneToLoad)
     {
         audioSource.Play();
