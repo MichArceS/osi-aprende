@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class GlobalCounter
@@ -5,119 +7,79 @@ public static class GlobalCounter
     private static int aciertosTotales = 0;
     private static int noAciertosTotales = 0;
 
-    private static AudioSource audioSource;
-    private static AudioSource audioSourceIncorrect;
+    private static AudioSource audioSourceCorrecto;
+    private static AudioSource audioSourceIncorrecto;
 
-    private static AudioClip[] audioClipsForThirdCorrectAnswer;
-    private static AudioClip[] audioClipsForThirdIncorrectAnswer;
+    private static AudioClip[] vocesPositivas;  // Audios para el tercer acierto
+    private static AudioClip[] vocesAnimo;      // Audios para el tercer error
 
-    // Evento que se dispara cuando cambian los aciertos
+    // ✅ Evento para notificar cambios de aciertos
     public static event System.Action OnAciertosChanged;
 
-    // M�todo para inicializar el AudioSource
-    public static void InitializeAudioSource(AudioSource source)
+    public static void InitializeAudioSourceCorrecto(AudioSource source)
     {
-        audioSource = source;
+        audioSourceCorrecto = source;
     }
 
-    // M�todo para inicializar el AudioSource
-    public static void InitializeAudioSourceIncorrect(AudioSource sourceIn)
+    public static void InitializeAudioSourceIncorrecto(AudioSource source)
     {
-        audioSourceIncorrect = sourceIn;
+        audioSourceIncorrecto = source;
     }
 
-    // M�todo para establecer los AudioClips
-    public static void SetAudioClips(AudioClip[] clips)
+    public static void SetVocesPositivas(AudioClip[] clips)
     {
-        audioClipsForThirdCorrectAnswer = clips;
+        vocesPositivas = clips;
     }
 
-    // M�todo para establecer los AudioClips
-    public static void SetAudioClipsIncorrect(AudioClip[] clips)
+    public static void SetVocesAnimo(AudioClip[] clips)
     {
-        audioClipsForThirdIncorrectAnswer = clips;
+        vocesAnimo = clips;
     }
 
-    public static void IncrementarAciertosJuego3()
-    {
-        aciertosTotales++;
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
-        OnAciertosChanged?.Invoke();
-    }
-
-    public static void IncrementarNoAciertosJuego3()
-    {
-        noAciertosTotales++;
-        if (audioSourceIncorrect != null)
-        {
-            audioSourceIncorrect.Play();
-        }
-
-    }
-
-    public static void IncrementarAciertosCartas()
-    {
-        aciertosTotales++;
-        Debug.Log("Aciertos Totales: " + aciertosTotales);
-
-        // Reproduce un audio aleatorio cuando se alcanza el tercer acierto
-        if (audioClipsForThirdCorrectAnswer != null && audioClipsForThirdCorrectAnswer.Length > 0)
-        {
-            AudioClip clipToPlay = audioClipsForThirdCorrectAnswer[Random.Range(0, audioClipsForThirdCorrectAnswer.Length)];
-            audioSource.PlayOneShot(clipToPlay);
-        }
-
-        OnAciertosChanged?.Invoke();
-    }
     public static void IncrementarAciertos()
     {
         aciertosTotales++;
-        Debug.Log("Aciertos Totales: " + aciertosTotales);
+        Debug.Log("Aciertos totales: " + aciertosTotales);
 
-        // Reproduce el audio si el n�mero total de aciertos es menor a dos
-        if (aciertosTotales < 3)
+        if (aciertosTotales % 3 != 0)
         {
-            if (audioSource != null)
+            if (audioSourceCorrecto != null)
             {
-                audioSource.Play();
+                audioSourceCorrecto.Play();
+            }
+        }
+        else
+        {
+            if (vocesPositivas != null && vocesPositivas.Length > 0 && audioSourceCorrecto != null)
+            {
+                AudioClip clip = vocesPositivas[Random.Range(0, vocesPositivas.Length)];
+                audioSourceCorrecto.PlayOneShot(clip);
             }
         }
 
-        // Reproduce un audio aleatorio cuando se alcanza el tercer acierto
-        if (aciertosTotales >= 3 && audioClipsForThirdCorrectAnswer != null && audioClipsForThirdCorrectAnswer.Length > 0)
-        {
-            AudioClip clipToPlay = audioClipsForThirdCorrectAnswer[Random.Range(0, audioClipsForThirdCorrectAnswer.Length)];
-            audioSource.PlayOneShot(clipToPlay);
-        }
-
-        //Debug.Log("Disparando OnAciertosChanged.");
-
+        // 🔔 Llamamos al evento
         OnAciertosChanged?.Invoke();
     }
 
     public static void IncrementarNoAciertos()
     {
         noAciertosTotales++;
-        Debug.Log("No Aciertos Totales: " + noAciertosTotales);
+        Debug.Log("Errores totales: " + noAciertosTotales);
 
-        // Reproduce el audio si el n�mero total de aciertos es menor a dos
-        if (noAciertosTotales < 3)
+        if (noAciertosTotales % 3 != 0)
         {
-            if (audioSourceIncorrect != null)
+            if (audioSourceIncorrecto != null)
             {
-                audioSourceIncorrect.Play();
+                audioSourceIncorrecto.Play();
             }
         }
-
-        // Reproduce un audio aleatorio 
-        if (noAciertosTotales >= 3 && audioClipsForThirdIncorrectAnswer != null && audioClipsForThirdIncorrectAnswer.Length > 0)
+        else
         {
-            AudioClip clipToPlay = audioClipsForThirdIncorrectAnswer[Random.Range(0, audioClipsForThirdIncorrectAnswer.Length)];
-            audioSource.PlayOneShot(clipToPlay);
-
+            if (vocesAnimo != null && vocesAnimo.Length > 0 && audioSourceIncorrecto != null)
+            {
+                AudioClip clip = vocesAnimo[Random.Range(0, vocesAnimo.Length)];
+                audioSourceIncorrecto.PlayOneShot(clip);
+            }
         }
     }
 
@@ -131,12 +93,28 @@ public static class GlobalCounter
         return noAciertosTotales;
     }
 
-    // M�todo para reiniciar los contadores
+    public static AudioSource GetAudioSourceCorrecto()
+    {
+        return audioSourceCorrecto;
+    }
+
+    public static AudioSource GetAudioSourceIncorrecto()
+    {
+        return audioSourceIncorrecto;
+    }
+
     public static void ResetCounters()
     {
         aciertosTotales = 0;
         noAciertosTotales = 0;
         Debug.Log("Contadores reiniciados.");
+
+        // 🔔 Llamamos al evento cuando se reinicia
+        OnAciertosChanged?.Invoke();
     }
 
+    public static void IncrementarAciertosCartas()
+    {
+        IncrementarAciertos();
+    }
 }

@@ -148,7 +148,7 @@ public class PanelManager2 : MonoBehaviour
             if (currentPanelIndex == 0)
             {
                 // Posición arriba a la izquierda
-                backRect.anchoredPosition = new Vector2(-886f, 512f);
+                backRect.anchoredPosition = new Vector2(135f, -135f);
             }
             else if (nextButton != null)
             {
@@ -156,7 +156,7 @@ public class PanelManager2 : MonoBehaviour
                 RectTransform nextRect = nextButton.GetComponent<RectTransform>();
                 Vector2 nextPos = nextRect.anchoredPosition;
 
-                backRect.anchoredPosition = new Vector2(-872f, -370f);
+                backRect.anchoredPosition = new Vector2(157f, -921f);
             }
             else
             {

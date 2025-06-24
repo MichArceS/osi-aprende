@@ -4,48 +4,48 @@ using UnityEngine;
 
 public class GlobalCounterInitializer : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioSource audioSourceIncorrect;
+    public AudioSource audioSourceCorrecto;
+    public AudioSource audioSourceIncorrecto;
 
     public AudioClip[] audioClipsForThirdCorrectAnswer;
     public AudioClip[] audioClipsForThirdIncorrectAnswer;
 
     void Start()
     {
-        if (audioSource != null)
+        if (audioSourceCorrecto != null)
         {
-            GlobalCounter.InitializeAudioSource(audioSource);
+            GlobalCounter.InitializeAudioSourceCorrecto(audioSourceCorrecto);
         }
         else
         {
-            Debug.LogWarning("No se ha asignado el AudioSource en GlobalCounterInitializer.");
+            Debug.LogWarning("No se ha asignado el AudioSource correcto en GlobalCounterInitializer.");
         }
 
-        if (audioSourceIncorrect != null)
+        if (audioSourceIncorrecto != null)
         {
-            GlobalCounter.InitializeAudioSourceIncorrect(audioSourceIncorrect);
+            GlobalCounter.InitializeAudioSourceIncorrecto(audioSourceIncorrecto);
         }
         else
         {
-            Debug.LogWarning("No se ha asignado el AudioSource en GlobalCounterInitializer.");
+            Debug.LogWarning("No se ha asignado el AudioSource incorrecto en GlobalCounterInitializer.");
         }
 
         if (audioClipsForThirdCorrectAnswer != null && audioClipsForThirdCorrectAnswer.Length > 0)
         {
-            GlobalCounter.SetAudioClips(audioClipsForThirdCorrectAnswer);
+            GlobalCounter.SetVocesPositivas(audioClipsForThirdCorrectAnswer);
         }
         else
         {
-            Debug.LogWarning("No se han asignado AudioClips en GlobalCounterInitializer.");
+            Debug.LogWarning("No se han asignado voces positivas en GlobalCounterInitializer.");
         }
 
         if (audioClipsForThirdIncorrectAnswer != null && audioClipsForThirdIncorrectAnswer.Length > 0)
         {
-            GlobalCounter.SetAudioClipsIncorrect(audioClipsForThirdIncorrectAnswer);
+            GlobalCounter.SetVocesAnimo(audioClipsForThirdIncorrectAnswer);
         }
         else
         {
-            Debug.LogWarning("No se han asignado AudioClips en GlobalCounterInitializer.");
+            Debug.LogWarning("No se han asignado voces de ánimo en GlobalCounterInitializer.");
         }
     }
 }

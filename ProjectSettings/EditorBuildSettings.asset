@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Pantalla_Avatars.unity
     guid: 9246091c755b9454787bc847fcc59294
   - enabled: 1
-    path: Assets/Scenes/Pantalla_Creditos.unity
-    guid: 5be49caf1d38b9649a0886e14b696af7
-  - enabled: 1
     path: Assets/Scenes/Pantalla_Nuevo_Juego.unity
     guid: 9fc555e6f3cb8d3409de54f10dfa6850
   - enabled: 1
@@ -89,4 +86,43 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/profesiones_juego.unity
     guid: 2f41f568308b68143a3cbda55ff6ae4d
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_Select_Casa.unity
+    guid: cacdaee1c9e3e44c0af90b0bde36f2ad
+  - enabled: 1
+    path: Assets/Scenes/Historia_Casa.unity
+    guid: 8c7384a19a2cf4f84b4e0526229a6c27
+  - enabled: 1
+    path: Assets/Scenes/juegos_Casa.unity
+    guid: a781fc6b353cb47ce9cb8158a87f9c60
+  - enabled: 1
+    path: Assets/Scenes/Escena_Banio.unity
+    guid: 131ebbbb9d3254ef681cbe5c28f20c40
+  - enabled: 1
+    path: Assets/Scenes/Escena_Cocina.unity
+    guid: 7c22ad91701244782869e26628c20737
+  - enabled: 1
+    path: Assets/Scenes/Escena_Comedor.unity
+    guid: 94dc41981157e43e6b5740954451a058
+  - enabled: 1
+    path: Assets/Scenes/Escena_Dormitorio.unity
+    guid: 354de05494e804d168ca564545b69a87
+  - enabled: 1
+    path: Assets/Scenes/Escena_Patio.unity
+    guid: 2ffb3ba43ead34962b2d92bcf4f5e168
+  - enabled: 1
+    path: Assets/Scenes/Escena_Sala.unity
+    guid: b264beedbb6f449a19c4af42ae254fc2
+  - enabled: 1
+    path: Assets/Scenes/Historia_Electro.unity
+    guid: 7cc9866fa43194d1b8d438ec67e9ea8c
+  - enabled: 1
+    path: Assets/Scenes/Juego_Electro.unity
+    guid: 19b39dde7641a4dbb96976edb4d4c533
+  - enabled: 1
+    path: Assets/Scenes/Pantalla_Select_Electrodomesticos.unity
+    guid: 70b861e870dec4a38933c35c9da9702b
+  - enabled: 1
+    path: Assets/Scenes/Escena_Recompensa_Casa.unity
+    guid: eb88f8cf826dc41a7b0da75c8760fbea
   m_configObjects: {}

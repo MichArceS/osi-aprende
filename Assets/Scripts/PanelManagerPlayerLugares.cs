@@ -242,7 +242,7 @@ public class PanelManagerPlayerLugares : MonoBehaviour
         Debug.Log("Correct Answer");
         StartCoroutine(PlayCorrectAudio());
         StartCoroutine(waitTenSeconds());
-        GlobalCounter.IncrementarAciertosJuego3();
+        GlobalCounter.IncrementarAciertos();
         ShowNextPanelAfterDelay(delayBeforeNextPanel);
     }
 
@@ -254,7 +254,7 @@ public class PanelManagerPlayerLugares : MonoBehaviour
     private void HandleWrongAnswer()
     {
         PlayButtonClickAudio();
-        GlobalCounter.IncrementarNoAciertosJuego3();
+        GlobalCounter.IncrementarNoAciertos();
     }
 
     public void ShowPreviousPanel()
