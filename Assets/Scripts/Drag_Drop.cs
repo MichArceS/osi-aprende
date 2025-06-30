@@ -21,12 +21,18 @@ public class Drag_Drop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Transform originalParent;
     private float savedScrollPosition;
 
+    // Audio para acierto y error
+    public AudioClip audioAcierto;
+    public AudioClip audioError;
+    private AudioSource audioSource;
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
         originalParent = transform.parent;
+        audioSource = GetComponent<AudioSource>(); // Se asume que el AudioSource está en este GameObject
         StartCoroutine(CaptureInitialPositionAfterDelay(0.5f));
     }
 
@@ -74,6 +80,10 @@ public class Drag_Drop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             canvasGroup.blocksRaycasts = false;
             enabled = false;
 
+            // Sonido de acierto
+            if (audioSource != null && audioAcierto != null)
+                audioSource.PlayOneShot(audioAcierto);
+
             // Notifica al GameProgressManager
             if (GameProgressManager.instance != null)
             {
@@ -88,6 +98,10 @@ public class Drag_Drop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
             if (scrollRect != null)
                 scrollRect.verticalNormalizedPosition = savedScrollPosition;
+
+            // Sonido de error
+            if (audioSource != null && audioError != null)
+                audioSource.PlayOneShot(audioError);
         }
     }
 }

@@ -37,6 +37,9 @@ TagManager:
   - Naturaleza
   - Piso
   - PuertaSalida
+  - tagLicuadora
+  - tagMicroondas
+  - tagAspiradora
   layers:
   - Default
   - TransparentFX
@@ -73,4 +76,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 59360993
+    locked: 0
+  - name: Electrodomesticos
+    uniqueID: 1061075235
+    locked: 0
+  - name: Objectos
+    uniqueID: 2118262849
+    locked: 0
+  - name: BackGround
+    uniqueID: 872067857
     locked: 0
