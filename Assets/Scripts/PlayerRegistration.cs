@@ -124,7 +124,7 @@ public class PlayerRegistration : MonoBehaviour
     {
         audioSource.Play();
         yield return new WaitForSeconds(audioSource.clip.length);
-        SceneManager.LoadScene(sceneToLoad);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
     }
 
 

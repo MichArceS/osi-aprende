@@ -9,7 +9,7 @@ public class cambiarScena : MonoBehaviour
 
     public void CambiarEscena()
     {
-        SceneManager.LoadSceneAsync(indiceEscena);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(indiceEscena);
         // Verificar si la clave existe antes de intentar borrarla
         if (PlayerPrefs.HasKey("SelectedAvatarImageName"))
         {

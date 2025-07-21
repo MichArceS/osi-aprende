@@ -352,7 +352,7 @@ public class MochilaCompletaScript : MonoBehaviour
     private IEnumerator WaitAndChangeScene()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("erupcion_Volcanica2");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("erupcion_Volcanica2");
     }
 
     private IEnumerator WaitForOneSecond(System.Action action)

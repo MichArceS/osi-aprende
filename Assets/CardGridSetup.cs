@@ -196,7 +196,7 @@ public class CardGridSetup : MonoBehaviour
     // Method to restart the game
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
     // Method to show play again panel

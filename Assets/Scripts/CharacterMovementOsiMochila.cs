@@ -266,7 +266,7 @@ public class CharacterMovementOsiMochila : MonoBehaviour
     {
         yield return new WaitForSeconds(newCharacter2Animator.GetCurrentAnimatorStateInfo(0).length);
 
-        SceneManager.LoadSceneAsync("terremoto_juego2");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("terremoto_juego2");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

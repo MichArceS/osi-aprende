@@ -21,7 +21,7 @@ public class SceneController : MonoBehaviour
         textProgress.text = "Cargando... 00%";
         sliderProgress.value = 0f;
 
-        loadAsync = SceneManager.LoadSceneAsync(nameToLoad);
+        loadAsync = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nameToLoad);
         loadAsync.allowSceneActivation = false;
 
    

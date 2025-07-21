@@ -137,7 +137,7 @@ public class PanelManagerPlayer : MonoBehaviour
         else
         {
             PlayButtonClickAudio();
-            SceneManager.LoadSceneAsync(sceneOnBackButton);
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneOnBackButton);
         }
     }
 
@@ -209,19 +209,19 @@ public class PanelManagerPlayer : MonoBehaviour
         PlayButtonClickAudio();
         //string currentSceneName = SceneManager.GetActiveScene().name;
         //SceneManager.LoadScene(currentSceneName);
-        SceneManager.LoadSceneAsync("instruccion_juego1");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("instruccion_juego1");
     }
     public void BackFirstScene()
     {
         PlayButtonClickAudio();
-        SceneManager.LoadSceneAsync("Pantalla_Actividades");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Pantalla_Actividades");
     }
 
     public void LoadNewScene()
     {
         if (!string.IsNullOrEmpty(sceneOnBackButton))
         {
-            SceneManager.LoadScene(sceneOnBackButton);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneOnBackButton);
         }
     }
 

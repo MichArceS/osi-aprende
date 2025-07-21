@@ -270,7 +270,7 @@ public class PanelManagerPlayerLugares : MonoBehaviour
         else
         {
             PlayButtonClickAudio();
-            SceneManager.LoadSceneAsync(sceneOnBackButton);
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneOnBackButton);
         }
     }
 
@@ -334,19 +334,19 @@ public class PanelManagerPlayerLugares : MonoBehaviour
         PlayButtonClickAudio();
         //string currentSceneName = SceneManager.GetActiveScene().name;
         //SceneManager.LoadScene(currentSceneName);
-        SceneManager.LoadSceneAsync("lugares_publicos_juego");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("lugares_publicos_juego");
     }
     public void BackFirstScene()
     {
         PlayButtonClickAudio();
-        SceneManager.LoadSceneAsync("Pantalla_Actividades");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Pantalla_Actividades");
     }
 
     public void LoadNewScene()
     {
         if (!string.IsNullOrEmpty(sceneOnBackButton))
         {
-            SceneManager.LoadScene(sceneOnBackButton);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneOnBackButton);
         }
     }
 

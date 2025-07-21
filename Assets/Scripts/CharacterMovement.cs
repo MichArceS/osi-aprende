@@ -346,7 +346,7 @@ public class CharacterMovement : MonoBehaviour
 
         Debug.Log("Terminado");
 
-        SceneManager.LoadSceneAsync("recompensas_juego2");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("recompensas_juego2");
     }
 
     private void ShowDestinationMessage(Vector2 position)

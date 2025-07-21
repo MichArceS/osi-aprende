@@ -64,7 +64,7 @@ public class PanelManager3 : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync(sceneOnNextButton);
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneOnNextButton);
         }
     }
 
@@ -78,7 +78,7 @@ public class PanelManager3 : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync(sceneOnBackButton);
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneOnBackButton);
         }
     }
 

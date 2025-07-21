@@ -50,7 +50,7 @@ public class PanelManagerTransitionLugaresPublicos : MonoBehaviour
         }
 
         // Immediately load the next scene
-        SceneManager.LoadScene(scenes[currentSceneIndex]);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scenes[currentSceneIndex]);
     }
 
     public void OnButtonClick(int buttonIndex)
@@ -118,7 +118,7 @@ public class PanelManagerTransitionLugaresPublicos : MonoBehaviour
         if (!isSkipping)
         {
             // Load the scene after the instruction panel
-            SceneManager.LoadScene(scenes[panelIndex]);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(scenes[panelIndex]);
         }
     }
 }

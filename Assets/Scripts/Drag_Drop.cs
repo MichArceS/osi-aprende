@@ -87,7 +87,7 @@ public class Drag_Drop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             // Notifica al GameProgressManager
             if (GameProgressManager.instance != null)
             {
-                GameProgressManager.instance.RegistrarAciertoEscena(SceneManager.GetActiveScene().name, totalAciertosEscena);
+                GameProgressManager.instance.RegistrarAciertoEscena(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, totalAciertosEscena);
             }
         }
         else

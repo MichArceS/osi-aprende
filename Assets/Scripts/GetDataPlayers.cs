@@ -64,7 +64,7 @@ public class GetDataPlayers : MonoBehaviour
                     boton.onClick.AddListener(() =>
                     {
                         SavePlayerName(jugador.playerCode);
-                        SceneManager.LoadScene(nombreEscenaACargar);
+                        UnityEngine.SceneManagement.SceneManager.LoadScene(nombreEscenaACargar);
                     });
                 }
             }

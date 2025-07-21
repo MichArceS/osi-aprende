@@ -205,7 +205,7 @@ public class charter_Erupcion : MonoBehaviour
     private IEnumerator LoadSceneWithDelay(string sceneName, float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadSceneAsync(sceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
     }
 
     private void UpdateDirection(Vector2 newPosition)

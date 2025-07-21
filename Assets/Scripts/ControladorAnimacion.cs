@@ -18,6 +18,6 @@ public class ControladorAnimacion : MonoBehaviour
         float animationDuration = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(animationDuration);
 
-        SceneManager.LoadSceneAsync(sceneToLoad);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneToLoad);
     }
 }

@@ -68,7 +68,7 @@ public class PanelManagerTransition : MonoBehaviour
         if (animator3 != null) animator3.enabled = false;
 
         // Cargar la siguiente escena inmediatamente
-        SceneManager.LoadScene(scenes[currentSceneIndex]);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scenes[currentSceneIndex]);
     }
 
     private Coroutine buttonClickCoroutine; // Track the current coroutine
@@ -161,7 +161,7 @@ public class PanelManagerTransition : MonoBehaviour
         if (!isSkipping)
         {
             yield return new WaitForSeconds(2f);
-            SceneManager.LoadScene(scenes[sceneIndex]);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(scenes[sceneIndex]);
         }
     }
 

@@ -40,6 +40,11 @@ TagManager:
   - tagLicuadora
   - tagMicroondas
   - tagAspiradora
+  - SliderMusic
+  - SliderVoice
+  - BackgroundAudio
+  - PanelAudio
+  - SliderSFX
   layers:
   - Default
   - TransparentFX

@@ -22,14 +22,7 @@ public class AvatarSelection : MonoBehaviour
             int index = i;
             avatarButtons[i].onClick.AddListener(() => SelectAvatar(index));
         }
-
-        if (audioSource == null)
-        {
-            audioSource = FindObjectOfType<AudioSource>();
-        }
-
         readyButton.onClick.AddListener(SaveAndLoadNextScene);
-
     }
 
     void SelectAvatar(int index)
@@ -55,8 +48,7 @@ public class AvatarSelection : MonoBehaviour
 
     IEnumerator PlayAudioAndLoadScene(string sceneToLoad)
     {
-        audioSource.Play();
-        yield return new WaitForSeconds(audioSource.clip.length);
-        SceneManager.LoadScene(sceneToLoad);
+        yield return new WaitForSeconds(0.1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
     }
 }

@@ -24,6 +24,6 @@ public class CambioEscenaPorIndice : MonoBehaviour
     {
         audioSource.Play(); 
         yield return new WaitForSeconds(audioSource.clip.length);
-        SceneManager.LoadSceneAsync(indiceEscena);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(indiceEscena);
     }
 }

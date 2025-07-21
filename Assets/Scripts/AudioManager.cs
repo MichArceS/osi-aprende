@@ -139,13 +139,13 @@ public class AudioManager : MonoBehaviour
         RegisterAllAudioSources();
 
         // Subscribe to the scene change event
-        SceneManager.activeSceneChanged += OnSceneChanged;
+        UnityEngine.SceneManagement.SceneManager.activeSceneChanged += OnSceneChanged;
     }
 
     private void OnDisable()
     {
         // Unsubscribe from the scene change event
-        SceneManager.activeSceneChanged -= OnSceneChanged;
+        UnityEngine.SceneManagement.SceneManager.activeSceneChanged -= OnSceneChanged;
     }
 
     private void OnSceneChanged(Scene prevScene, Scene newScene)

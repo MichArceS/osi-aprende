@@ -53,11 +53,11 @@ public class GameProgressManager : MonoBehaviour
             if (TodasEscenasCompletadas())
             {
                 Debug.Log("¡Todas las escenas completadas! Cargando recompensa...");
-                SceneManager.LoadScene("Escena_Recompensa_Casa");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Escena_Recompensa_Casa");
             }
             else
             {
-                SceneManager.LoadScene("juegos_Casa");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("juegos_Casa");
             }
         }
         else

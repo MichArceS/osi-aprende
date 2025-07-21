@@ -211,7 +211,7 @@ public class charteMovement_terr : MonoBehaviour
     private IEnumerator LoadSceneWithDelay(string sceneName, float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadSceneAsync(sceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
     }
 
     void UpdateDirection(Vector2 newPosition)

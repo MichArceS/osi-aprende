@@ -15,10 +15,10 @@ public class SceneChanger : MonoBehaviour
     private IEnumerator ChangeSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadSceneAsync(nameScene);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nameScene);
     }
     public void ChangeSceneAfterClick()
     {
-        SceneManager.LoadSceneAsync(nameScene);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(nameScene);
     }
 }
