@@ -126,6 +126,16 @@ public class AudioController : MonoBehaviour
         voiceSource.Play();
     }
 
+    public AudioSource GetSFXSource()
+    {
+        return sfxSource;
+    }
+
+    public AudioSource GetVoiceSource()
+    {
+        return voiceSource;
+    }
+
     public AudioClip GetVoice()
     {
         return voiceSource.clip;
@@ -134,6 +144,17 @@ public class AudioController : MonoBehaviour
     public void StopMusic()
     {
         musicSource.Stop();
+    }
+
+    public void StopVoice()
+    {
+        voiceSource.Stop();
+    }
+
+    public void ReplayVoice()
+    {
+        voiceSource.Stop();
+        voiceSource.Play();
     }
 
     public void StopAllAudio()

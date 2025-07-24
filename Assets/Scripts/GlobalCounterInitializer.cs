@@ -4,31 +4,15 @@ using UnityEngine;
 
 public class GlobalCounterInitializer : MonoBehaviour
 {
-    public AudioSource audioSourceCorrecto;
-    public AudioSource audioSourceIncorrecto;
+    public AudioClip goodSFX;
+    public AudioClip badSFX;
 
     public AudioClip[] audioClipsForThirdCorrectAnswer;
     public AudioClip[] audioClipsForThirdIncorrectAnswer;
 
     void Start()
     {
-        if (audioSourceCorrecto != null)
-        {
-            GlobalCounter.InitializeAudioSourceCorrecto(audioSourceCorrecto);
-        }
-        else
-        {
-            Debug.LogWarning("No se ha asignado el AudioSource correcto en GlobalCounterInitializer.");
-        }
-
-        if (audioSourceIncorrecto != null)
-        {
-            GlobalCounter.InitializeAudioSourceIncorrecto(audioSourceIncorrecto);
-        }
-        else
-        {
-            Debug.LogWarning("No se ha asignado el AudioSource incorrecto en GlobalCounterInitializer.");
-        }
+        GlobalCounter.InitializeClips(goodSFX, badSFX);
 
         if (audioClipsForThirdCorrectAnswer != null && audioClipsForThirdCorrectAnswer.Length > 0)
         {

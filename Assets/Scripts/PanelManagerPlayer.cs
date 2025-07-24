@@ -6,22 +6,27 @@ using System.Collections.Generic;
 public class PanelManagerPlayer : MonoBehaviour
 {
     public GameObject[] panels;
+    public AudioClip[] audioClips;
     public GameObject[] panelsRecompensas;
     public GameObject additionalPanel;
     public float delayBeforeNextPanel = 1f;
     public float rewardPanelDuration = 3f;
     public string sceneOnBackButton;
-    public AudioSource buttonClickAudio;
 
     private List<int> availablePanelIndices;
+    private List<int> availableAudios;
     private Stack<int> panelHistory;
     private int currentPanelIndex = -1;
     private int[] aciertosPorPanel;
     private bool allPanelsCompleted = false;
     private AudioSource currentAudioSource;
 
+    public AudioClip buttonEffect;
+    public AudioClip music;
+
     void Start()
     {
+        AudioController.Instance.PlayMusic(music);
         aciertosPorPanel = new int[panels.Length];
         for (int i = 0; i < aciertosPorPanel.Length; i++)
         {
@@ -35,20 +40,13 @@ public class PanelManagerPlayer : MonoBehaviour
 
     public void PlayButtonClickAudio()
     {
-        if (buttonClickAudio != null)
-        {
-            buttonClickAudio.Play();
-        }
+        AudioController.Instance.PlaySfx(buttonEffect);
     }
 
     public void RepeatAudio()
     {
         PlayButtonClickAudio();
-        if (currentAudioSource != null)
-        {
-            currentAudioSource.Stop();
-            currentAudioSource.Play();
-        }
+        AudioController.Instance.ReplayVoice();
     }
 
     void OnDestroy()
@@ -59,9 +57,11 @@ public class PanelManagerPlayer : MonoBehaviour
     private void InitializePanelIndices()
     {
         availablePanelIndices = new List<int>();
+        availableAudios = new List<int>();
         for (int i = 0; i < panels.Length; i++)
         {
             availablePanelIndices.Add(i);
+            availableAudios.Add(i);
         }
         allPanelsCompleted = false;
     }
@@ -74,24 +74,8 @@ public class PanelManagerPlayer : MonoBehaviour
     private IEnumerator FindAudioSourceInPanel(int panelIndex)
     {
         yield return new WaitForSeconds(0.1f);
-        AudioSource[] audioSources = panels[panelIndex].GetComponentsInChildren<AudioSource>();
-        AudioSource audioRepetir = null;
-        AudioSource audioAmbiente = null;
-        if (audioSources.Length > 0)
-        {
-            audioRepetir = audioSources[0];
-            audioAmbiente = audioSources.Length > 1 ? audioSources[1] : null;
-        }
-        if (audioRepetir != null)
-        {
-            SetCurrentAudioSource(audioRepetir);
-            audioRepetir.Play();
-        }
-        
-        if (audioAmbiente != null)
-        {
-            audioAmbiente.Play();
-        }
+
+        AudioController.Instance.PlayVoice(audioClips[panelIndex]);
     }
 
     private void ShowNextPanel()
@@ -118,7 +102,10 @@ public class PanelManagerPlayer : MonoBehaviour
         int panelIndex = availablePanelIndices[randomIndex];
         panels[panelIndex].SetActive(true);
         currentPanelIndex = panelIndex;
+
         availablePanelIndices.RemoveAt(randomIndex);
+        availableAudios.RemoveAt(randomIndex);
+        
         panelHistory.Push(panelIndex);
         GlobalCounter.ResetCounters();
         StartCoroutine(FindAudioSourceInPanel(currentPanelIndex));
@@ -246,5 +233,10 @@ public class PanelManagerPlayer : MonoBehaviour
         yield return new WaitForSeconds(rewardPanelDuration);
         panelsRecompensas[panelIndex].SetActive(false);
         ShowNextPanel();
+    }
+
+    public void HideAudioManage(bool b)
+    {
+        AudioController.Instance.HidePanel(b);
     }
 }

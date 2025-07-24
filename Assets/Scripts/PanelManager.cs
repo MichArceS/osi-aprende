@@ -5,50 +5,37 @@ using UnityEngine.UI;
 public class PanelManager : MonoBehaviour
 {
     public GameObject[] panels;
+    public AudioClip[] audioClips;
+
     public string sceneOnBackButton;
     public string sceneOnNextButton;
-    public AudioSource audioClic;
-    public AudioSource backgroundAudio;
+
     public Button backButton;
 
     private int currentPanelIndex = 0;
     private Animator panelAnimator;
-    private AudioSource currentAudioSource;
+
+    public AudioClip buttonEffect;
+    public AudioClip music;
 
     void Start()
     {
+        AudioController.Instance.PlayMusic(music);
         panelAnimator = GetComponent<Animator>();
         ShowPanel(currentPanelIndex);
         StartCoroutine(FindAudioSourceInPanel(currentPanelIndex));
 
         AdjustBackButtonPosition();
     }
-    private void PlayAudioClic()
+    public void PlayAudioClic()
     {
-        if (audioClic != null)
-        {
-            audioClic.Play();
-        }
+        AudioController.Instance.PlaySfx(buttonEffect);
     }
 
     public void RepeatAudio()
     {
         PlayAudioClic();
-
-        if (currentAudioSource != null)
-        {
-            currentAudioSource.Stop();
-            currentAudioSource.Play();
-        }
-        else
-        {
-            Debug.LogWarning("No se encontr� AudioSource actual para repetir.");
-        }
-    }
-
-    public void SetCurrentAudioSource(AudioSource audioSource)
-    {
-        currentAudioSource = audioSource;
+        AudioController.Instance.ReplayVoice();
     }
 
     public void ShowNextPanel()
@@ -82,6 +69,7 @@ public class PanelManager : MonoBehaviour
 
     private IEnumerator TransitionToPanel(int nextIndex, bool isNext)
     {
+        AudioController.Instance.StopVoice();
         if (panelAnimator != null)
         {
             ShowPanel(nextIndex);
@@ -115,17 +103,7 @@ public class PanelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        AudioSource audioSource = panels[panelIndex].GetComponentInChildren<AudioSource>();
-
-        if (audioSource != null)
-        {
-            SetCurrentAudioSource(audioSource);
-            audioSource.Play();
-        }
-        else
-        {
-            Debug.Log($"No se encontr� AudioSource en el panel {panelIndex}.");
-        }
+        AudioController.Instance.PlayVoice(audioClips[panelIndex]);
     }
 
     private float GetAnimatorStateDuration(string stateName)
@@ -157,5 +135,10 @@ public class PanelManager : MonoBehaviour
                 backButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(135, 135);
             }
         }
+    }
+
+    public void HideAudioManage(bool b)
+    {
+        AudioController.Instance.HidePanel(b);
     }
 }

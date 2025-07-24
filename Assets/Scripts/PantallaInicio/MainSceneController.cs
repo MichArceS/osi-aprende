@@ -11,8 +11,15 @@ public class MainSceneController : MonoBehaviour
 
     void Start()
     {
-        AudioController.Instance.PlayMusic(music);
-        AudioController.Instance.PlayVoice(initVoice);
+        try
+        {
+            AudioController.Instance.PlayMusic(music);
+            AudioController.Instance.PlayVoice(initVoice);
+        }
+        catch(Exception ex)
+        {
+            Debug.Log("No voz");
+        }
     }
 
     public void PlayButtonEffect()

@@ -7,8 +7,8 @@ public static class GlobalCounter
     private static int aciertosTotales = 0;
     private static int noAciertosTotales = 0;
 
-    private static AudioSource audioSourceCorrecto;
-    private static AudioSource audioSourceIncorrecto;
+    private static AudioClip goodSFX;
+    private static AudioClip badSFX;
 
     private static AudioClip[] vocesPositivas;  // Audios para el tercer acierto
     private static AudioClip[] vocesAnimo;      // Audios para el tercer error
@@ -16,14 +16,10 @@ public static class GlobalCounter
     // ✅ Evento para notificar cambios de aciertos
     public static event System.Action OnAciertosChanged;
 
-    public static void InitializeAudioSourceCorrecto(AudioSource source)
+    public static void InitializeClips(AudioClip goodAudioClip, AudioClip badAudioClip)
     {
-        audioSourceCorrecto = source;
-    }
-
-    public static void InitializeAudioSourceIncorrecto(AudioSource source)
-    {
-        audioSourceIncorrecto = source;
+        goodSFX = goodAudioClip;
+        badSFX = badAudioClip;
     }
 
     public static void SetVocesPositivas(AudioClip[] clips)
@@ -43,17 +39,14 @@ public static class GlobalCounter
 
         if (aciertosTotales % 3 != 0)
         {
-            if (audioSourceCorrecto != null)
-            {
-                audioSourceCorrecto.Play();
-            }
+            AudioController.Instance.PlaySfx(goodSFX);
         }
         else
         {
-            if (vocesPositivas != null && vocesPositivas.Length > 0 && audioSourceCorrecto != null)
+            if (vocesPositivas != null && vocesPositivas.Length > 0)
             {
                 AudioClip clip = vocesPositivas[Random.Range(0, vocesPositivas.Length)];
-                audioSourceCorrecto.PlayOneShot(clip);
+                AudioController.Instance.PlayVoice(clip);
             }
         }
 
@@ -68,17 +61,14 @@ public static class GlobalCounter
 
         if (noAciertosTotales % 3 != 0)
         {
-            if (audioSourceIncorrecto != null)
-            {
-                audioSourceIncorrecto.Play();
-            }
+            AudioController.Instance.PlaySfx(badSFX);
         }
         else
         {
-            if (vocesAnimo != null && vocesAnimo.Length > 0 && audioSourceIncorrecto != null)
+            if (vocesAnimo != null && vocesAnimo.Length > 0)
             {
                 AudioClip clip = vocesAnimo[Random.Range(0, vocesAnimo.Length)];
-                audioSourceIncorrecto.PlayOneShot(clip);
+                AudioController.Instance.PlayVoice(clip);
             }
         }
     }
@@ -91,16 +81,6 @@ public static class GlobalCounter
     public static int ObtenerNoAciertosTotales()
     {
         return noAciertosTotales;
-    }
-
-    public static AudioSource GetAudioSourceCorrecto()
-    {
-        return audioSourceCorrecto;
-    }
-
-    public static AudioSource GetAudioSourceIncorrecto()
-    {
-        return audioSourceIncorrecto;
     }
 
     public static void ResetCounters()

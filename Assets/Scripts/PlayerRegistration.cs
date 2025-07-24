@@ -11,7 +11,6 @@ public class PlayerRegistration : MonoBehaviour
     public TMP_InputField playerNameInput;
     public Button saveButton;
     public string nextSceneName;
-    public AudioSource audioSource;
 
     private PlayerData playerData;
 
@@ -21,11 +20,6 @@ public class PlayerRegistration : MonoBehaviour
         saveButton.gameObject.SetActive(false);
         // Cargar datos de jugadores al iniciar
         LoadPlayersData();
-
-        if (audioSource == null)
-        {
-            audioSource = FindObjectOfType<AudioSource>();
-        }
 
         // A?adir listener al input field para verificar cambios en el texto
         playerNameInput.onValueChanged.AddListener(OnPlayerNameInputChanged);
@@ -122,8 +116,7 @@ public class PlayerRegistration : MonoBehaviour
 
     IEnumerator PlayAudioAndLoadScene(string sceneToLoad)
     {
-        audioSource.Play();
-        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return new WaitForSeconds(0.1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
     }
 
