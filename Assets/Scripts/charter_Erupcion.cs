@@ -23,14 +23,16 @@ public class charter_Erupcion : MonoBehaviour
     public Button botones;
 
     [Header("Audio")]
-    public AudioSource audioSource;
     public AudioClip clickSound;
     public AudioClip[] randomSounds;
-    public AudioSource audioWalkCorrect1;
-    public AudioSource audioWalkInCorrect1;
+    public AudioClip audioWalkCorrect1;
+    public AudioClip audioWalkInCorrect1;
+
+    public LevelMetaData levelData;
 
     void Start()
     {
+        levelData = new LevelMetaData(SessionManager.Instance.nombre_jugador, "Nivel Erupcion", "Nivel Erupcion Descripcion", "Fenomenos Naturales", "Fenomenos Naturales Historia", "Fenomenos Naturales Descripcion");
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         isMoving = false;
@@ -79,21 +81,13 @@ public class charter_Erupcion : MonoBehaviour
         }
     }
 
-    private void PlayTheAudioCorrect(AudioSource audioSource)
-    {
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
-    }
-
     private void PlayToAudioClicIncorrect()
     {
         clickCount++;
 
         if (clickCount <= 2)
         {
-            PlayAudio(clickSound);
+            AudioController.Instance.PlaySfx(clickSound);
         }
         else if (clickCount > 2)
         {
@@ -102,24 +96,14 @@ public class charter_Erupcion : MonoBehaviour
 
     }
 
-    private void PlayAudio(AudioClip clip)
-    {
-        if (audioSource != null && clip != null)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-    }
-
     private void PlayRandomSound()
     {
-        if (audioSource != null && randomSounds.Length > 0)
+        if (randomSounds.Length > 0)
         {
             AudioClip randomClip = randomSounds[Random.Range(0, randomSounds.Length)];
-            PlayAudio(randomClip);
+            AudioController.Instance.PlayVoice(randomClip);
         }
     }
-
 
     void HandleClick(Collider2D hit)
     {
@@ -138,7 +122,7 @@ public class charter_Erupcion : MonoBehaviour
         {
             targetPosition = DestinationInorrecto;
             isMoving = true;
-            PlayTheAudioCorrect(audioWalkInCorrect1);
+            AudioController.Instance.PlayVoice(audioWalkInCorrect1);    
         }
         else if (hit.CompareTag("empezandoCaminar"))
         {
@@ -191,13 +175,13 @@ public class charter_Erupcion : MonoBehaviour
     {
         if (currentWaypointIndex == waypoints.Count - 1)
         {
-            PlayTheAudioCorrect(audioWalkCorrect1);
+            AudioController.Instance.PlayVoice(audioWalkCorrect1);
 
             if (GameManagerOsiPersonaje.Instance != null)
             {
                 GameManagerOsiPersonaje.Instance.IncrementScore();
             }
-
+            EndLevel("completado");
             StartCoroutine(LoadSceneWithDelay("recompensa3_juego2", 3f));
         }
     }
@@ -241,5 +225,16 @@ public class charter_Erupcion : MonoBehaviour
                 animator.SetFloat("Vertical", Mathf.Sign(direction.y));
             }
         }
+    }
+    public void EndLevel(string status)
+    {
+        levelData.estado = status;
+        levelData.fecha_fin = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        levelData.tiempo_juego = (System.Math.Round(Time.timeSinceLevelLoad)).ToString();
+        //levelData.puntaje = contP.puntaje.ToString();
+        levelData.correctas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        levelData.incorrectas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(levelData));
+        //GameStateManager.Instance.LoadScene("ActivityHub");
     }
 }

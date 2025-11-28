@@ -49,6 +49,9 @@ public class PlayerRegistration : MonoBehaviour
         string playerName = playerNameInput.text.Trim();
         string selectedAvatarName = PlayerPrefs.GetString("SelectedAvatarImageName", "");
 
+        SessionManager.Instance.fecha_fin_nombre = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        SessionManager.Instance.nombre_jugador = playerName;
+
         if (playerData == null)
         {
             Debug.LogError("Algo pas?.");
@@ -75,7 +78,7 @@ public class PlayerRegistration : MonoBehaviour
         SavePlayersData();
 
         // Enviar al dashboard
-        StartCoroutine(EnviarJugadorAlDashboard(newPlayer));
+        SessionManager.Instance.SetPlayerInfo(selectedAvatarName, playerName, GameStateManager.Instance.gameTitle);
 
         // Limpiar y guardar PlayerPrefs
         playerNameInput.text = "";
@@ -85,33 +88,6 @@ public class PlayerRegistration : MonoBehaviour
 
         // Ir a la siguiente escena
         StartCoroutine(PlayAudioAndLoadScene(nextSceneName));
-    }
-
-    //se manda a la URL del dashboard
-    private IEnumerator EnviarJugadorAlDashboard(PlayerInfo jugador)
-    {
-        string url = "https://midiapi.espol.edu.ec/api/v1/entrance/AlmacenarDatosController";
-
-        string jsonJugador = JsonUtility.ToJson(jugador);
-        Debug.Log("Enviando JSON al Dashboard: " + jsonJugador);
-
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonJugador);
-
-        UnityEngine.Networking.UnityWebRequest request = new UnityEngine.Networking.UnityWebRequest(url, "POST");
-        request.uploadHandler = new UnityEngine.Networking.UploadHandlerRaw(bodyRaw);
-        request.downloadHandler = new UnityEngine.Networking.DownloadHandlerBuffer();
-        request.SetRequestHeader("Content-Type", "application/json");
-
-        yield return request.SendWebRequest();
-
-        if (request.result == UnityEngine.Networking.UnityWebRequest.Result.Success)
-        {
-            Debug.Log("Jugador enviado correctamente al dashboard.");
-        }
-        else
-        {
-            Debug.LogError("Error al enviar jugador: " + request.error);
-        }
     }
 
     IEnumerator PlayAudioAndLoadScene(string sceneToLoad)

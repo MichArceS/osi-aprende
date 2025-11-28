@@ -18,6 +18,14 @@ public class PanelManager : MonoBehaviour
     public AudioClip buttonEffect;
     public AudioClip music;
 
+    [Header("StoryMetaData")]
+    public string duracion;
+    public string historia;
+    public string descripcion;
+    public string capitulo;
+    public string descripcion_cap;
+    public StoryMetaData storyData;
+
     void Start()
     {
         AudioController.Instance.PlayMusic(music);
@@ -25,6 +33,7 @@ public class PanelManager : MonoBehaviour
         ShowPanel(currentPanelIndex);
         StartCoroutine(FindAudioSourceInPanel(currentPanelIndex));
 
+        storyData = new StoryMetaData(SessionManager.Instance.nombre_jugador, duracion, descripcion, capitulo, descripcion_cap, historia);
         AdjustBackButtonPosition();
     }
     public void PlayAudioClic()
@@ -48,6 +57,7 @@ public class PanelManager : MonoBehaviour
         }
         else
         {
+            SendJSON("completado");
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneOnNextButton);
         }
     }
@@ -62,6 +72,7 @@ public class PanelManager : MonoBehaviour
         }
         else
         {
+            SendJSON("abandonado");
             AdjustBackButtonPosition(true);
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneOnBackButton);
         }
@@ -140,5 +151,13 @@ public class PanelManager : MonoBehaviour
     public void HideAudioManage(bool b)
     {
         AudioController.Instance.HidePanel(b);
+    }
+
+    public void SendJSON(string estado)
+    {
+        storyData.estado = estado;
+        storyData.fecha_fin = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        storyData.tiempo_juego = System.Math.Round(Time.timeSinceLevelLoad).ToString();
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(storyData));
     }
 }

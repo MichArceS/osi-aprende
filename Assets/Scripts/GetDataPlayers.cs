@@ -14,10 +14,13 @@ public class GetDataPlayers : MonoBehaviour
 
 
     private PlayerData playerData;
+    public string playerName;
+    public string selectedAvatarName;
 
     // Start is called before the first frame update
     void Start()
     {
+        SessionManager.Instance.fecha_inicio_nombre = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         LoadPlayersData();
     }
 
@@ -60,6 +63,9 @@ public class GetDataPlayers : MonoBehaviour
                     nombreText.text = jugador.playerName; // Asignar nombre del jugador
                     imgAvatar.sprite = Resources.Load<Sprite>("Avatares/" + jugador.selectedAvatarName);
 
+                    playerName = nombreText.text;
+                    selectedAvatarName = imgAvatar.sprite.name;
+
                     // Asignar el listener al botón para guardar el nombre en PlayerPrefs y cargar la escena
                     boton.onClick.AddListener(() =>
                     {
@@ -79,6 +85,8 @@ public class GetDataPlayers : MonoBehaviour
     {
         // Guardar el nombre del jugador en PlayerPrefs
         PlayerPrefs.SetString("PlayerCodeContinue", playerCode);
+        SessionManager.Instance.fecha_fin_nombre = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        SessionManager.Instance.SetPlayerInfo(selectedAvatarName, playerName, GameStateManager.Instance.gameTitle);
         Debug.Log("Codigo del jugador en continuar: " + playerCode);
     }
 }

@@ -16,6 +16,7 @@ public class AvatarSelection : MonoBehaviour
 
     void Start()
     {
+        SessionManager.Instance.fecha_inicio_nombre = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         readyButton.gameObject.SetActive(false);
         for (int i = 0; i < avatarButtons.Length; i++)
         {

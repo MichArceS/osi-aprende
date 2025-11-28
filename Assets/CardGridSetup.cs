@@ -16,11 +16,9 @@ public class CardGridSetup : MonoBehaviour
     public List<Sprite> placeSprites;        // List of places (front images)
 
     [Header("Sound Effects")]
-    public AudioSource audioSource;     // Audio source to play sounds
     public AudioClip flipSound;         // Sound for flipping cards
     public List<AudioClip> matchSound;        // Sound for matching cards
     public AudioClip wrongMatchSound;   // Sound for wrong match
-    public AudioClip winSound;          // Sound for winning
 
     [Header("Panel Management")]
     public GameObject rewardPanel;   // Panels to show after completion
@@ -31,14 +29,11 @@ public class CardGridSetup : MonoBehaviour
     public List<CardBehavior> flippedCards = new List<CardBehavior>();
     public bool isProcessing = false;
 
+    public LevelMetaData levelData;
+
     void Start()
     {
-        // If no audio source is assigned, try to get one from this GameObject
-        // Ensure audio source is available
-        if (audioSource == null)
-        {
-            audioSource = GetComponent<AudioSource>() ?? gameObject.AddComponent<AudioSource>();
-        }
+        levelData = new LevelMetaData(SessionManager.Instance.nombre_jugador, "Nivel Profesiones", "Nivel Profesiones Descripcion", "Lugares Publicos", "Lugares Publicos Historia", "Lugares Publicos Descripcion");
         GenerateCardGrid();
     }
 
@@ -101,7 +96,7 @@ public class CardGridSetup : MonoBehaviour
     {
         if (flipSound != null)
         {
-            audioSource.PlayOneShot(flipSound);
+            AudioController.Instance.PlaySfx(flipSound);
         }
     }
 
@@ -109,7 +104,7 @@ public class CardGridSetup : MonoBehaviour
     {
         if (matchSound.Count > 0)
         {
-            audioSource.PlayOneShot(matchSound[Random.Range(0, matchSound.Count)]);
+            AudioController.Instance.PlayVoice(matchSound[Random.Range(0, matchSound.Count)]);
         }
     }
 
@@ -117,7 +112,7 @@ public class CardGridSetup : MonoBehaviour
     {
         if (wrongMatchSound != null)
         {
-            audioSource.PlayOneShot(wrongMatchSound);
+            AudioController.Instance.PlaySfx(wrongMatchSound);
         }
     }
 
@@ -143,6 +138,7 @@ public class CardGridSetup : MonoBehaviour
             flippedCards[0].PlayAnimation();
             flippedCards[1].PlayAnimation();
             GlobalCounter.IncrementarAciertosCartas();
+            PlayMatchSound();
             // Cards match; keep them flipped
             flippedCards[0].gameObject.GetComponent<Button>().interactable = false;
             flippedCards[1].gameObject.GetComponent<Button>().interactable = false;
@@ -158,6 +154,7 @@ public class CardGridSetup : MonoBehaviour
         {
             GlobalCounter.IncrementarNoAciertos();
             // Cards don't match; flip them back
+            PlayWrongMatchSound();
             flippedCards[0].ResetCard();
             flippedCards[1].ResetCard();
         }
@@ -168,6 +165,7 @@ public class CardGridSetup : MonoBehaviour
 
     private IEnumerator HandleGameCompletion()
     {
+        EndLevel("completado");
         // Wait a moment before showing completion
         yield return new WaitForSeconds(1f);
 
@@ -193,7 +191,11 @@ public class CardGridSetup : MonoBehaviour
         }
     }
 
-    // Method to restart the game
+    public void RestartInstruction()
+    {
+        AudioController.Instance.ReplayVoice();
+    }
+
     public void RestartGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
@@ -208,4 +210,15 @@ public class CardGridSetup : MonoBehaviour
         }
     }
 
+    public void EndLevel(string status)
+    {
+        levelData.estado = status;
+        levelData.fecha_fin = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        levelData.tiempo_juego = (System.Math.Round(Time.timeSinceLevelLoad)).ToString();
+        //levelData.puntaje = contP.puntaje.ToString();
+        levelData.correctas = GlobalCounter.ObtenerAciertosTotales().ToString();
+        levelData.incorrectas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(levelData));
+        //GameStateManager.Instance.LoadScene("ActivityHub");
+    }
 }

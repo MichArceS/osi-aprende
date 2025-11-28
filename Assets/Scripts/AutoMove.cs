@@ -33,11 +33,10 @@ public class AutoMove : MonoBehaviour
     [SerializeField] private GameObject PersonajeNuevo;
 
     [Header("Audio")]
-    public AudioSource audioSource;
     public AudioClip clickSound;
     public AudioClip[] randomSounds;
-    public AudioSource audioTv;
-    public AudioSource audioMochila;
+    public AudioClip audioTv;
+    public AudioClip audioMochila;
 
     void Start()
     {
@@ -150,16 +149,15 @@ public class AutoMove : MonoBehaviour
 
     private void PlayAudio(AudioClip clip)
     {
-        if (audioSource != null && clip != null)
+        if (clip != null)
         {
-            audioSource.clip = clip;
-            audioSource.Play();
+            AudioController.Instance.PlayVoice(clip);
         }
     }
 
     private void PlayRandomSound()
     {
-        if (audioSource != null && randomSounds.Length > 0)
+        if (randomSounds.Length > 0)
         {
             AudioClip randomClip = randomSounds[Random.Range(0, randomSounds.Length)];
             PlayAudio(randomClip);
@@ -239,7 +237,7 @@ public class AutoMove : MonoBehaviour
     {
         if (position == mochilaDestination)
         {
-            PlayTheAudioCorrect(audioMochila);
+            AudioController.Instance.PlayVoice(audioMochila);
 
             if (botones.Count > 1 && botones[0] != null)
             {
@@ -260,7 +258,7 @@ public class AutoMove : MonoBehaviour
         else if (position == tvDestination)
         {
             Debug.Log("Llegaste a la televisi�n, �mira la televisi�n!");
-            PlayTheAudioCorrect(audioTv);
+            AudioController.Instance.PlayVoice(audioTv);
             if (botones.Count > 1 && botones[1] != null)
             {
                 botones[1].interactable = true;

@@ -55,8 +55,8 @@ public class MochilaCompletaScript : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip clickSound;
     public AudioClip[] randomSounds;
-    public AudioSource audioAlimentos;
-    public AudioSource audioTv;
+    public AudioClip audioAlimentos;
+    public AudioClip audioTv;
 
 
     void Start()
@@ -88,15 +88,7 @@ public class MochilaCompletaScript : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector2.zero;
-        }
-    }
-
-    private void PlayTheAudioCorrect(AudioSource audioSource)
-    {
-        if (audioSource != null)
-        {
-            audioSource.Play();
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -250,7 +242,7 @@ public class MochilaCompletaScript : MonoBehaviour
                 HandleAlimentosArrival();
                 break;
             case Destination.Tv:
-                PlayTheAudioCorrect(audioTv);
+                AudioController.Instance.PlayVoice(audioTv);
                 activateCharter(osiMochilaAtras1);
                 HandleTvArrival();
                 break;
@@ -270,7 +262,7 @@ public class MochilaCompletaScript : MonoBehaviour
         activateCharter(osiMochilaAtras);
         StartCoroutine(WaitAnimationNew(cubridorAlimentos));
         StartCoroutine(WaitForOneSecond(reactivandoPersonajes));
-        PlayTheAudioCorrect(audioAlimentos);
+        AudioController.Instance.PlayVoice(audioAlimentos);
     }
 
     private void HandleTvArrival()

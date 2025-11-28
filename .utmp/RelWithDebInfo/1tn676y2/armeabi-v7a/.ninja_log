@@ -1,0 +1,5 @@
+# ninja log v5
+6	645	7826764608916010	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	421bd209acf40f0a
+645	856	7826764610927300	C:/MIDI/osi-aprende/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1tn676y2/obj/armeabi-v7a/libswappywrapper.so	86f0d9b79a42b0ea
+11	1204	7859624926344632	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	421bd209acf40f0a
+1204	1638	7859624930632665	C:/MIDI/osi-aprende/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1tn676y2/obj/armeabi-v7a/libswappywrapper.so	86f0d9b79a42b0ea

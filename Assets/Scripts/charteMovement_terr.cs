@@ -23,15 +23,16 @@ public class charteMovement_terr : MonoBehaviour
     public Button boton;
 
     [Header("Audio")]
-    public AudioSource audioSource;
     public AudioClip clickSound;
     public AudioClip[] randomSounds;
-    public AudioSource audioSalir;
-    public AudioSource audioCamIncorrecto;
+    public AudioClip audioSalir;
+    public AudioClip audioCamIncorrecto;
 
+    public LevelMetaData levelData;
 
     void Start()
     {
+        levelData = new LevelMetaData(SessionManager.Instance.nombre_jugador, "Nivel Terremoto", "Nivel Terremoto Descripcion", "Fenomenos Naturales", "Fenomenos Naturales Historia", "Fenomenos Naturales Descripcion");
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         isMoving = false;
@@ -130,7 +131,7 @@ public class charteMovement_terr : MonoBehaviour
 
         if (clickCount <= 2)
         {
-            PlayAudio(clickSound);
+            AudioController.Instance.PlaySfx(clickSound);
         }
         else if (clickCount > 2)
         {
@@ -138,21 +139,13 @@ public class charteMovement_terr : MonoBehaviour
         }
 
     }
-    private void PlayAudio(AudioClip clip)
-    {
-        if (audioSource != null && clip != null)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-    }
 
     private void PlayRandomSound()
     {
-        if (audioSource != null && randomSounds.Length > 0)
+        if (randomSounds.Length > 0)
         {
             AudioClip randomClip = randomSounds[Random.Range(0, randomSounds.Length)];
-            PlayAudio(randomClip);
+            AudioController.Instance.PlayVoice(randomClip);
         }
     }
 
@@ -168,7 +161,7 @@ public class charteMovement_terr : MonoBehaviour
         {
             if (targetPosition == DestinationInorrecto)
             {
-                PlayTheAudioCorrect(audioCamIncorrecto);
+                AudioController.Instance.PlayVoice(audioCamIncorrecto);
                 targetPosition = DestinationEmpezando;
                 Debug.Log("Regresando al punto de inicio...");
             }
@@ -197,13 +190,13 @@ public class charteMovement_terr : MonoBehaviour
         {
             Debug.Log("Llegaste al encuentro muy bien");
 
-            PlayTheAudioCorrect(audioSalir);
+            AudioController.Instance.PlayVoice(audioSalir);
 
             if (GameManagerOsiPersonaje.Instance != null)
             {
                 GameManagerOsiPersonaje.Instance.IncrementScore();
             }
-
+            EndLevel("completado");
             StartCoroutine(LoadSceneWithDelay("recompensa1_jego2", 3f));
         }
     }
@@ -247,5 +240,17 @@ public class charteMovement_terr : MonoBehaviour
                 animator.SetFloat("Vertical", Mathf.Sign(direction.y));
             }
         }
+    }
+
+    public void EndLevel(string status)
+    {
+        levelData.estado = status;
+        levelData.fecha_fin = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        levelData.tiempo_juego = (System.Math.Round(Time.timeSinceLevelLoad)).ToString();
+        //levelData.puntaje = contP.puntaje.ToString();
+        levelData.correctas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        levelData.incorrectas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(levelData));
+        //GameStateManager.Instance.LoadScene("ActivityHub");
     }
 }

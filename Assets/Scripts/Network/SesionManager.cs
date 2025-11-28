@@ -1,86 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using System.Net;
-using System.Text;
+using UnityEngine.UI;
+using System.Runtime.Serialization.Formatters.Binary;
+using System;
 using System.IO;
 
-public class SessionManager : MonoBehaviour
+[System.Serializable]
+public class SessionManager : UnitySingleton<SessionManager>
 {
-    public static SessionManager Instance;
 
-    private string playerName;
-    private string playerAvatar;
+    public string tipo = "jugador";
+    public string avatar;
+    public string nombre_jugador;
+    public string nombre_juego = "Osi Aprende";
 
-    // URL de Producción
-    private const string SERVER_URL = "http://midiapi.espol.edu.ec";
-    private const string API_URL = SERVER_URL + "/api/v1/entrance/AlmacenarDatosController";
+    public string fecha_inicio_saludo;
+    public string fecha_inicio_nombre;
+    public string fecha_fin_nombre;
+    public string fecha_inicio_creditos = null;
+    public string fecha_fin_creditos = null;
 
-    // URL de Desarrollo
-    // private const string SERVER_URL = "http://test.midiapi.espol.edu.ec";
-    // private const string API_URL = SERVER_URL + "/api/v1/entrance/AlmacenarDatosController";
+    private string V;
 
-    private void Awake()
+    public void SetPlayerInfo(string avatar, string nombre_jugador, string nombre_juego)
     {
-        if (Instance == null)
+        string school = GameStateManager.Instance.GetGlobalSettings().school;
+        string room = GameStateManager.Instance.GetGlobalSettings().room;
+
+        if (school == "" || room == "")
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            V = "";
         }
         else
         {
-            Destroy(gameObject);
+            V = "-";
         }
-    }
-
-    public void SetPlayerInfo(string avatar, string name)
-    {
-        playerAvatar = avatar;
-        playerName = name;
-
-        SendSessionData();
-    }
-
-    private void SendSessionData()
-    {
-        SessionData session = new SessionData()
-        {
-            Avatar = playerAvatar,
-            Nombre = playerName
-        };
-
-        string json = JsonUtility.ToJson(session);
-
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(API_URL);
-        request.Method = "POST";
-        request.ContentType = "application/json";
-
-        byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
-        request.ContentLength = jsonBytes.Length;
-
-        using (Stream dataStream = request.GetRequestStream())
-        {
-            dataStream.Write(jsonBytes, 0, jsonBytes.Length);
-        }
-
-        try
-        {
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            {
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    Debug.Log("Sesión enviada exitosamente.");
-                }
-            }
-        }
-        catch (WebException e)
-        {
-            Debug.LogError("Error enviando sesión: " + e.Message);
-        }
+        this.avatar = avatar;
+        this.nombre_jugador = school + V + room + V + nombre_jugador;
+        this.nombre_juego = nombre_juego;
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(this));
     }
 }
 
-[System.Serializable]
-public class SessionData
-{
-    public string Avatar;
-    public string Nombre;
-}

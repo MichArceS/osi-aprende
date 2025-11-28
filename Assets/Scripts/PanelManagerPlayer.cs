@@ -24,8 +24,13 @@ public class PanelManagerPlayer : MonoBehaviour
     public AudioClip buttonEffect;
     public AudioClip music;
 
+    public LevelMetaData levelData;
+    public string[] metaLevels;
+    public double time;
+
     void Start()
     {
+        time = 0;
         AudioController.Instance.PlayMusic(music);
         aciertosPorPanel = new int[panels.Length];
         for (int i = 0; i < aciertosPorPanel.Length; i++)
@@ -101,6 +106,7 @@ public class PanelManagerPlayer : MonoBehaviour
         int randomIndex = Random.Range(0, availablePanelIndices.Count);
         int panelIndex = availablePanelIndices[randomIndex];
         panels[panelIndex].SetActive(true);
+        levelData = new LevelMetaData(SessionManager.Instance.nombre_jugador, "Nivel " + metaLevels[panelIndex], "Nivel " + metaLevels[panelIndex] + " Descripcion", "Clima", "Clima Historia", "Clima Descripcion");
         currentPanelIndex = panelIndex;
 
         availablePanelIndices.RemoveAt(randomIndex);
@@ -232,11 +238,25 @@ public class PanelManagerPlayer : MonoBehaviour
         panelsRecompensas[panelIndex].SetActive(true);
         yield return new WaitForSeconds(rewardPanelDuration);
         panelsRecompensas[panelIndex].SetActive(false);
+        EndLevel("completado");
         ShowNextPanel();
     }
 
     public void HideAudioManage(bool b)
     {
         AudioController.Instance.HidePanel(b);
+    }
+
+    public void EndLevel(string status)
+    {
+        levelData.estado = status;
+        levelData.fecha_fin = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        levelData.tiempo_juego = (System.Math.Round(Time.timeSinceLevelLoad) - time).ToString();
+        time = System.Math.Round(Time.timeSinceLevelLoad);
+        //levelData.puntaje = contP.puntaje.ToString();
+        levelData.correctas = GlobalCounter.ObtenerAciertosTotales().ToString();
+        levelData.incorrectas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(levelData));
+        //GameStateManager.Instance.LoadScene("ActivityHub");
     }
 }

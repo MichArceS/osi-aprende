@@ -7,32 +7,42 @@ using UnityEngine.UI;
 public class PanelManagerPlayerLugares : MonoBehaviour
 {
     public GameObject[] panels;
+    public AudioClip[] audioClipPanels;
+
     public GameObject[] panelsContent;
+
     public GameObject[] panelsRecompensas;
+    public AudioClip audioClipRecompensa;
+
     public GameObject additionalPanel;
-    public float delayBeforeNextPanel = 3f;
+    public float delayBeforeNextPanel = 5f;
     public float rewardPanelDuration = 3f;
     public string sceneOnBackButton;
-    public AudioSource buttonClickAudio;
+
+    public AudioClip buttonClickAudio;
 
     private List<int> availablePanelIndices;
     private Stack<int> panelHistory;
     private int currentPanelIndex = -1;
     private int[] aciertosPorPanel;
     private bool allPanelsCompleted = false;
-    private AudioSource currentAudioSource;
+    
     public AudioClip[] audiosLugares;
-    public AudioSource correctAudio;
-    private AudioSource audioRepetir;
+    public AudioClip correctAudio;
+    public AudioClip correctSFX;
+    public AudioClip incorrectSFX;
+
     public RuntimeAnimatorController correctAnimator;
     public RuntimeAnimatorController wrongAnimator;
 
     public Sprite[] optionImages;
 
+    public LevelMetaData levelData;
     private bool isPlayingAudio = false;
 
     void Start()
     {
+        levelData = new LevelMetaData(SessionManager.Instance.nombre_jugador, "Nivel Lugares Publicos", "Nivel Lugares Publicos Descripcion", "Lugares Publicos", "Lugares Publicos Historia", "Lugares Publicos Descripcion");
         aciertosPorPanel = new int[panels.Length];
         for (int i = 0; i < aciertosPorPanel.Length; i++)
         {
@@ -45,24 +55,13 @@ public class PanelManagerPlayerLugares : MonoBehaviour
 
     public void PlayButtonClickAudio()
     {
-        if (buttonClickAudio != null)
-        {
-            buttonClickAudio.Play();
-        }
+        AudioController.Instance.PlaySfx(buttonClickAudio);
     }
 
     public void RepeatAudio()
     {
         PlayButtonClickAudio();
-        if (currentAudioSource != null)
-        {
-            currentAudioSource.Stop();
-            currentAudioSource.Play();
-        }
-    }
-
-    void OnDestroy()
-    {
+        AudioController.Instance.ReplayVoice();
     }
 
     private void InitializePanelIndices()
@@ -75,39 +74,17 @@ public class PanelManagerPlayerLugares : MonoBehaviour
         allPanelsCompleted = false;
     }
 
-    public void SetCurrentAudioSource(AudioSource audioSource)
-    {
-        currentAudioSource = audioSource;
-    }
-
-    public void SetCurrentAudioSourceAndPlay(AudioSource audioSource)
-    {
-        SetCurrentAudioSource(audioSource);
-        audioSource.Play();
-    }
-
     private IEnumerator FindAudioSourceInPanel(int panelIndex)
     {
         yield return new WaitForSeconds(0.1f);
-        AudioSource[] audioSources = panels[panelIndex].GetComponentsInChildren<AudioSource>();
-        audioRepetir = null;
-        if (audioSources.Length > 0)
-        {
-            audioRepetir = audioSources[0];
-        }
-        if (audioRepetir != null)
-        {
-            SetCurrentAudioSource(audioRepetir);
-            audioRepetir.Play();
-        }
+        AudioClip audioClip = audioClipPanels[panelIndex];
+        AudioController.Instance.PlayVoice(audioClip);
     }
 
     public void PlayCurrentAudio()
     {
-        if (audioRepetir != null)
-        {
-            audioRepetir.Play();
-        }
+        PlayButtonClickAudio();
+        AudioController.Instance.ReplayVoice();
     }
 
 
@@ -203,7 +180,7 @@ public class PanelManagerPlayerLugares : MonoBehaviour
                 }
             }
         }
-        correctAudio.clip = audioCorrect;
+        correctAudio = audioCorrect;
         currentPanelIndex = panelIndex;
         panelHistory.Push(panelIndex);
         GlobalCounter.ResetCounters();
@@ -216,11 +193,11 @@ public class PanelManagerPlayerLugares : MonoBehaviour
         if (isPlayingAudio) yield break;
         isPlayingAudio = true;
 
-        if (correctAudio != null && correctAudio.clip != null)
+        if (correctAudio != null && correctAudio != null)
         {
-            correctAudio.Play();
+            AudioController.Instance.PlayVoice(correctAudio);
             Debug.Log("Playing correct audio", correctAudio);
-            yield return new WaitForSeconds(correctAudio.clip.length);
+            yield return new WaitForSeconds(correctAudio.length);
         }
         else
         {
@@ -233,7 +210,7 @@ public class PanelManagerPlayerLugares : MonoBehaviour
 
     private void HandleCorrectAnswer()
     {
-        PlayButtonClickAudio();
+        AudioController.Instance.PlaySfx(correctSFX);
         Animator panelAnimator = panels[currentPanelIndex].GetComponent<Animator>();
         if (panelAnimator != null)
         {
@@ -253,7 +230,7 @@ public class PanelManagerPlayerLugares : MonoBehaviour
 
     private void HandleWrongAnswer()
     {
-        PlayButtonClickAudio();
+        AudioController.Instance.PlaySfx(incorrectSFX);
         GlobalCounter.IncrementarNoAciertos();
     }
 
@@ -368,14 +345,26 @@ public class PanelManagerPlayerLugares : MonoBehaviour
     private IEnumerator ShowRewardPanel(int panelIndex)
     {
         panelsRecompensas[0].SetActive(true);
-        AudioSource[] audios = panelsRecompensas[0].GetComponentsInChildren<AudioSource>();
-        audios[0].Play();
-        yield return new WaitUntil(() => !audios[0].isPlaying);
+        AudioController.Instance.PlayVoice(audioClipRecompensa);
+        EndLevel("completado");
+        yield return new WaitUntil(() => !AudioController.Instance.GetVoiceSource().isPlaying);
         yield return new WaitForSeconds(rewardPanelDuration);
 
         if (additionalPanel != null)
         {
             additionalPanel.SetActive(true);
         }
+    }
+
+    public void EndLevel(string status)
+    {
+        levelData.estado = status;
+        levelData.fecha_fin = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        levelData.tiempo_juego = (System.Math.Round(Time.timeSinceLevelLoad)).ToString();
+        //levelData.puntaje = contP.puntaje.ToString();
+        levelData.correctas = GlobalCounter.ObtenerAciertosTotales().ToString();
+        levelData.incorrectas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(levelData));
+        //GameStateManager.Instance.LoadScene("ActivityHub");
     }
 }

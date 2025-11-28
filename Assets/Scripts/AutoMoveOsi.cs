@@ -13,12 +13,11 @@ public class AutoMoveOsi : MonoBehaviour
     private bool pasarSiguente;
 
     [Header("Audio")]
-    public AudioSource audioSource;
     public AudioClip clickSound;
     public AudioClip[] randomSounds;
-    public AudioSource audioMesa;
-    public AudioSource audioMochila;
-    public AudioSource audioPuerta;
+    public AudioClip audioMesa;
+    public AudioClip audioMochila;
+    public AudioClip audioPuerta;
 
     private bool isMoving = false;
     private int currentWaypointIndex = 0;
@@ -93,7 +92,7 @@ public class AutoMoveOsi : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -142,7 +141,7 @@ public class AutoMoveOsi : MonoBehaviour
 
         if (clickCount <= 2)
         {
-            PlayAudio(clickSound);
+            AudioController.Instance.PlaySfx(clickSound);
         }
         else if (clickCount > 2)
         {
@@ -150,29 +149,13 @@ public class AutoMoveOsi : MonoBehaviour
         }
 
     }
-    private void PlayAudio(AudioClip clip)
-    {
-        if (audioSource != null && clip != null)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-    }
 
     private void PlayRandomSound()
     {
-        if (audioSource != null && randomSounds.Length > 0)
+        if (randomSounds.Length > 0)
         {
             AudioClip randomClip = randomSounds[Random.Range(0, randomSounds.Length)];
-            PlayAudio(randomClip);
-        }
-    }
-
-    private void PlayTheAudioCorrect(AudioSource audioSource)
-    {
-        if (audioSource != null)
-        {
-            audioSource.Play();
+            AudioController.Instance.PlayVoice(randomClip);
         }
     }
 
@@ -266,7 +249,7 @@ public class AutoMoveOsi : MonoBehaviour
             case Destination.Mesa:
                 //Debug.Log("�Llegaste a la mesa! Ponte debajo de ella.");
                 StartCoroutine(WaitOsi(ReactivateNewCharacter));
-                PlayTheAudioCorrect(audioMesa);
+                AudioController.Instance.PlayVoice(audioMesa);
                 pasarSiguente = true;
                 break;
             case Destination.Mochila:
@@ -274,7 +257,7 @@ public class AutoMoveOsi : MonoBehaviour
                 break;
             case Destination.Puerta:
                 //Debug.LogWarning("�Peligro! Has llegado a la puerta.");
-                PlayTheAudioCorrect(audioPuerta);
+                AudioController.Instance.PlayVoice(audioPuerta);
                 break;
             default:
                 break;
@@ -290,7 +273,7 @@ public class AutoMoveOsi : MonoBehaviour
         {
             //Debug.Log("�Llegaste a recoger la mochila! Rec�gela.");
             StartCoroutine(WaitOsi(ActivateOsiMochila));
-            PlayTheAudioCorrect(audioMochila);
+            AudioController.Instance.PlayVoice(audioMochila);
         }
         else
         {

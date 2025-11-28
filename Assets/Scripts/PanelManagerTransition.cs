@@ -7,10 +7,9 @@ public class PanelManagerTransition : MonoBehaviour
     public GameObject panel2;
     public GameObject panel3;
     public GameObject panel4;
-    public AudioSource audioButton1;
-    public AudioSource audioButton2;
-    public AudioSource audioButton3;
-    public AudioSource audioInstrucion;
+    public AudioClip audioButton1;
+    public AudioClip audioButton2;
+    public AudioClip audioButton3;
 
     public Animator animator1;
     public Animator animator2;
@@ -21,7 +20,6 @@ public class PanelManagerTransition : MonoBehaviour
     public float waitTimeBeforePanel3Transition = 0.5f;
     public float transitionDuration = 1f;
 
-    private AudioSource activeAudioSource;
     private bool isInInstructionPanel = false;
     private bool isSkipping = false;
     private int currentSceneIndex = 0;
@@ -42,18 +40,19 @@ public class PanelManagerTransition : MonoBehaviour
         }
     }
 
+    public void PlayButtonSound(AudioClip audio)
+    {
+        AudioController.Instance.PlayVoice(audio);
+    }
+
     private void SkipToNextScene()
     {
         isSkipping = true;
 
         // Detener el audio actual
-        if (activeAudioSource != null && activeAudioSource.isPlaying)
+        if (AudioController.Instance.GetVoiceSource().isPlaying)
         {
-            activeAudioSource.Stop();
-        }
-        if (audioInstrucion != null && audioInstrucion.isPlaying)
-        {
-            audioInstrucion.Stop();
+            AudioController.Instance.StopVoice();
         }
 
         // Detener la corrutina actual si existe
@@ -99,20 +98,14 @@ public class PanelManagerTransition : MonoBehaviour
         switch (buttonIndex)
         {
             case 1:
-                activeAudioSource = audioButton1;
+                AudioController.Instance.PlayVoice(audioButton1);
                 break;
             case 2:
-                activeAudioSource = audioButton2;
+                AudioController.Instance.PlayVoice(audioButton2);
                 break;
             case 3:
-                activeAudioSource = audioButton3;
+                AudioController.Instance.PlayVoice(audioButton3);
                 break;
-        }
-
-        // Reproduce el audio
-        if (activeAudioSource != null)
-        {
-            activeAudioSource.Play();
         }
 
         currentTransitionCoroutine = StartCoroutine(HandlePanelTransition(buttonIndex - 1));
@@ -147,12 +140,6 @@ public class PanelManagerTransition : MonoBehaviour
         SetCanvasGroupAlpha(canvasGroup4, 1f);
         isInInstructionPanel = true; // Indicamos que estamos en el panel de instrucciones
 
-        // Reproduce el audio
-        if (audioInstrucion != null && !isSkipping)
-        {
-            activeAudioSource = audioInstrucion;
-            audioInstrucion.Play();
-        }
         if (!isSkipping)
         {
             yield return StartCoroutine(PlayAnimations());

@@ -30,11 +30,10 @@ public class CharacterMovementOsiMochila : MonoBehaviour
 
 
     [Header("Audio")]
-    public AudioSource audioSource;
     public AudioClip clickSound;
     public AudioClip[] randomSounds;
-    public AudioSource audioMama;
-    public AudioSource audioSalida;
+    public AudioClip audioMama;
+    public AudioClip audioSalida;
 
     private bool isAtMama = false;
 
@@ -74,20 +73,20 @@ public class CharacterMovementOsiMochila : MonoBehaviour
         {
             Vector2 target = waypoints[currentWaypointIndex];
             Vector2 direction = (target - rb.position).normalized;
-            rb.velocity = direction * speed;
+            rb.linearVelocity = direction * speed;
             animator.SetFloat("Horizontal", direction.x);
             animator.SetFloat("Vertical", direction.y);
             animator.SetBool("isWalking", true);
             if (Vector2.Distance(rb.position, target) < 0.1f)
             {
-                rb.velocity = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
                 currentWaypointIndex++;
                 CheckArrival();
             }
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
         }
     }
@@ -99,7 +98,7 @@ public class CharacterMovementOsiMochila : MonoBehaviour
             if (waypoints == mamaWaypoints)
             {
                 isAtMama = true;
-                PlayTheAudioCorrect(audioMama);
+                AudioController.Instance.PlayVoice(audioMama);
                 if (botones.Count > 0 && botones[0] != null)
                 {
                     botones[0].interactable = true;
@@ -158,21 +157,13 @@ public class CharacterMovementOsiMochila : MonoBehaviour
         }
     }
 
-    private void PlayTheAudioCorrect(AudioSource audioSource)
-    {
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
-    }
-
     private void PlayToAudioClicIncorrect()
     {
         clickCount++;
 
         if (clickCount <= 2)
         {
-            PlayAudio(clickSound);
+            AudioController.Instance.PlaySfx(clickSound);
         }
         else if (clickCount > 2)
         {
@@ -180,24 +171,14 @@ public class CharacterMovementOsiMochila : MonoBehaviour
         }
     }
 
-    private void PlayAudio(AudioClip clip)
-    {
-        if (audioSource != null && clip != null)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-    }
-
     private void PlayRandomSound()
     {
-        if (audioSource != null && randomSounds.Length > 0)
+        if (randomSounds.Length > 0)
         {
             AudioClip randomClip = randomSounds[Random.Range(0, randomSounds.Length)];
-            PlayAudio(randomClip);
+            AudioController.Instance.PlayVoice(randomClip);
         }
     }
-
 
     public void ActivateButton()
     {
@@ -236,7 +217,7 @@ public class CharacterMovementOsiMochila : MonoBehaviour
         if (hasReachedMama && hasReachedCharacter)
         {
             Debug.Log("�Ambos han llegado a sus destinos!");
-            PlayTheAudioCorrect(audioSalida);
+            AudioController.Instance.PlayVoice(audioSalida);
             FadeOutCharacter(animator);
             FadeOutCharacter(mamaAnimator);
             ActivateNewCharacters();

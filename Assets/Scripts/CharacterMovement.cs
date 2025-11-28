@@ -35,17 +35,18 @@ public class CharacterMovement : MonoBehaviour
     private Animator newCharacterAnimator;
 
     [Header("Audio")]
-    public AudioSource audioSource;
     public AudioClip clickSound;
     public AudioClip[] randomSounds;
-    public AudioSource audioWalkCorrect1;
-    public AudioSource audioWalkCorrect2;
-    public AudioSource audioWalkInCorrect1;
-    public AudioSource audioWalkInCorrect2;
-    public AudioSource audioWalkInCorrect3;
+    public AudioClip audioWalkCorrect1;
+    public AudioClip audioWalkCorrect2;
+    public AudioClip audioWalkInCorrect1;
+    public AudioClip audioWalkInCorrect2;
+    public AudioClip audioWalkInCorrect3;
 
+    public LevelMetaData levelData;
     void Start()
     {
+        levelData = new LevelMetaData(SessionManager.Instance.nombre_jugador, "Nivel Inundacion", "Nivel Inundacion Descripcion", "Fenomenos Naturales", "Fenomenos Naturales Historia", "Fenomenos Naturales Descripcion");
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         isMoving = false;
@@ -124,7 +125,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (clickCount <= 2)
         {
-            PlayAudio(clickSound);
+            AudioController.Instance.PlaySfx(clickSound);
         }
         else if (clickCount > 2)
         {
@@ -133,21 +134,12 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-    private void PlayAudio(AudioClip clip)
-    {
-        if (audioSource != null && clip != null)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-    }
-
     private void PlayRandomSound()
     {
-        if (audioSource != null && randomSounds.Length > 0)
+        if (randomSounds.Length > 0)
         {
             AudioClip randomClip = randomSounds[Random.Range(0, randomSounds.Length)];
-            PlayAudio(randomClip);
+            AudioController.Instance.PlayVoice(randomClip);
         }
     }
 
@@ -170,7 +162,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 botones[0].interactable = true;
             }
-            PlayTheAudioCorrect(audioWalkCorrect1);
+            AudioController.Instance.PlayVoice(audioWalkCorrect1);
         }
         else if (hit.CompareTag("caminoIncorrecto"))
         {
@@ -183,7 +175,7 @@ public class CharacterMovement : MonoBehaviour
             currentPath = "caminoIncorrecto";
             Debug.Log("Dirigi�ndose a camino incorrecto");
             isMoving = true;
-            PlayTheAudioCorrect(audioWalkInCorrect1);
+            AudioController.Instance.PlayVoice(audioWalkInCorrect1);
         }
         else if (hit.CompareTag("empezandoCaminar"))
         {
@@ -220,7 +212,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 botones[1].interactable = true;
             }
-            PlayTheAudioCorrect(audioWalkCorrect1);
+            AudioController.Instance.PlayVoice(audioWalkCorrect1);
         }
         else if (hit.CompareTag("segundoCaminoIncorrecto"))
         {
@@ -233,7 +225,7 @@ public class CharacterMovement : MonoBehaviour
             currentPath = "segundoCaminoIncorrecto";
             Debug.Log("Est� pensando pasar por el puente");
             isMoving = true;
-            PlayTheAudioCorrect(audioWalkInCorrect2);
+            AudioController.Instance.PlayVoice(audioWalkInCorrect2);
         }
         else if (hit.CompareTag("Salir"))
         {
@@ -248,7 +240,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 botones[2].interactable = true;
             }
-            PlayTheAudioCorrect(audioWalkCorrect2);
+            AudioController.Instance.PlayVoice(audioWalkInCorrect2);
         }
         else if (hit.CompareTag("tercerCaminoIncorrecto"))
         {
@@ -261,7 +253,7 @@ public class CharacterMovement : MonoBehaviour
             currentPath = "tercerCaminoIncorrecto";
             Debug.Log("Camino Incorrecto");
             isMoving = true;
-            PlayTheAudioCorrect(audioWalkInCorrect3);
+            AudioController.Instance.PlayVoice(audioWalkInCorrect3);
         }
         else
         {
@@ -345,6 +337,7 @@ public class CharacterMovement : MonoBehaviour
         }
 
         Debug.Log("Terminado");
+        EndLevel("completado");
 
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("recompensas_juego2");
     }
@@ -426,5 +419,16 @@ public class CharacterMovement : MonoBehaviour
 
         // Ensure the walking animation is triggered
         animator.SetBool("isWalking", true);
+    }
+    public void EndLevel(string status)
+    {
+        levelData.estado = status;
+        levelData.fecha_fin = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        levelData.tiempo_juego = (System.Math.Round(Time.timeSinceLevelLoad)).ToString();
+        //levelData.puntaje = contP.puntaje.ToString();
+        levelData.correctas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        levelData.incorrectas = GlobalCounter.ObtenerNoAciertosTotales().ToString();
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(levelData));
+        //GameStateManager.Instance.LoadScene("ActivityHub");
     }
 }

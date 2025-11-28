@@ -41,10 +41,9 @@ public class controllerOsiErupcion : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera camara2;
 
     [Header("Audio")]
-    public AudioSource audioSource;
     public AudioClip clickSound;
     public AudioClip[] randomSounds;
-    public AudioSource audioMascarilla;
+    public AudioClip audioMascarilla;
 
     void Start()
     {
@@ -85,7 +84,7 @@ public class controllerOsiErupcion : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -103,7 +102,7 @@ public class controllerOsiErupcion : MonoBehaviour
 
         if (clickCount <= 2)
         {
-            PlayAudio(clickSound);
+            AudioController.Instance.PlaySfx(clickSound);
         }
         else if (clickCount > 2)
         {
@@ -114,16 +113,15 @@ public class controllerOsiErupcion : MonoBehaviour
 
     private void PlayAudio(AudioClip clip)
     {
-        if (audioSource != null && clip != null)
+        if (clip != null)
         {
-            audioSource.clip = clip;
-            audioSource.Play();
+            AudioController.Instance.PlayVoice(clip);
         }
     }
 
     private void PlayRandomSound()
     {
-        if (audioSource != null && randomSounds.Length > 0)
+        if (randomSounds.Length > 0)
         {
             AudioClip randomClip = randomSounds[Random.Range(0, randomSounds.Length)];
             PlayAudio(randomClip);
@@ -244,7 +242,7 @@ public class controllerOsiErupcion : MonoBehaviour
         switch (currentDestination)
         {
             case Destination.Mascarilla:
-                PlayTheAudioCorrect(audioMascarilla);
+                AudioController.Instance.PlayVoice(audioMascarilla);
                 StartCoroutine(WaitOsi(ReactiveToCharter));
                 break;
             case Destination.Mochila:
