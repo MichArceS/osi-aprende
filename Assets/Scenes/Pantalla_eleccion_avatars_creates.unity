@@ -216,9 +216,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 223742012}
-        m_TargetAssemblyTypeName: CambioEscenaPorIndice, Assembly-CSharp
-        m_MethodName: CambiarEscenaPorIndice
+      - m_Target: {fileID: 600902581}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -432,6 +432,8 @@ MonoBehaviour:
   prefabJugador: {fileID: 7323485206017926153, guid: bf41a26cf98e10442ab6e1b90eb02f87, type: 3}
   contenedorJugadores: {fileID: 345529149}
   nombreEscenaACargar: Pantalla_Actividades
+  playerName: 
+  selectedAvatarName: 
 --- !u!1 &538687073
 GameObject:
   m_ObjectHideFlags: 0

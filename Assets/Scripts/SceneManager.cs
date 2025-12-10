@@ -25,4 +25,9 @@ public class SceneManager : MonoBehaviour
         yield return new WaitForSeconds(AudioController.Instance.GetVoice().length + 0.1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

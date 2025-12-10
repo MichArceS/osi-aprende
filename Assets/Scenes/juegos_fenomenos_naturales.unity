@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 181747673}
   - component: {fileID: 181747672}
   - component: {fileID: 181747671}
-  - component: {fileID: 181747674}
   m_Layer: 5
   m_Name: btnVolver
   m_TagString: Untagged
@@ -202,9 +201,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 181747674}
-        m_TargetAssemblyTypeName: CambioEscenaPorIndice, Assembly-CSharp
-        m_MethodName: CambiarEscenaPorIndice
+      - m_Target: {fileID: 197280403}
+        m_TargetAssemblyTypeName: MainSceneController, Assembly-CSharp
+        m_MethodName: PlayButtonEffect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -212,6 +211,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 197280402}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: OnChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pantalla_select_fenomenos
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &181747672
@@ -252,20 +263,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181747669}
   m_CullTransparentMesh: 1
---- !u!114 &181747674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181747669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363424f08fa64974789d43d215e69031, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indiceEscena: 7
-  audioSource: {fileID: 0}
 --- !u!1 &197280399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,7 +1195,6 @@ GameObject:
   - component: {fileID: 827145652}
   - component: {fileID: 827145651}
   - component: {fileID: 827145650}
-  - component: {fileID: 827145649}
   m_Layer: 5
   m_Name: btnCerrar
   m_TagString: Untagged
@@ -1225,20 +1221,6 @@ RectTransform:
   m_AnchoredPosition: {x: 180, y: -75}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &827145649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827145647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363424f08fa64974789d43d215e69031, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indiceEscena: 0
-  audioSource: {fileID: 0}
 --- !u!114 &827145650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,9 +1265,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 827145649}
-        m_TargetAssemblyTypeName: CambioEscenaPorIndice, Assembly-CSharp
-        m_MethodName: CambiarEscenaPorIndice
+      - m_Target: {fileID: 197280402}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
