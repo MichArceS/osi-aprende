@@ -9,4 +9,9 @@ public class AudioSceneCaller : MonoBehaviour
             HabitacionAudioManager.instance.ReproducirAudioUnaVez();
         }
     }
+
+    public void PlayAudio()
+    {
+        HabitacionAudioManager.instance.ReproducirAudioUnaVez();
+    }
 }

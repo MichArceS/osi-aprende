@@ -3,8 +3,9 @@ using UnityEngine;
 public class HabitacionAudioManager : MonoBehaviour
 {
     public static HabitacionAudioManager instance;
-    public AudioClip audioClip;    // Asigna aquí el audio que quieres reproducir
-    private AudioSource audioSource;
+
+    public AudioClip audioClip1;
+    public AudioClip audioClip2;
 
     private bool audioYaReproducido = false;
 
@@ -15,7 +16,6 @@ public class HabitacionAudioManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            audioSource = gameObject.AddComponent<AudioSource>();
         }
         else
         {
@@ -23,13 +23,14 @@ public class HabitacionAudioManager : MonoBehaviour
         }
     }
 
+    public void ReproducirPrimerAudio()
+    {
+        AudioController.Instance.PlayVoice(audioClip1);
+    }
+
     public void ReproducirAudioUnaVez()
     {
-        if (!audioYaReproducido && audioClip != null)
-        {
-            audioSource.clip = audioClip;
-            audioSource.Play();
-            audioYaReproducido = true;
-        }
+        AudioController.Instance.PlayVoice(audioClip2);
+        audioYaReproducido = true;
     }
 }
