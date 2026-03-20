@@ -1,0 +1,2106 @@
+fileFormatVersion: 2
+guid: c953cde2970167242b02c42a97b3ef2e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3670241566257511380
+    second: gotas de la regadera_00000_0
+  - first:
+      213: -1394583102721040354
+    second: gotas de la regadera_00000_1
+  - first:
+      213: 5228265048583673777
+    second: gotas de la regadera_00000_2
+  - first:
+      213: 2680563646836593273
+    second: gotas de la regadera_00000_3
+  - first:
+      213: 7025603068679019026
+    second: gotas de la regadera_00000_4
+  - first:
+      213: 414893574191202841
+    second: gotas de la regadera_00000_5
+  - first:
+      213: 7591510885633491147
+    second: gotas de la regadera_00000_6
+  - first:
+      213: 7157295360862177874
+    second: gotas de la regadera_00000_7
+  - first:
+      213: -7218282667187704547
+    second: gotas de la regadera_00000_8
+  - first:
+      213: -461491259577635552
+    second: gotas de la regadera_00000_9
+  - first:
+      213: -5997668806015164468
+    second: gotas de la regadera_00000_10
+  - first:
+      213: 2910507376472081004
+    second: gotas de la regadera_00000_11
+  - first:
+      213: -8128875105754476717
+    second: gotas de la regadera_00000_12
+  - first:
+      213: -3646013347133185112
+    second: gotas de la regadera_00000_13
+  - first:
+      213: 9044872484740794788
+    second: gotas de la regadera_00000_14
+  - first:
+      213: 8570632463319394480
+    second: gotas de la regadera_00000_15
+  - first:
+      213: 4243718142977746469
+    second: gotas de la regadera_00000_16
+  - first:
+      213: 8571784976673050268
+    second: gotas de la regadera_00000_17
+  - first:
+      213: -5592707737834522349
+    second: gotas de la regadera_00000_18
+  - first:
+      213: -3615266849129874322
+    second: gotas de la regadera_00000_19
+  - first:
+      213: -6501723709913141053
+    second: gotas de la regadera_00000_20
+  - first:
+      213: -6351054923139311570
+    second: gotas de la regadera_00000_21
+  - first:
+      213: 8143522825173045709
+    second: gotas de la regadera_00000_22
+  - first:
+      213: 2870605534653506205
+    second: gotas de la regadera_00000_23
+  - first:
+      213: 7931400303753552987
+    second: gotas de la regadera_00000_24
+  - first:
+      213: 5375820682667879910
+    second: gotas de la regadera_00000_25
+  - first:
+      213: -8450558023777079442
+    second: gotas de la regadera_00000_26
+  - first:
+      213: 2887191503567877291
+    second: gotas de la regadera_00000_27
+  - first:
+      213: -476913632158362621
+    second: gotas de la regadera_00000_28
+  - first:
+      213: 2920493862115265922
+    second: gotas de la regadera_00000_29
+  - first:
+      213: 2533081987613848610
+    second: gotas de la regadera_00000_30
+  - first:
+      213: 2097644363293239056
+    second: gotas de la regadera_00000_31
+  - first:
+      213: -4169826560041571653
+    second: gotas de la regadera_00000_32
+  - first:
+      213: 4222956913614727723
+    second: gotas de la regadera_00000_33
+  - first:
+      213: -3448925250996858095
+    second: gotas de la regadera_00000_34
+  - first:
+      213: -8760482879502796846
+    second: gotas de la regadera_00000_35
+  - first:
+      213: 8552575300665075604
+    second: gotas de la regadera_00000_36
+  - first:
+      213: 1392016024036296673
+    second: gotas de la regadera_00000_37
+  - first:
+      213: 8433698529510057808
+    second: gotas de la regadera_00000_38
+  - first:
+      213: 8725610587612305573
+    second: gotas de la regadera_00000_39
+  - first:
+      213: -8854676356289958739
+    second: gotas de la regadera_00000_40
+  - first:
+      213: -149363054160522676
+    second: gotas de la regadera_00000_41
+  - first:
+      213: 8691079244146885691
+    second: gotas de la regadera_00000_42
+  - first:
+      213: -833793451225710963
+    second: gotas de la regadera_00000_43
+  - first:
+      213: 6149877512143528407
+    second: gotas de la regadera_00000_44
+  - first:
+      213: 3424235641952700614
+    second: gotas de la regadera_00000_45
+  - first:
+      213: 801956553985954306
+    second: gotas de la regadera_00000_46
+  - first:
+      213: 6408793618009635339
+    second: gotas de la regadera_00000_47
+  - first:
+      213: 2931197226953946953
+    second: gotas de la regadera_00000_48
+  - first:
+      213: -4546804696922561981
+    second: gotas de la regadera_00000_49
+  - first:
+      213: 6289143395613978106
+    second: gotas de la regadera_00000_50
+  - first:
+      213: -4709363770216940359
+    second: gotas de la regadera_00000_51
+  - first:
+      213: -31742349922694613
+    second: gotas de la regadera_00000_52
+  - first:
+      213: 2002299198918154171
+    second: gotas de la regadera_00000_53
+  - first:
+      213: -7852474663669835467
+    second: gotas de la regadera_00000_54
+  - first:
+      213: -4754844850061323048
+    second: gotas de la regadera_00000_55
+  - first:
+      213: -4265308978144558799
+    second: gotas de la regadera_00000_56
+  - first:
+      213: -2250369028830412339
+    second: gotas de la regadera_00000_57
+  - first:
+      213: -3949944435241640576
+    second: gotas de la regadera_00000_58
+  - first:
+      213: 101822245584603594
+    second: gotas de la regadera_00000_59
+  - first:
+      213: -3728201844361895850
+    second: gotas de la regadera_00000_60
+  - first:
+      213: 2749786552276781740
+    second: gotas de la regadera_00000_61
+  - first:
+      213: -1284143088920768981
+    second: gotas de la regadera_00000_62
+  - first:
+      213: -2721603027053210454
+    second: gotas de la regadera_00000_63
+  - first:
+      213: 1869817961485734917
+    second: gotas de la regadera_00000_64
+  - first:
+      213: -234124690874252154
+    second: gotas de la regadera_00000_65
+  - first:
+      213: -8735616077432361217
+    second: gotas de la regadera_00000_66
+  - first:
+      213: 8084306055728517728
+    second: gotas de la regadera_00000_67
+  - first:
+      213: 8604889231652915022
+    second: gotas de la regadera_00000_68
+  - first:
+      213: -1181505178666554089
+    second: gotas de la regadera_00000_69
+  - first:
+      213: 3742837273764774666
+    second: gotas de la regadera_00000_70
+  - first:
+      213: 22393237535560032
+    second: gotas de la regadera_00000_71
+  - first:
+      213: -2490147257600151530
+    second: gotas de la regadera_00000_72
+  - first:
+      213: -2630971017215640917
+    second: gotas de la regadera_00000_73
+  - first:
+      213: 7381038661652002454
+    second: gotas de la regadera_00000_74
+  - first:
+      213: 8377830473567245914
+    second: gotas de la regadera_00000_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 659
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbf6ac32415fe230800000000000000
+      internalID: 3670241566257511380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 660
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10ec809e0275ace0800000000000000
+      internalID: -1394583102721040354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 656
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b79b647c578e8840800000000000000
+      internalID: 5228265048583673777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 642
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 972558f3f66433520800000000000000
+      internalID: 2680563646836593273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ad18984c4ff7160800000000000000
+      internalID: 7025603068679019026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 622
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 912424de18ff1c500800000000000000
+      internalID: 414893574191202841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 640
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc002becde67a5960800000000000000
+      internalID: 7591510885633491147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 635
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25acdb0b532d35360800000000000000
+      internalID: 7157295360862177874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 622
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1deae5882283db90800000000000000
+      internalID: -7218282667187704547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_9
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 618
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d6dedf4247899f0800000000000000
+      internalID: -461491259577635552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 620
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf56097ffff3cca0800000000000000
+      internalID: -5997668806015164468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_11
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 613
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62c5c2d903346820800000000000000
+      internalID: 2910507376472081004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 586
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f0df1f82f603f80800000000000000
+      internalID: -8128875105754476717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_13
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 586
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a32bcd9d22c66dc0800000000000000
+      internalID: -3646013347133185112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_14
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 596
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a90ea36a97d58d70800000000000000
+      internalID: 9044872484740794788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_15
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 603
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b86594f0d001f670800000000000000
+      internalID: 8570632463319394480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_16
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 591
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 526a117ba27b4ea30800000000000000
+      internalID: 4243718142977746469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 570
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e80a1650915f670800000000000000
+      internalID: 8571784976673050268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_18
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 571
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3197bc1a1f5b262b0800000000000000
+      internalID: -5592707737834522349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_19
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 567
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c3e5984fdf3ddc0800000000000000
+      internalID: -3615266849129874322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_20
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 582
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c074e2cbbc35c5a0800000000000000
+      internalID: -6501723709913141053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_21
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 568
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28194d52358cd7a0800000000000000
+      internalID: -6351054923139311570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_22
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 581
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc199befcda930170800000000000000
+      internalID: 8143522825173045709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_23
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 575
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d92ea4f468076d720800000000000000
+      internalID: 2870605534653506205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_24
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 567
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b54e7accd8ef11e60800000000000000
+      internalID: 7931400303753552987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_25
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 554
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eded96bd60ca9a40800000000000000
+      internalID: 5375820682667879910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_26
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 542
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6fa0f6104699ba80800000000000000
+      internalID: -8450558023777079442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_27
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 555
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba470b0206d511820800000000000000
+      internalID: 2887191503567877291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_28
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 546
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304d8ae0499a169f0800000000000000
+      internalID: -476913632158362621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_29
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 529
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28dc614b1bda78820800000000000000
+      internalID: 2920493862115265922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_30
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 532
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224f9aa95a0572320800000000000000
+      internalID: 2533081987613848610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_31
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 500
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017a1334f645c1d10800000000000000
+      internalID: 2097644363293239056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_32
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 512
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbaabb916dcc126c0800000000000000
+      internalID: -4169826560041571653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_33
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 503
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a29c150f4fa9a30800000000000000
+      internalID: 4222956913614727723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_34
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 489
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1131575e1c4f220d0800000000000000
+      internalID: -3448925250996858095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_35
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 471
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d738527c338c6680800000000000000
+      internalID: -8760482879502796846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_36
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 484
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497ebe62ce9d0b670800000000000000
+      internalID: 8552575300665075604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_37
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 433
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7c55ad23f615310800000000000000
+      internalID: 1392016024036296673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_38
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 443
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0576e2201248a0570800000000000000
+      internalID: 8433698529510057808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_39
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 454
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a8d4036998971970800000000000000
+      internalID: 8725610587612305573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_40
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 409
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac694e94cedd1580800000000000000
+      internalID: -8854676356289958739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_41
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 425
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c42d136f71b5dedf0800000000000000
+      internalID: -149363054160522676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_42
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 375
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b344526768aec9870800000000000000
+      internalID: 8691079244146885691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_43
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 384
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ef4a31645cd64f0800000000000000
+      internalID: -833793451225710963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_44
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 398
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d16a7b8301c85550800000000000000
+      internalID: 6149877512143528407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_45
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 366
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c882d98c24558f20800000000000000
+      internalID: 3424235641952700614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_46
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 341
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20211a5ac3f112b00800000000000000
+      internalID: 801956553985954306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_47
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 308
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a314027db90f850800000000000000
+      internalID: 6408793618009635339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_48
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 320
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94733370954bda820800000000000000
+      internalID: 2931197226953946953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_49
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 328
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3426ad8d73186e0c0800000000000000
+      internalID: -4546804696922561981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_50
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 293
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afda015d896874750800000000000000
+      internalID: 6289143395613978106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_51
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 301
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bcff1e2a9af4aeb0800000000000000
+      internalID: -4709363770216940359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_52
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 234
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a858c308a3f8ff0800000000000000
+      internalID: -31742349922694613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_53
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 243
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7d095438899cb10800000000000000
+      internalID: 2002299198918154171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_54
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 249
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5395438c5e7660390800000000000000
+      internalID: -7852474663669835467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_55
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 258
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4dff51dc5630eb0800000000000000
+      internalID: -4754844850061323048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_56
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 222
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131c86c35149ec4c0800000000000000
+      internalID: -4265308978144558799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_57
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 229
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1c50f8a4515c0e0800000000000000
+      internalID: -2250369028830412339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_58
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 155
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d14eeb67afe29c0800000000000000
+      internalID: -3949944435241640576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_59
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 161
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac98d4afaceb96100800000000000000
+      internalID: 101822245584603594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_60
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 164
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6506ad7ec24c24cc0800000000000000
+      internalID: -3728201844361895850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_61
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 171
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa8a90ec44392620800000000000000
+      internalID: 2749786552276781740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_62
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 174
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2eca101aaecd2ee0800000000000000
+      internalID: -1284143088920768981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_63
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 180
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa49dd0777cea3ad0800000000000000
+      internalID: -2721603027053210454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_64
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 97
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504900d778de2f910800000000000000
+      internalID: 1869817961485734917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_65
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 103
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684ca4785d830ccf0800000000000000
+      internalID: -234124690874252154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_66
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 105
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffee37af57bd4c680800000000000000
+      internalID: -8735616077432361217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_67
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 109
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062dc337689313070800000000000000
+      internalID: 8084306055728517728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_68
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 111
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4781406a25ba6770800000000000000
+      internalID: 8604889231652915022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_69
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 113
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71dab45cc437a9fe0800000000000000
+      internalID: -1181505178666554089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_70
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 49
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0347da8baa31f330800000000000000
+      internalID: 3742837273764774666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_71
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 55
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0619da8e78e8f4000800000000000000
+      internalID: 22393237535560032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_72
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 55
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61074583348317dd0800000000000000
+      internalID: -2490147257600151530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_73
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 57
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa7380acc9ec7bd0800000000000000
+      internalID: -2630971017215640917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_74
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 57
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 696313d6e87be6660800000000000000
+      internalID: 7381038661652002454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gotas de la regadera_00000_75
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 58
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a561b659d68044470800000000000000
+      internalID: 8377830473567245914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gotas de la regadera_00000_0: 3670241566257511380
+      gotas de la regadera_00000_1: -1394583102721040354
+      gotas de la regadera_00000_10: -5997668806015164468
+      gotas de la regadera_00000_11: 2910507376472081004
+      gotas de la regadera_00000_12: -8128875105754476717
+      gotas de la regadera_00000_13: -3646013347133185112
+      gotas de la regadera_00000_14: 9044872484740794788
+      gotas de la regadera_00000_15: 8570632463319394480
+      gotas de la regadera_00000_16: 4243718142977746469
+      gotas de la regadera_00000_17: 8571784976673050268
+      gotas de la regadera_00000_18: -5592707737834522349
+      gotas de la regadera_00000_19: -3615266849129874322
+      gotas de la regadera_00000_2: 5228265048583673777
+      gotas de la regadera_00000_20: -6501723709913141053
+      gotas de la regadera_00000_21: -6351054923139311570
+      gotas de la regadera_00000_22: 8143522825173045709
+      gotas de la regadera_00000_23: 2870605534653506205
+      gotas de la regadera_00000_24: 7931400303753552987
+      gotas de la regadera_00000_25: 5375820682667879910
+      gotas de la regadera_00000_26: -8450558023777079442
+      gotas de la regadera_00000_27: 2887191503567877291
+      gotas de la regadera_00000_28: -476913632158362621
+      gotas de la regadera_00000_29: 2920493862115265922
+      gotas de la regadera_00000_3: 2680563646836593273
+      gotas de la regadera_00000_30: 2533081987613848610
+      gotas de la regadera_00000_31: 2097644363293239056
+      gotas de la regadera_00000_32: -4169826560041571653
+      gotas de la regadera_00000_33: 4222956913614727723
+      gotas de la regadera_00000_34: -3448925250996858095
+      gotas de la regadera_00000_35: -8760482879502796846
+      gotas de la regadera_00000_36: 8552575300665075604
+      gotas de la regadera_00000_37: 1392016024036296673
+      gotas de la regadera_00000_38: 8433698529510057808
+      gotas de la regadera_00000_39: 8725610587612305573
+      gotas de la regadera_00000_4: 7025603068679019026
+      gotas de la regadera_00000_40: -8854676356289958739
+      gotas de la regadera_00000_41: -149363054160522676
+      gotas de la regadera_00000_42: 8691079244146885691
+      gotas de la regadera_00000_43: -833793451225710963
+      gotas de la regadera_00000_44: 6149877512143528407
+      gotas de la regadera_00000_45: 3424235641952700614
+      gotas de la regadera_00000_46: 801956553985954306
+      gotas de la regadera_00000_47: 6408793618009635339
+      gotas de la regadera_00000_48: 2931197226953946953
+      gotas de la regadera_00000_49: -4546804696922561981
+      gotas de la regadera_00000_5: 414893574191202841
+      gotas de la regadera_00000_50: 6289143395613978106
+      gotas de la regadera_00000_51: -4709363770216940359
+      gotas de la regadera_00000_52: -31742349922694613
+      gotas de la regadera_00000_53: 2002299198918154171
+      gotas de la regadera_00000_54: -7852474663669835467
+      gotas de la regadera_00000_55: -4754844850061323048
+      gotas de la regadera_00000_56: -4265308978144558799
+      gotas de la regadera_00000_57: -2250369028830412339
+      gotas de la regadera_00000_58: -3949944435241640576
+      gotas de la regadera_00000_59: 101822245584603594
+      gotas de la regadera_00000_6: 7591510885633491147
+      gotas de la regadera_00000_60: -3728201844361895850
+      gotas de la regadera_00000_61: 2749786552276781740
+      gotas de la regadera_00000_62: -1284143088920768981
+      gotas de la regadera_00000_63: -2721603027053210454
+      gotas de la regadera_00000_64: 1869817961485734917
+      gotas de la regadera_00000_65: -234124690874252154
+      gotas de la regadera_00000_66: -8735616077432361217
+      gotas de la regadera_00000_67: 8084306055728517728
+      gotas de la regadera_00000_68: 8604889231652915022
+      gotas de la regadera_00000_69: -1181505178666554089
+      gotas de la regadera_00000_7: 7157295360862177874
+      gotas de la regadera_00000_70: 3742837273764774666
+      gotas de la regadera_00000_71: 22393237535560032
+      gotas de la regadera_00000_72: -2490147257600151530
+      gotas de la regadera_00000_73: -2630971017215640917
+      gotas de la regadera_00000_74: 7381038661652002454
+      gotas de la regadera_00000_75: 8377830473567245914
+      gotas de la regadera_00000_8: -7218282667187704547
+      gotas de la regadera_00000_9: -461491259577635552
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

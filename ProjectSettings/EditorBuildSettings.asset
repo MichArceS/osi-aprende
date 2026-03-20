@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Pantalla_select_fenomenos.unity
     guid: 2f481ce9f37f1714e994fb3b9e28e01f
   - enabled: 1
+    path: Assets/Scenes/Pantalla_select_plantas_medicinales.unity
+    guid: 29498c9ab7797df4c904a140756231a3
+  - enabled: 1
     path: Assets/Scenes/historia_clima.unity
     guid: 037bb0bf7523f8f40bc45c1fa268c20f
   - enabled: 1
@@ -46,7 +49,7 @@ EditorBuildSettings:
     guid: f937934dc13060a45bfbb544a6442007
   - enabled: 1
     path: Assets/Scenes/terremoto_juego.unity
-    guid: 403debca4edfa3d44b50ac028e6ccbeb
+    guid: 0bbe99c15dcff324aa240870c3d803d9
   - enabled: 1
     path: Assets/Scenes/terremoto_juego2.unity
     guid: c68064da0ea54bb43a96e61ff36bb3f4
@@ -126,3 +129,4 @@ EditorBuildSettings:
     path: Assets/Scenes/Escena_Recompensa_Casa.unity
     guid: eb88f8cf826dc41a7b0da75c8760fbea
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

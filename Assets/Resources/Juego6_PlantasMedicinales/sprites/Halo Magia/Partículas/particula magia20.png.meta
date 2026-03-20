@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: 46b95476ebea1a84eb9b8f099db01de9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3303758507304539795
+    second: particula magia20_0
+  - first:
+      213: -6282824906198846932
+    second: particula magia20_1
+  - first:
+      213: -5062777956827286927
+    second: particula magia20_2
+  - first:
+      213: -7833369735866385925
+    second: particula magia20_3
+  - first:
+      213: 4286717166336972742
+    second: particula magia20_4
+  - first:
+      213: -6564210527818278455
+    second: particula magia20_5
+  - first:
+      213: 1282229853579969571
+    second: particula magia20_6
+  - first:
+      213: 8809707412616820731
+    second: particula magia20_7
+  - first:
+      213: 8026690790163032843
+    second: particula magia20_8
+  - first:
+      213: -1462993608917291589
+    second: particula magia20_9
+  - first:
+      213: 7189352926488420792
+    second: particula magia20_10
+  - first:
+      213: 2589125308119529229
+    second: particula magia20_11
+  - first:
+      213: -7013469941051090889
+    second: particula magia20_12
+  - first:
+      213: 4477542223877073403
+    second: particula magia20_13
+  - first:
+      213: -5566088897664987027
+    second: particula magia20_14
+  - first:
+      213: 4866064265780413857
+    second: particula magia20_15
+  - first:
+      213: -4440694557225854447
+    second: particula magia20_16
+  - first:
+      213: -3009300167866940292
+    second: particula magia20_17
+  - first:
+      213: -7242643577177247092
+    second: particula magia20_18
+  - first:
+      213: -5938789779372037806
+    second: particula magia20_19
+  - first:
+      213: -7053186091065051591
+    second: particula magia20_20
+  - first:
+      213: -4302611961872106701
+    second: particula magia20_21
+  - first:
+      213: -8557203098565931967
+    second: particula magia20_22
+  - first:
+      213: 8454803040880717703
+    second: particula magia20_23
+  - first:
+      213: 5380843152876604125
+    second: particula magia20_24
+  - first:
+      213: 6228591850747897702
+    second: particula magia20_25
+  - first:
+      213: 80292812795862768
+    second: particula magia20_26
+  - first:
+      213: 7235454937461989831
+    second: particula magia20_27
+  - first:
+      213: -6958356472905567322
+    second: particula magia20_28
+  - first:
+      213: 4077318349886141667
+    second: particula magia20_29
+  - first:
+      213: 1127321837475960234
+    second: particula magia20_30
+  - first:
+      213: 6510948921658591290
+    second: particula magia20_31
+  - first:
+      213: -8213519660119949457
+    second: particula magia20_32
+  - first:
+      213: -7372491534813901448
+    second: particula magia20_33
+  - first:
+      213: -7830170684837607952
+    second: particula magia20_34
+  - first:
+      213: 2476074743712185799
+    second: particula magia20_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: particula magia20_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 143
+        width: 174
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6920744421b622d0800000000000000
+      internalID: -3303758507304539795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_1
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 264
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c227a00290ceec8a0800000000000000
+      internalID: -6282824906198846932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_2
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 260
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172b1a2a5466db9b0800000000000000
+      internalID: -5062777956827286927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 219
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9736b6ab74a4390800000000000000
+      internalID: -7833369735866385925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_4
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 204
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c795100d8a7d7b30800000000000000
+      internalID: 4286717166336972742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_5
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 184
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9138abd4d37e4a0800000000000000
+      internalID: -6564210527818278455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_6
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 170
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 324090f12456bc110800000000000000
+      internalID: 1282229853579969571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_7
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 191
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7b628473e524a70800000000000000
+      internalID: 8809707412616820731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_8
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 164
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0b21951fb8846f60800000000000000
+      internalID: 8026690790163032843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_9
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 176
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd61df501762bbe0800000000000000
+      internalID: -1462993608917291589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_10
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 178
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1e1445566b5c360800000000000000
+      internalID: 7189352926488420792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_11
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 185
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07307dffbb6ee320800000000000000
+      internalID: 2589125308119529229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_12
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 137
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73815c06f362bae90800000000000000
+      internalID: -7013469941051090889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_13
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 166
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf96109fdec632e30800000000000000
+      internalID: 4477542223877073403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_14
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 173
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60de6253a741c2b0800000000000000
+      internalID: -5566088897664987027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_15
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 168
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a540101babb78340800000000000000
+      internalID: 4866064265780413857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_16
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 171
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ada88f3db7f52c0800000000000000
+      internalID: -4440694557225854447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_17
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 157
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7484c7f071dc36d0800000000000000
+      internalID: -3009300167866940292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_18
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 163
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c82f59b2a06fc7b90800000000000000
+      internalID: -7242643577177247092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_19
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 150
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2592fc4292e259da0800000000000000
+      internalID: -5938789779372037806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_20
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 160
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936775b9e9c0e1e90800000000000000
+      internalID: -7053186091065051591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_21
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 157
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b3446873d0a44c0800000000000000
+      internalID: -4302611961872106701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_22
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 158
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c0b1fae15be3980800000000000000
+      internalID: -8557203098565931967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_23
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 157
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f6699f19e755570800000000000000
+      internalID: 8454803040880717703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_24
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 138
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dda8d4fa6589caa40800000000000000
+      internalID: 5380843152876604125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_25
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 150
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667a8baa947607650800000000000000
+      internalID: 6228591850747897702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_26
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 135
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fed6b843e14d1100800000000000000
+      internalID: 80292812795862768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_27
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 150
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c1a4c73eef796460800000000000000
+      internalID: 7235454937461989831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_28
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 148
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a37ce3a7a3fe6f90800000000000000
+      internalID: -6958356472905567322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_29
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e43529cf6b859830800000000000000
+      internalID: 4077318349886141667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_30
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 141
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa59b460d3d05af00800000000000000
+      internalID: 1127321837475960234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_31
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 131
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a384c2a3c898b5a50800000000000000
+      internalID: 6510948921658591290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_32
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 132
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ffcded267b30e80800000000000000
+      internalID: -8213519660119949457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_33
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 128
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87dc7dd9206afa990800000000000000
+      internalID: -7372491534813901448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_34
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 134
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5c3978f35a55390800000000000000
+      internalID: -7830170684837607952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula magia20_35
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 140
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cdf7405cd8cc5220800000000000000
+      internalID: 2476074743712185799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      particula magia20_0: -3303758507304539795
+      particula magia20_1: -6282824906198846932
+      particula magia20_10: 7189352926488420792
+      particula magia20_11: 2589125308119529229
+      particula magia20_12: -7013469941051090889
+      particula magia20_13: 4477542223877073403
+      particula magia20_14: -5566088897664987027
+      particula magia20_15: 4866064265780413857
+      particula magia20_16: -4440694557225854447
+      particula magia20_17: -3009300167866940292
+      particula magia20_18: -7242643577177247092
+      particula magia20_19: -5938789779372037806
+      particula magia20_2: -5062777956827286927
+      particula magia20_20: -7053186091065051591
+      particula magia20_21: -4302611961872106701
+      particula magia20_22: -8557203098565931967
+      particula magia20_23: 8454803040880717703
+      particula magia20_24: 5380843152876604125
+      particula magia20_25: 6228591850747897702
+      particula magia20_26: 80292812795862768
+      particula magia20_27: 7235454937461989831
+      particula magia20_28: -6958356472905567322
+      particula magia20_29: 4077318349886141667
+      particula magia20_3: -7833369735866385925
+      particula magia20_30: 1127321837475960234
+      particula magia20_31: 6510948921658591290
+      particula magia20_32: -8213519660119949457
+      particula magia20_33: -7372491534813901448
+      particula magia20_34: -7830170684837607952
+      particula magia20_35: 2476074743712185799
+      particula magia20_4: 4286717166336972742
+      particula magia20_5: -6564210527818278455
+      particula magia20_6: 1282229853579969571
+      particula magia20_7: 8809707412616820731
+      particula magia20_8: 8026690790163032843
+      particula magia20_9: -1462993608917291589
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

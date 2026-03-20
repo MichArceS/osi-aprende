@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Linq;
 
 public class AudioController : MonoBehaviour
 {
@@ -47,11 +48,22 @@ public class AudioController : MonoBehaviour
 
     public void SetAudioUI()
     {
-        background = GameObject.FindGameObjectWithTag("BackgroundAudio");
-        panel = GameObject.FindGameObjectWithTag("PanelAudio");
-        musicVolumeSlider = GameObject.FindGameObjectWithTag("SliderMusic").GetComponent<Slider>();
-        sfxVolumeSlider = GameObject.FindGameObjectWithTag("SliderSFX").GetComponent<Slider>();
-        voiceVolumeSlider = GameObject.FindGameObjectWithTag("SliderVoice").GetComponent<Slider>();
+        var audioPanel = GameObject.FindGameObjectWithTag("AudioVolumePanel");
+        if (audioPanel != null){
+            background = audioPanel.transform.Find("Background").gameObject;
+            panel = audioPanel.transform.Find("Panel").gameObject;
+            musicVolumeSlider = audioPanel.transform.Find("Panel/VerticalButtons/Music/SliderLabel/SliderGroup/SliderMusic").GetComponent<Slider>();
+            sfxVolumeSlider = audioPanel.transform.Find("Panel/VerticalButtons/SFX/SliderLabel/SliderGroup/SliderSFX").GetComponent<Slider>();
+            voiceVolumeSlider = audioPanel.transform.Find("Panel/VerticalButtons/Voice/SliderLabel/SliderGroup/SliderVoice").GetComponent<Slider>();
+        }
+        else
+        {
+            background = GameObject.FindGameObjectWithTag("BackgroundAudio");
+            panel = GameObject.FindGameObjectWithTag("PanelAudio");
+            musicVolumeSlider = GameObject.FindGameObjectWithTag("SliderMusic").GetComponent<Slider>();
+            sfxVolumeSlider = GameObject.FindGameObjectWithTag("SliderSFX").GetComponent<Slider>();
+            voiceVolumeSlider = GameObject.FindGameObjectWithTag("SliderVoice").GetComponent<Slider>();
+        }
 
         background.SetActive(false);
         panel.SetActive(false);

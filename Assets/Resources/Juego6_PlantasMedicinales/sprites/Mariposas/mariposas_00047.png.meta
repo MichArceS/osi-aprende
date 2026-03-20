@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 66c1680a5bda33e47885ba717c4b23b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8532140726642194730
+    second: mariposas_00047_0
+  - first:
+      213: 920279758473046158
+    second: mariposas_00047_1
+  - first:
+      213: 3064066967975797356
+    second: mariposas_00047_2
+  - first:
+      213: -1913889932964769625
+    second: mariposas_00047_3
+  - first:
+      213: 3252699961399921620
+    second: mariposas_00047_4
+  - first:
+      213: -7770935456759467074
+    second: mariposas_00047_5
+  - first:
+      213: -8654885093211721795
+    second: mariposas_00047_6
+  - first:
+      213: 4111222235765336525
+    second: mariposas_00047_7
+  - first:
+      213: 5441317645337999468
+    second: mariposas_00047_8
+  - first:
+      213: -2821769161628655901
+    second: mariposas_00047_9
+  - first:
+      213: -5359777744688719997
+    second: mariposas_00047_10
+  - first:
+      213: -7172856773046869831
+    second: mariposas_00047_11
+  - first:
+      213: -2216997712848061753
+    second: mariposas_00047_12
+  - first:
+      213: -2548663823321096795
+    second: mariposas_00047_13
+  - first:
+      213: 8062665541987397855
+    second: mariposas_00047_14
+  - first:
+      213: -1823647401408816892
+    second: mariposas_00047_15
+  - first:
+      213: 6916418079672632378
+    second: mariposas_00047_16
+  - first:
+      213: 2875445725261584379
+    second: mariposas_00047_17
+  - first:
+      213: -3194490538252092940
+    second: mariposas_00047_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mariposas_00047_0
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 630
+        width: 235
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d649ded63fb79980800000000000000
+      internalID: -8532140726642194730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_1
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 658
+        width: 113
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88a4c1809d75cc00800000000000000
+      internalID: 920279758473046158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_2
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 647
+        width: 140
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62a43a5ca0c58a20800000000000000
+      internalID: 3064066967975797356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_3
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 765
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a050760f3f7075e0800000000000000
+      internalID: -1913889932964769625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_4
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 543
+        width: 186
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db4b20a169e32d20800000000000000
+      internalID: 3252699961399921620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_5
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 656
+        width: 92
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb33d5fcf57182490800000000000000
+      internalID: -7770935456759467074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_6
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 546
+        width: 111
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfaa4ffcdba3e780800000000000000
+      internalID: -8654885093211721795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_7
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 501
+        width: 73
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9ea7b57defd0930800000000000000
+      internalID: 4111222235765336525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 436
+        width: 215
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c68bf60b191738b40800000000000000
+      internalID: 5441317645337999468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_9
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 468
+        width: 110
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eed8fad5ef07d8d0800000000000000
+      internalID: -2821769161628655901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_10
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 524
+        width: 92
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 387d8ccd98e3e95b0800000000000000
+      internalID: -5359777744688719997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_11
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 375
+        width: 181
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b069c1b4c4e47c90800000000000000
+      internalID: -7172856773046869831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_12
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 336
+        width: 113
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca76d98354ab31e0800000000000000
+      internalID: -2216997712848061753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_13
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 263
+        width: 318
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad9e0f81c351acd0800000000000000
+      internalID: -2548663823321096795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_14
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 299
+        width: 102
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd0f0f4b79754ef60800000000000000
+      internalID: 8062665541987397855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_15
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 159
+        width: 152
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409967bb95a11b6e0800000000000000
+      internalID: -1823647401408816892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_16
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 204
+        width: 111
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a340af4499d0cff50800000000000000
+      internalID: 6916418079672632378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_17
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 107
+        width: 109
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7d12107a2a7e720800000000000000
+      internalID: 2875445725261584379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mariposas_00047_18
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 162
+        width: 125
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f93325d7c3eaa3d0800000000000000
+      internalID: -3194490538252092940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      mariposas_00047_0: -8532140726642194730
+      mariposas_00047_1: 920279758473046158
+      mariposas_00047_10: -5359777744688719997
+      mariposas_00047_11: -7172856773046869831
+      mariposas_00047_12: -2216997712848061753
+      mariposas_00047_13: -2548663823321096795
+      mariposas_00047_14: 8062665541987397855
+      mariposas_00047_15: -1823647401408816892
+      mariposas_00047_16: 6916418079672632378
+      mariposas_00047_17: 2875445725261584379
+      mariposas_00047_18: -3194490538252092940
+      mariposas_00047_2: 3064066967975797356
+      mariposas_00047_3: -1913889932964769625
+      mariposas_00047_4: 3252699961399921620
+      mariposas_00047_5: -7770935456759467074
+      mariposas_00047_6: -8654885093211721795
+      mariposas_00047_7: 4111222235765336525
+      mariposas_00047_8: 5441317645337999468
+      mariposas_00047_9: -2821769161628655901
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
