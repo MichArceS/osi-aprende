@@ -6,14 +6,14 @@ using System.Linq;
 public class MatchGameManager : MonoBehaviour
 {
     [System.Serializable]
-    public struct ParejaImágenes
+    public struct ParejaImagenes
     {
         public Sprite imagenArriba;
         public Sprite imagenAbajoPar;
     }
 
     [Header("Bancos de Datos")]
-    public List<ParejaImágenes> bancoParejas;
+    public List<ParejaImagenes> bancoParejas;
     public List<Sprite> bancoIncorrectas;
 
     [Header("Referencias de Escena")]
@@ -53,7 +53,7 @@ public class MatchGameManager : MonoBehaviour
 
     public void ConfigurarNivel()
     {
-        List<ParejaImágenes> seleccionadas = bancoParejas.OrderBy(x => Random.value).Take(3).ToList();
+        List<ParejaImagenes> seleccionadas = bancoParejas.OrderBy(x => Random.value).Take(3).ToList();
 
         for (int i = 0; i < cardsArriba.Length; i++)
         {
