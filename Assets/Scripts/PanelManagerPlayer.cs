@@ -188,7 +188,7 @@ public class PanelManagerPlayer : MonoBehaviour
         {
             if (child.CompareTag("Draggable"))
             {
-                var draggable = child.GetComponent<ControllerDrag_and_Drop>();
+                var draggable = child.GetComponent<DragAndDrop>();
                 if (draggable != null)
                 {
                     draggable.ResetState();

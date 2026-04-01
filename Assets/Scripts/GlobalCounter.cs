@@ -87,7 +87,6 @@ public static class GlobalCounter
     {
         aciertosTotales = 0;
         noAciertosTotales = 0;
-        Debug.Log("Contadores reiniciados.");
 
         // 🔔 Llamamos al evento cuando se reinicia
         OnAciertosChanged?.Invoke();

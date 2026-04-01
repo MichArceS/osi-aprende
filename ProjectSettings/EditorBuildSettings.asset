@@ -36,6 +36,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Pantalla_select_plantas_medicinales.unity
     guid: 29498c9ab7797df4c904a140756231a3
   - enabled: 1
+    path: Assets/Scenes/juegos_plantas_medicinales.unity
+    guid: bef3548d40b3e734bae4ad82d05ef61b
+  - enabled: 1
+    path: Assets/Scenes/historia_plantas_medicinales.unity
+    guid: f71e7b47993faf640a745dfc5b431090
+  - enabled: 1
     path: Assets/Scenes/historia_clima.unity
     guid: 037bb0bf7523f8f40bc45c1fa268c20f
   - enabled: 1

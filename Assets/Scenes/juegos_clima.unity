@@ -491,7 +491,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppablePantalon
+  destination:
+  - {fileID: 1294797142}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &153814060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,7 +1452,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableSandalias
+  destination: []
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &353629996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,7 +1728,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableChompa
+  destination:
+  - {fileID: 2001693101}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &420647942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1862,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableChompa
+  destination:
+  - {fileID: 1824102560}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &583289957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2221,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppablePantalon
+  destination:
+  - {fileID: 1779860066}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &627705149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,7 +2528,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableMedias
+  destination:
+  - {fileID: 1200438600}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &715689507
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,7 +2737,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppablePantalon
+  destination:
+  - {fileID: 296388291}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &754330329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,7 +3202,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableSandalias
+  destination:
+  - {fileID: 1780982606}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!225 &810646992
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3899,7 +4154,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableChompa
+  destination:
+  - {fileID: 1258537115}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1043961473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,6 +4440,7 @@ GameObject:
   - component: {fileID: 1181430398}
   - component: {fileID: 1181430400}
   - component: {fileID: 1181430399}
+  - component: {fileID: 1181430401}
   m_Layer: 5
   m_Name: osi
   m_TagString: Untagged
@@ -4217,6 +4505,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181430397}
   m_CullTransparentMesh: 1
+--- !u!114 &1181430401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181430397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7231e65905c81cd429b3120763691ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Chapter1.ClothesController
 --- !u!1 &1182160217
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,7 +4943,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableGafas
+  destination: []
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1249435477
 GameObject:
   m_ObjectHideFlags: 0
@@ -5403,7 +5734,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableZapatos
+  destination:
+  - {fileID: 1391983053}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1391983053
 GameObject:
   m_ObjectHideFlags: 0
@@ -6010,7 +6373,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppablePlayera
+  destination:
+  - {fileID: 153814060}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!225 &1517803695
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6568,7 +6963,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableZapatos
+  destination:
+  - {fileID: 754330329}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1636435343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6620,7 +7047,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppablePantaloneta
+  destination:
+  - {fileID: 583289957}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!225 &1636435346
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6722,7 +7181,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableGorra
+  destination:
+  - {fileID: 1729911484}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!225 &1643347533
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6957,7 +7448,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableZapatos
+  destination: []
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!225 &1690729147
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7464,7 +7986,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableGorra
+  destination:
+  - {fileID: 1506051674}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1809844240
 GameObject:
   m_ObjectHideFlags: 0
@@ -8289,7 +8843,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableSombrilla
+  destination: []
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1950262041
 GameObject:
   m_ObjectHideFlags: 0
@@ -8657,7 +9242,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableSombrilla
+  destination:
+  - {fileID: 137182430}
+  - {fileID: 231593496}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2001693101
 GameObject:
   m_ObjectHideFlags: 0
@@ -8967,7 +9585,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da701c474fa5204fbc326cb0cb350e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagNameObjet: DroppableBotas
+  destination:
+  - {fileID: 1421153819}
+  initialDelay: 0.5
+  onDropSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragSuccessful
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropFailed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181430401}
+        m_TargetAssemblyTypeName: Chapter1.ClothesController, Assembly-CSharp
+        m_MethodName: OnDragCancelled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2097944839
 GameObject:
   m_ObjectHideFlags: 0
