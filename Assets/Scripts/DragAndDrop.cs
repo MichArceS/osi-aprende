@@ -18,7 +18,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private Vector3 _initialPosition;
     private Vector2 _initialSizeDelta;
     
-    [Tooltip("The GameObject that represents the final destination of the dragging")]
+    [Tooltip("The GameObject that represents the final destination of the dragging (Can be multiple destinations)")]
     [SerializeField] private List<GameObject> destination;
     [SerializeField] private float initialDelay = 0.5f;
     

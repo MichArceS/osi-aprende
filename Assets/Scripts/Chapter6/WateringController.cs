@@ -22,9 +22,14 @@ namespace Chapter6
         private Animator _wateringCanAnimator;
         private bool isWatering;
 
+        private RectTransform _rectTransform;
+        private Vector3 defaultPosition;
+        
         private void Start()
         {
             _wateringCanAnimator = GetComponent<Animator>();
+            _rectTransform = GetComponent<RectTransform>();
+            defaultPosition = _rectTransform.anchoredPosition;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -43,6 +48,12 @@ namespace Chapter6
             
             if (!(_progress >= wateringTime)) return;
             
+            HandleWateringCompletion();
+        }
+
+        private void HandleWateringCompletion()
+        {
+            _rectTransform.anchoredPosition = defaultPosition;
             manager.Next();
             GetComponent<DragAndDrop>().enabled = false;
             GetComponent<Image>().raycastTarget = false;
@@ -50,6 +61,7 @@ namespace Chapter6
             {
                 plant.GrowAnimation();
             }
+            IdleAnimation();
         }
 
         private void OnTriggerExit2D(Collider2D other)

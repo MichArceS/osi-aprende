@@ -18,8 +18,10 @@ namespace Chapter6
         [SerializeField] private GameObject player;
         [Tooltip("The parent GameObject that contains Background and Foreground")]
         [SerializeField] private GameObject environment;
+        [SerializeField] private GameObject foreground;
         [SerializeField] private GameObject butterflies;
         [SerializeField] private GameObject cart;
+        [SerializeField] private GameObject endScreen;
         
         [Header("Movement")]
         [Tooltip("The time in seconds that Osi will take to move from one position to another")]
@@ -53,6 +55,7 @@ namespace Chapter6
         // Components
         private RectTransform _playerRectTransform;
         private RectTransform _environmentRectTransform;
+        private RectTransform _foregroundRectTransform;
         private Button _screenInputButton;
         private Image _screenInputImage;
         
@@ -76,6 +79,7 @@ namespace Chapter6
             _progress = 0;
             _playerRectTransform = player.GetComponent<RectTransform>();
             _environmentRectTransform = environment.GetComponent<RectTransform>();
+            _foregroundRectTransform = foreground.GetComponent<RectTransform>();
             _screenInputButton = screenInput.GetComponent<Button>();
             _screenInputImage = screenInput.GetComponent<Image>();
             SwitchInteraction(true);
@@ -84,6 +88,13 @@ namespace Chapter6
             
             AudioController.Instance.PlayMusic(levelMusic);
             AudioController.Instance.PlayVoice(startVoice);
+            StartCoroutine(StartTalking());
+        }
+
+        private IEnumerator StartTalking()
+        {
+            yield return new WaitForSeconds(0.1f);
+            osi.ChangeAnimation(ChapterSixOsiController.Talk);
         }
 
         public void Next()
@@ -177,6 +188,11 @@ namespace Chapter6
                     // Animacion de plantas
                     osi.ChangeAnimation(ChapterSixOsiController.Jump);
                     butterflies.SetActive(true);
+                    StartCoroutine(EndTimer());
+                    break;
+                case 16: // End Screen
+                    SwitchInteraction(false);
+                    endScreen.SetActive(true);
                     break;
             }
         }
@@ -227,6 +243,7 @@ namespace Chapter6
                 case 0:
                     if (startVoice == null) return;
                     AudioController.Instance.PlayVoice(startVoice);
+                    osi.ChangeAnimation(ChapterSixOsiController.Talk);
                     break;
                 case 1:
                 case 2:
@@ -286,6 +303,13 @@ namespace Chapter6
             AudioController.Instance.PlayVoice(audioClip);
         }
 
+        private IEnumerator EndTimer()
+        {
+            yield return new WaitForSeconds(3f);
+            Next();
+        }
+        
+        
         private IEnumerator MovementRoutine(Vector3 envStart, Vector3 envEnd, Action onComplete = null)
         {
             var elapsedTime = 0f;
@@ -295,6 +319,7 @@ namespace Chapter6
             
             // Ensure the player is where it should to start
             _environmentRectTransform.anchoredPosition3D = envStart;
+            _foregroundRectTransform.anchoredPosition3D = envStart;
             _playerRectTransform.anchoredPosition3D = PlayerPosition;
             
             // Moves the player to the new position (for this we move the environment and slightly osi on screen)
@@ -306,6 +331,7 @@ namespace Chapter6
                 var easedT = Mathf.SmoothStep(0f, 1f, t);
 
                 _environmentRectTransform.anchoredPosition3D = Vector3.Lerp(envStart, envEnd, easedT);
+                _foregroundRectTransform.anchoredPosition3D = Vector3.Lerp(envStart, envEnd, easedT);
 
                 if (_progress < 10)
                 {
@@ -322,6 +348,7 @@ namespace Chapter6
 
             // Ensure that the player is where it had to go
             _environmentRectTransform.anchoredPosition3D = envEnd;
+            _foregroundRectTransform.anchoredPosition3D = envEnd;
             _playerRectTransform.anchoredPosition3D = _progress < 10 ? PlayerPosition : PlayerFinalPosition;
             
             // Invoke actions after coroutine completion

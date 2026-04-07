@@ -14,6 +14,7 @@ namespace Chapter6
         public static readonly int Back = Animator.StringToHash("Back");
         public static readonly int Heal = Animator.StringToHash("Heal");
         public static readonly int Jump = Animator.StringToHash("Jump");
+        public static readonly int Talk = Animator.StringToHash("Talk");
 
         [SerializeField] private float healingTime = 3f;
         
